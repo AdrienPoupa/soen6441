@@ -1,5 +1,5 @@
 @import java.util
-@(myForm: Form[Keyword], statuses: util.List[Status])
+@(myForm: Form[Keyword], statuses: util.List[models.twitter.search.Status])
 
 @if(flash.containsKey("error")) {
     @flash.get("error")
@@ -13,6 +13,6 @@
 
 <ul>
 @for(status <- statuses) {
-    <li>@status.getUser.getScreenName wrote: @status.getFullText</li>
+    <li><a href="@routes.TwitterController.profile(status.getUser.getScreenName)">@status.getUser.getScreenName</a> wrote: @status.getFullText</li>
 }
 </ul>

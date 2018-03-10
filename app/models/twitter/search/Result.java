@@ -1,11 +1,11 @@
-package models;
+package models.twitter.search;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SearchResult {
+public class Result {
 
     protected String query;
 

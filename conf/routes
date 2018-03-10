@@ -22,3 +22,4 @@ GET     /hello/:message             controllers.HomeController.hello(message: St
 GET     /twitter/auth               controllers.TwitterController.auth()
 GET     /twitter/search             controllers.TwitterController.searchForm()
 POST    /twitter/search             controllers.TwitterController.searchPost()
+GET     /twitter/profile/:username  controllers.TwitterController.profile(username: String)

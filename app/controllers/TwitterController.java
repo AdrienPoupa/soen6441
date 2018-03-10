@@ -3,11 +3,10 @@ package controllers;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import models.Keyword;
-import models.SearchResult;
-import models.Status;
 import play.cache.SyncCacheApi;
 import play.data.Form;
 import play.data.FormFactory;
+import play.libs.concurrent.HttpExecutionContext;
 import play.libs.oauth.OAuth;
 import play.libs.oauth.OAuth.ConsumerKey;
 import play.libs.oauth.OAuth.OAuthCalculator;
@@ -25,7 +24,8 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
-import views.html.*;
+import views.html.twitter.*;
+
 
 /**
  * TwitterController
@@ -48,19 +48,22 @@ public class TwitterController extends Controller {
 
     private SyncCacheApi cache;
 
+    private HttpExecutionContext httpExecutionContext;
+
     @Inject
-    public TwitterController(WSClient ws, final FormFactory formFactory, SyncCacheApi cache) {
+    public TwitterController(WSClient ws, final FormFactory formFactory, SyncCacheApi cache, HttpExecutionContext ec) {
         this.ws = ws;
         this.formFactory = formFactory;
         this.cache = cache;
+        this.httpExecutionContext = ec;
     }
 
     public CompletionStage<Result> searchForm() {
-        List<Status> cachedStatuses = cache.get("cachedStatuses");
+        List<models.twitter.search.Status> cachedStatuses = cache.get("cachedStatuses");
         if (cachedStatuses == null) {
             cachedStatuses = new ArrayList<>();
         }
-        return CompletableFuture.completedFuture(ok(twitterform.render(formFactory.form(Keyword.class), cachedStatuses)));
+        return CompletableFuture.completedFuture(ok(form.render(formFactory.form(Keyword.class), cachedStatuses)));
     }
 
     public CompletionStage<Result> searchPost() {
@@ -78,14 +81,14 @@ public class TwitterController extends Controller {
                     .addQueryParameter("result_type", "recent")
                     .addQueryParameter("tweet_mode", "extended")
                     .sign(new OAuthCalculator(TwitterController.KEY, sessionTokenPair.get()))
-                    .get()
-                    .thenApply(result -> {
+                    .get() // THIS IS NOT BLOCKING! It returns CompletionStage<WSResponse> It comes from WSRequest
+                    .thenApplyAsync(result -> {
                         JsonNode rootNode = result.asJson();
                         try {
                             ObjectMapper mapper = new ObjectMapper();
-                            SearchResult root = mapper.treeToValue(rootNode, SearchResult.class);
+                            models.twitter.search.Result root = mapper.treeToValue(rootNode, models.twitter.search.Result.class);
 
-                            List<Status> cachedStatuses = cache.get("cachedStatuses");
+                            List<models.twitter.search.Status> cachedStatuses = cache.get("cachedStatuses");
 
                             if (cachedStatuses != null) {
                                 cachedStatuses.addAll(root.getStatuses());
@@ -101,6 +104,30 @@ public class TwitterController extends Controller {
                             return ok(e.toString());
                         }
                     });
+        }
+        return CompletableFuture.completedFuture(redirect(routes.TwitterController.auth()));
+    }
+
+    public CompletionStage<Result> profile(String username) {
+        Optional<RequestToken> sessionTokenPair = getSessionTokenPair();
+        if (sessionTokenPair.isPresent()) {
+            return ws.url("https://api.twitter.com/1.1/statuses/user_timeline.json")
+                    .addQueryParameter("count", "10")
+                    .addQueryParameter("tweet_mode", "extended")
+                    .addQueryParameter("screen_name", username)
+                    .sign(new OAuthCalculator(TwitterController.KEY, sessionTokenPair.get()))
+                    .get() // THIS IS NOT BLOCKING! It returns CompletionStage<WSResponse> It comes from WSRequest
+                    .thenApplyAsync(result -> {
+                        JsonNode rootNode = result.asJson();
+                        try {
+                            ObjectMapper mapper = new ObjectMapper();
+                            List<models.twitter.profile.Status> root = Arrays.asList(mapper.treeToValue(rootNode, models.twitter.profile.Status[].class));
+
+                            return ok(profile.render(root, root.get(0).getUser()));
+                        } catch (IOException e) {
+                            return ok(e.toString());
+                        }
+                    }, httpExecutionContext.current());
         }
         return CompletableFuture.completedFuture(redirect(routes.TwitterController.auth()));
     }
