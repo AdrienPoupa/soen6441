@@ -34,10 +34,19 @@ public class HomeController extends Controller {
         return ok(index.render("Your new application is ready."));
     }
 
+    /**
+     * Display current time
+     * @return SearchResult
+     */
     public Result time() {
         return ok(time.render(new SimpleDateFormat("yyy/MM/dd HH:mm:ss").format(new Date())));
     }
 
+    /**
+     * Display a Hello, world! message
+     * @param message String message to display
+     * @return CompletionStage<SearchResult>
+     */
     public CompletionStage<Result> hello(String message) {
         return HelloPlay.helloPlay(message).thenApplyAsync(answer -> {
             return ok("Hello, "+answer+"!");

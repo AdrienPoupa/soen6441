@@ -38,7 +38,7 @@ GET     /               controllers.HomeController.index</code></pre>
                 Play has invoked the <code>controllers.HomeController.index</code> method:
             </p>
 
-            <pre><code>public Result index() {
+            <pre><code>public SearchResult index() {
     return ok(index.render("Your new application is ready."));
 }</code></pre>
 
@@ -75,7 +75,7 @@ GET     /               controllers.HomeController.index</code></pre>
 
             <h2>Async Controller</h2>
 
-            Now that you've seen how Play renders a page, take a look at <code>AsyncController.java</code>, which shows how to do asynchronous programming when handling a request.  The code is almost exactly the same as <code>HomeController.java</code>, but instead of returning <code>Result</code>, the action returns <code>CompletionStage&lt;Result&gt;</code> to Play.  When the execution completes, Play can use a thread to render the result without blocking the thread in the mean time.
+            Now that you've seen how Play renders a page, take a look at <code>AsyncController.java</code>, which shows how to do asynchronous programming when handling a request.  The code is almost exactly the same as <code>HomeController.java</code>, but instead of returning <code>SearchResult</code>, the action returns <code>CompletionStage&lt;SearchResult&gt;</code> to Play.  When the execution completes, Play can use a thread to render the result without blocking the thread in the mean time.
 
             <p>
                 <a href="@routes.AsyncController.message">Click here for the AsyncController action!</a>
