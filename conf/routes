@@ -19,5 +19,6 @@ GET     /time                       controllers.HomeController.time
 GET     /hello/:message             controllers.HomeController.hello(message: String)
 
 # Twitter API
-GET     /twitter/homeTimeline controllers.TwitterController.homeTimeline()
-GET     /twitter/auth         controllers.TwitterController.auth()
+GET     /twitter/auth               controllers.TwitterController.auth()
+GET     /twitter/search             controllers.TwitterController.searchForm()
+POST    /twitter/search             controllers.TwitterController.searchPost()

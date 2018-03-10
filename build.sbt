@@ -17,8 +17,11 @@ libraryDependencies += "com.h2database" % "h2" % "1.4.196"
 libraryDependencies += "org.assertj" % "assertj-core" % "3.6.2" % Test
 libraryDependencies += "org.awaitility" % "awaitility" % "2.0.0" % Test
 
+libraryDependencies += jcache
+
 libraryDependencies ++= Seq(
-  ws
+  ws,
+  ehcache
 )
 
 // Make verbose tests

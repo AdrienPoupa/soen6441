@@ -1,0 +1,18 @@
+@import java.util
+@(myForm: Form[Keyword], statuses: util.List[Status])
+
+@if(flash.containsKey("error")) {
+    @flash.get("error")
+}
+
+@helper.form(action = routes.TwitterController.searchPost()) {
+    @helper.CSRF.formField
+    @helper.inputText(myForm("keyword"))
+}
+
+
+<ul>
+@for(status <- statuses) {
+    <li>@status.getUser.getScreenName wrote: @status.getFullText</li>
+}
+</ul>
