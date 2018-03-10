@@ -59,11 +59,15 @@ public class TwitterController extends Controller {
     }
 
     public CompletionStage<Result> searchForm() {
-        List<models.twitter.search.Status> cachedStatuses = cache.get("cachedStatuses");
-        if (cachedStatuses == null) {
-            cachedStatuses = new ArrayList<>();
+        Optional<RequestToken> sessionTokenPair = getSessionTokenPair();
+        if (sessionTokenPair.isPresent()) {
+            List<models.twitter.search.Status> cachedStatuses = cache.get("cachedStatuses");
+            if (cachedStatuses == null) {
+                cachedStatuses = new ArrayList<>();
+            }
+            return CompletableFuture.completedFuture(ok(search.render(formFactory.form(Keyword.class), cachedStatuses)));
         }
-        return CompletableFuture.completedFuture(ok(form.render(formFactory.form(Keyword.class), cachedStatuses)));
+        return CompletableFuture.completedFuture(redirect(routes.TwitterController.auth()));
     }
 
     public CompletionStage<Result> searchPost() {

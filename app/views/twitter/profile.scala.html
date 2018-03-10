@@ -2,21 +2,23 @@
 
 @(statuses: util.List[models.twitter.profile.Status], user: models.twitter.User)
 
-@if(flash.containsKey("error")) {
-    @flash.get("error")
-}
+@master(user.getScreenName+"'s Twitter Profile") {
+    @if(flash.containsKey("error")) {
+        @flash.get("error")
+    }
 
-<ul>
-    <li>User name: @user.getScreenName</li>
-    <li>Real name: @user.getName</li>
-    <li>Location: @user.getLocation</li>
-    <li>Description: @user.getDescription</li>
-    <li>Followers: @user.getFollowers</li>
-    <li>Friends: @user.getFriends</li>
-</ul>
+    <ul>
+        <li>User name: @user.getScreenName</li>
+        <li>Real name: @user.getName</li>
+        <li>Location: @user.getLocation</li>
+        <li>Description: @user.getDescription</li>
+        <li>Followers: @user.getFollowers</li>
+        <li>Friends: @user.getFriends</li>
+    </ul>
 
-<ul>
-@for(status <- statuses) {
-    <li><a href="@routes.TwitterController.profile(status.getUser.getScreenName)">@status.getUser.getScreenName</a> wrote: @status.getFullText</li>
+    <ul>
+    @for(status <- statuses) {
+        <li><a href="@routes.TwitterController.profile(status.getUser.getScreenName)">@status.getUser.getScreenName</a> wrote: @status.getFullText</li>
+    }
+    </ul>
 }
-</ul>

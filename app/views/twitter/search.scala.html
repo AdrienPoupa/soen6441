@@ -1,0 +1,23 @@
+@import java.util
+@(myForm: Form[Keyword], statuses: util.List[models.twitter.search.Status])
+
+@master("Search on Twitter") {
+
+    @if(flash.containsKey("error")) {
+        @flash.get("error")
+    }
+
+    @helper.form(action = routes.TwitterController.searchPost()) {
+        @helper.CSRF.formField
+        @helper.inputText(myForm("keyword"))
+        <button type="submit">Search</button>
+    }
+
+
+    <ul>
+    @for(status <- statuses) {
+        <li><a href="@routes.TwitterController.profile(status.getUser.getScreenName)">@status.getUser.getScreenName</a> wrote: @status.getFullText</li>
+    }
+    </ul>
+
+}
