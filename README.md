@@ -15,13 +15,13 @@ And then go to http://localhost:9000 to see the running web application.
 ## Team Members
 
 
-| Name               | Student ID    | Contributions              |
-| ------------------ |:-------------:| --------------------------:|
-| Adrien Poupa       | 40059458      | TwitterController, JavaDoc |
-| Jialu Wang         | 40019673      | TBD                        |
-| Wei Li             | 40027433      | TBD                        |
-| Vamsi Krishna      | XXX           | TBD                        |
-| Manoj Muppavarapu  | XXX           | TBD                        |
+| Name                      | Student ID    | Contributions                      |
+| :-----------------------: |:-------------:| :---------------------------------:|
+| Adrien Poupa              | 40059458      | TwitterController, Models, JavaDoc |
+| Jialu Wang                | 40019673      | TBD                                |
+| Wei Li                    | 40027433      | TBD                                |
+| Vamsikrishna Tamil Selvan | 40010750      | TBD                                |
+| Manoj Kumar Muppavarapu   | 40042560      | TBD                                |
 
 ## Controllers
 
@@ -44,6 +44,22 @@ There are several demonstration files available in this template.
 
   Shows how to inject a component into a controller and use the component when
   handling requests.
+  
+## Models
+
+There are several models used in this project. They are simple POJO (Plain Old Java Object) used by Jackon's Object Mapper to map the JSON returned by Twitter's API to a Java Object.
+
+- SearchResult.java:
+
+  Handles the JSON object returned by Twitter's search API.
+  
+- Status.java:
+
+  Handles the status included in both Search and Profile.
+  
+- User.java:
+
+  Handles the user included in both Search and Profile.
 
 ## Components
 
