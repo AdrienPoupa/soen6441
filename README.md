@@ -121,55 +121,55 @@ There are several models used in this project. They are simple POJO (Plain Old J
 
 - testGetStatuses:For search result
 
--testGetUser: for Status 
+- testGetUser: for Status 
 
--testSetUser: For Status
+- testSetUser: For Status
 
--testGetFullText: For Status
+- testGetFullText: For Status
 
--testSetFullText:For Status
+- testSetFullText:For Status
 
--testAuth:For TwitterController
+- testAuth:For TwitterController
 
--testSearchForm: For TwitterController
+- testSearchForm: For TwitterController
 
--testGetSearchJson: For TwitterController
+- testGetSearchJson: For TwitterController
 
--testSearchPost: For TwitterController
+- testSearchPost: For TwitterController
 
--testProfile: For TwitterController
+- testProfile: For TwitterController
 
--testGetProfileJson: For TwitterController
+- testGetProfileJson: For TwitterController
 
--testGetBaseUrl: For TwitterController
+- testGetBaseUrl: For TwitterController
 
--testGetLocation: For User 
+- testGetLocation: For User 
 
--testSetLocation: For User
+- testSetLocation: For User
 
--testGetDescription: For User
+- testGetDescription: For User
 
--testSetDescription: For User
+- testSetDescription: For User
 
--testGetFollowers: For User
+- testGetFollowers: For User
 
--testSetFollowers: For User
+- testSetFollowers: For User
 
--testGetFriends: For User
+- testGetFriends: For User
 
--testSetFriends: For User
+- testSetFriends: For User
 
--testGetId:For User
+- testGetId:For User
 
--testSetId:For User
+- testSetId:For User
 
--testGetName:For User
+- testGetName:For User
 
--testSetName:For User
+- testSetName:For User
 
--testGetScreenName: For User
+- testGetScreenName: For User
 
--testGetScreenName: For User
+- testGetScreenName: For User
 
 
 
