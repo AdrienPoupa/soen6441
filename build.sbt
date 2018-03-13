@@ -27,3 +27,6 @@ libraryDependencies ++= Seq(
 
 // Make verbose tests
 testOptions in Test := Seq(Tests.Argument(TestFrameworks.JUnit, "-a", "-v"))
+
+// Javadoc
+sources in (Compile, doc) ~= (_ filter (_.getName endsWith ".java"))
