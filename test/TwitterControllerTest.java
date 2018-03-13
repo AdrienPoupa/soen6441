@@ -78,11 +78,7 @@ public class TwitterControllerTest extends WithBrowser {
         // Mock the context and flash to render the templates
         Http.Context context = mock(Http.Context.class);
         Http.Flash flash = mock(Http.Flash.class);
-
         when(context.flash()).thenReturn(flash);
-        when(Http.Context.current()).thenReturn(mock(Http.Context.class));
-        when(Http.Context.current().session()).thenReturn(mock(Http.Session.class));
-        Http.Context.current.set(context);
     }
 
     /**

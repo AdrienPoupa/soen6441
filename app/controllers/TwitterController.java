@@ -237,7 +237,7 @@ public class TwitterController extends Controller {
      * Get the RequestToken
      * @return Optional<RequestToken>
      */
-    public Optional<RequestToken> getSessionTokenPair() {
+    private Optional<RequestToken> getSessionTokenPair() {
         if (Http.Context.current().session().containsKey("token")) {
             return Optional.of(new RequestToken(session("token"), session("secret")));
         }
