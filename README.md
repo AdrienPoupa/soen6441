@@ -88,22 +88,22 @@ There are several models used in this project. They are simple POJO (Plain Old J
   searchForm method gets the previous tweets from the cache.If cache is empty an 
   empty arraylist is created to avoid having an exception thrown.
   
--getsearchJson:
+- getsearchJson:
 
   This method is used to display the search file and to  get, update the status of the cache.
   
--getProfileJson:
+- getProfileJson:
 
  This method displays the profile file.
  
--searchPost:
+- searchPost:
 
  This method will displays the keyword form ,retrieve the latest tweets given a keyword. 
  
--profile:
+- profile:
 
  This method will display the latest status of the profile.
  
--auth:
+- auth:
 
  login into twitter application user interface using oAuth.
