@@ -12,6 +12,9 @@ import models.User;
  */
 public class StatusTest{
 
+    /**
+     * Getter test for User
+     */
 	@Test
 	public void testGetUser() {
 		Status status=new Status();
@@ -20,6 +23,9 @@ public class StatusTest{
 		assertEquals(user,status.getUser());
 	}
 
+    /**
+     * Setter test for User
+     */
 	@Test
 	public void testSetUser() {
 		Status status=new Status();
@@ -28,6 +34,9 @@ public class StatusTest{
 		assertEquals(user,status.getUser());
 	}
 
+    /**
+     * Getter test for FullText
+     */
 	@Test
 	public void testGetFullText() {
 		Status status=new Status();
@@ -35,6 +44,9 @@ public class StatusTest{
 		assertEquals("Have a nice day!",status.getFullText());
 	}
 
+    /**
+     * Setter test for FullText
+     */
 	@Test
 	public void testSetFullText() {
 		Status status=new Status();
