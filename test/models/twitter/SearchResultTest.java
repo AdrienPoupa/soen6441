@@ -27,4 +27,18 @@ public class SearchResultTest{
 		assertEquals("keyword",sr.getQuery());
 	}
 
+	@Test
+	public void testSetStatuses() {
+		SearchResult sr=new SearchResult();
+		sr.setStatuses(null);
+		assertEquals(null,sr.getStatuses());
+	}
+
+	@Test
+	public void testGetStatuses() {
+		SearchResult sr=new SearchResult();
+		sr.setStatuses(null);
+		assertEquals(null,sr.getStatuses());
+	}
+
 }
