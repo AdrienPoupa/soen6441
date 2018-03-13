@@ -16,6 +16,7 @@ import play.libs.oauth.OAuth.RequestToken;
 import play.libs.oauth.OAuth.ServiceInfo;
 import play.libs.ws.WSClient;
 import play.mvc.Controller;
+import play.mvc.Http;
 import play.mvc.Result;
 
 import com.google.common.base.Strings;
@@ -236,8 +237,8 @@ public class TwitterController extends Controller {
      * Get the RequestToken
      * @return Optional<RequestToken>
      */
-    private Optional<RequestToken> getSessionTokenPair() {
-        if (session().containsKey("token")) {
+    public Optional<RequestToken> getSessionTokenPair() {
+        if (Http.Context.current().session().containsKey("token")) {
             return Optional.of(new RequestToken(session("token"), session("secret")));
         }
         return Optional.empty();

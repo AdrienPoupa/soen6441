@@ -1,12 +1,10 @@
-package controllers;
-
 import akka.util.ByteString;
+import controllers.TwitterController;
 import models.Keyword;
 import models.Status;
 import models.User;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
+import org.junit.runners.MethodSorters;
 import play.data.FormFactory;
 import play.http.HttpEntity;
 import play.inject.guice.GuiceApplicationBuilder;
@@ -40,6 +38,8 @@ import static play.test.Helpers.*;
  * TwitterController test class
  * @author Adrien Poupa
  */
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TwitterControllerTest extends WithBrowser {
 
     private TwitterController client;
@@ -80,6 +80,8 @@ public class TwitterControllerTest extends WithBrowser {
         Http.Flash flash = mock(Http.Flash.class);
 
         when(context.flash()).thenReturn(flash);
+        when(Http.Context.current()).thenReturn(mock(Http.Context.class));
+        when(Http.Context.current().session()).thenReturn(mock(Http.Session.class));
         Http.Context.current.set(context);
     }
 
