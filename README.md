@@ -98,12 +98,78 @@ There are several models used in this project. They are simple POJO (Plain Old J
  
 - searchPost:
 
- This method will displays the keyword form ,retrieve the latest tweets given a keyword. 
+  This method will displays the keyword form ,retrieve the latest tweets given a keyword. 
  
 - profile:
 
- This method will display the latest status of the profile.
+  This method will display the latest status of the profile.
  
 - auth:
 
- login into twitter application user interface using oAuth.
+  login into twitter application user interface using oAuth.
+  
+## Tests
+- TestIndex: For HomeController
+
+- TestgetKeyword: For Keyword
+
+- testGetQuery: For search result 
+
+- testSetQuery: For search result
+
+- testSetStatuses:For seartestSetFullText:For Statusch result
+
+- testGetStatuses:For search result
+
+-testGetUser: for Status 
+
+-testSetUser: For Status
+
+-testGetFullText: For Status
+
+-testSetFullText:For Status
+
+-testAuth:For TwitterController
+
+-testSearchForm: For TwitterController
+
+-testGetSearchJson: For TwitterController
+
+-testSearchPost: For TwitterController
+
+-testProfile: For TwitterController
+
+-testGetProfileJson: For TwitterController
+
+-testGetBaseUrl: For TwitterController
+
+-testGetLocation: For User 
+
+-testSetLocation: For User
+
+-testGetDescription: For User
+
+-testSetDescription: For User
+
+-testGetFollowers: For User
+
+-testSetFollowers: For User
+
+-testGetFriends: For User
+
+-testSetFriends: For User
+
+-testGetId:For User
+
+-testSetId:For User
+
+-testGetName:For User
+
+-testSetName:For User
+
+-testGetScreenName: For User
+
+-testGetScreenName: For User
+
+
+
