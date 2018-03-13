@@ -20,8 +20,8 @@ And then go to http://localhost:9000 to see the running web application.
 | Adrien Poupa              | 40059458      | TwitterController, Models, JavaDoc |
 | Jialu Wang                | 40019673      | TBD                                |
 | Wei Li                    | 40027433      | TBD                                |
-| Vamsikrishna Tamil Selvan | 40010750      | TBD                                |
-| Manoj Kumar Muppavarapu   | 40042560      | TBD                                |
+| Vamsikrishna Tamil Selvan | 40010750      | Test cases,JavaDoc,Documentation                               |
+| Manoj Kumar Muppavarapu   | 40042560      | JavaDoc,Test cases,Documentation                               |
 
 ## Controllers
 
