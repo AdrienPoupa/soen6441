@@ -18,10 +18,10 @@ And then go to http://localhost:9000 to see the running web application.
 | Name                      | Student ID    | Contributions                      |
 | :-----------------------: |:-------------:| :---------------------------------:|
 | Adrien Poupa              | 40059458      | TwitterController, Models, JavaDoc |
-| Jialu Wang                | 40019673      | Framework architecture, twitter api|
+| Jialu Wang                | 40019673      | TBD                                |
 | Wei Li                    | 40027433      | TBD                                |
-| Vamsikrishna Tamil Selvan | 40010750      | Test cases,JavaDoc,Documentation                               |
-| Manoj Kumar Muppavarapu   | 40042560      | JavaDoc,Test cases,Documentation                               |
+| Vamsikrishna Tamil Selvan | 40010750      | Test cases,JavaDoc,Documentation   |
+| Manoj Kumar Muppavarapu   | 40042560      | JavaDoc,Test cases,Documentation   |
 
 ## Controllers
 
@@ -81,3 +81,29 @@ There are several models used in this project. They are simple POJO (Plain Old J
 - ExampleFilter.java
 
   A simple filter that adds a header to every response.
+  
+## Methods
+- searchForm:
+
+  searchForm method gets the previous tweets from the cache.If cache is empty an 
+  empty arraylist is created to avoid having an exception thrown.
+  
+-getsearchJson:
+
+  This method is used to display the search file and to  get, update the status of the cache.
+  
+-getProfileJson:
+
+ This method displays the profile file.
+ 
+-searchPost:
+
+ This method will displays the keyword form ,retrieve the latest tweets given a keyword. 
+ 
+-profile:
+
+ This method will display the latest status of the profile.
+ 
+-auth:
+
+ login into twitter application user interface using oAuth.
