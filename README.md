@@ -18,7 +18,7 @@ And then go to http://localhost:9000 to see the running web application.
 | Name                      | Student ID    | Contributions                      |
 | :-----------------------: |:-------------:| :---------------------------------:|
 | Adrien Poupa              | 40059458      | TwitterController, Models, JavaDoc |
-| Jialu Wang                | 40019673      | Framework archeticture, twitter api|
+| Jialu Wang                | 40019673      | Framework architecture, twitter api|
 | Wei Li                    | 40027433      | TBD                                |
 | Vamsikrishna Tamil Selvan | 40010750      | Test cases,JavaDoc,Documentation                               |
 | Manoj Kumar Muppavarapu   | 40042560      | JavaDoc,Test cases,Documentation                               |
