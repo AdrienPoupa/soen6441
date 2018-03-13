@@ -7,7 +7,6 @@ import models.twitter.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import play.cache.SyncCacheApi;
 import play.data.FormFactory;
 import play.http.HttpEntity;
 import play.inject.guice.GuiceApplicationBuilder;
@@ -37,12 +36,16 @@ import static org.mockito.Mockito.when;
 import static play.mvc.Results.ok;
 import static play.test.Helpers.*;
 
+/**
+ * TwitterController test class
+ * @author Adrien Poupa
+ */
 public class TwitterControllerTest extends WithBrowser {
 
     private TwitterController client;
     private WSClient ws;
     private Server server;
-    private SyncCacheApi cache;
+    private FakeSyncCacheApi cache;
     private FormFactory formFactory;
     private HttpExecutionContext ec;
 
@@ -63,7 +66,7 @@ public class TwitterControllerTest extends WithBrowser {
         );
 
         // Get instances of the cache, the form factory and the HttpExecutionContext with the injector
-        cache = new GuiceApplicationBuilder().injector().instanceOf(SyncCacheApi.class);
+        cache = new FakeSyncCacheApi();
         formFactory = new GuiceApplicationBuilder().injector().instanceOf(FormFactory.class);
         ec = new GuiceApplicationBuilder().injector().instanceOf(HttpExecutionContext.class);
         ws = play.test.WSTestClient.newClient(server.httpPort());
@@ -92,6 +95,21 @@ public class TwitterControllerTest extends WithBrowser {
         finally {
             server.stop();
         }
+    }
+
+    /**
+     * We will go on the authentication page to check that the OAuth form is displayed
+     */
+    @Test
+    public void auth() {
+        // We have to run on port 9000 because of the callback URL
+        running(testServer(9000), HTMLUNIT, browser -> {
+            browser.goTo("/twitter/auth");
+            browser.await().untilPage().isLoaded();
+            // SOEN6441 Concordia is the name of our app
+            // If it's showing, we have the Authorize an application page showing up!
+            assertThat(browser.pageSource(), containsString("SOEN6441 Concordia"));
+        });
     }
 
     /**
@@ -217,21 +235,6 @@ public class TwitterControllerTest extends WithBrowser {
         assertThat(user.getDescription(), is("Located in the vibrant and cosmopolitan city of #Montreal, #Concordia University is one of Canada’s most innovative and diverse, comprehensive universities."));
         assertThat(user.getFollowers(), is("68001"));
         assertThat(user.getFriends(), is("1191"));
-    }
-
-    /**
-     * We will go on the authentication page to check that the OAuth form is displayed
-     */
-    @Test
-    public void auth() {
-        // We have to run on port 9000 because of the callback URL
-        running(testServer(9000), HTMLUNIT, browser -> {
-            browser.goTo("/twitter/auth");
-            browser.await().untilPage().isLoaded();
-            // SOEN6441 Concordia is the name of our app
-            // If it's showing, we have the Authorize an application page showing up!
-            assertThat(browser.pageSource(), containsString("SOEN6441 Concordia"));
-        });
     }
 
     /**
