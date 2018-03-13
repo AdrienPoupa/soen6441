@@ -8,8 +8,14 @@
     }
 
     @helper.form(action = routes.TwitterController.searchPost()) {
-        @helper.CSRF.formField
-        @helper.inputText(myForm("keyword"))
+        <dl class=" " id="keyword_field">
+            <dt><label for="keyword">keyword</label></dt>
+            <dd>
+                <input type="text" id="keyword" name="keyword" value="" />
+            </dd>
+            <dd class="info">Required</dd>
+        </dl>
+
         <button type="submit">Search</button>
     }
 

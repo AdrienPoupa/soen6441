@@ -24,6 +24,7 @@ public class BrowserTest extends WithBrowser {
     @Test
     public void test() {
         browser.goTo("http://localhost:" + play.api.test.Helpers.testServerPort());
+        String b = browser.pageSource();
         assertTrue(browser.pageSource().contains("Your new application is ready."));
     }
 

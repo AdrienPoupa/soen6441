@@ -1,0 +1,1716 @@
+{
+  "statuses": [
+    {
+      "created_at": "Mon Mar 12 23:00:39 +0000 2018",
+      "id": 973332976783249400,
+      "id_str": "973332976783249408",
+      "full_text": "Concórdia anuncia a saída do técnico Mauro Ovelha. Clube deve anunciar o novo treinador nas próximas horas. Confira: https://t.co/DOrxI7aIAj",
+      "truncated": false,
+      "display_text_range": [
+        0,
+        140
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/DOrxI7aIAj",
+            "expanded_url": "https://goo.gl/TPwxDq",
+            "display_url": "goo.gl/TPwxDq",
+            "indices": [
+              117,
+              140
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "iso_language_code": "pt",
+        "result_type": "recent"
+      },
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 543541226,
+        "id_str": "543541226",
+        "name": "Portal DI Online",
+        "screen_name": "PortalDIOnline",
+        "location": "Chapecó - Santa Catarina",
+        "description": "Ex Portal RedecomSC",
+        "url": "https://t.co/6C6Zf25RbU",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/6C6Zf25RbU",
+                "expanded_url": "http://www.diariodoiguacu.com.br",
+                "display_url": "diariodoiguacu.com.br",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 1502,
+        "friends_count": 168,
+        "listed_count": 10,
+        "created_at": "Mon Apr 02 16:31:18 +0000 2012",
+        "favourites_count": 166,
+        "utc_offset": -25200,
+        "time_zone": "Pacific Time (US & Canada)",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 36618,
+        "lang": "pt",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/955484756166283265/1vkJz3My_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/955484756166283265/1vkJz3My_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/543541226/1516638421",
+        "profile_link_color": "19CF86",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "000000",
+        "profile_text_color": "000000",
+        "profile_use_background_image": false,
+        "has_extended_profile": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "pt"
+    },
+    {
+      "created_at": "Mon Mar 12 23:00:28 +0000 2018",
+      "id": 973332926946476000,
+      "id_str": "973332926946476033",
+      "full_text": "Candelarios no olviden que este sábado 17 de marzo tendremos un nuevo Diálogo ciudadano y esperamos contar con su presencia en casa comunitaria de La concordia; después  tendremos  una feria de servios para acercar a la comunidad a las entidades. #CandelariaTurística https://t.co/Ot0rUMugDj",
+      "truncated": false,
+      "display_text_range": [
+        0,
+        267
+      ],
+      "entities": {
+        "hashtags": [
+          {
+            "text": "CandelariaTurística",
+            "indices": [
+              247,
+              267
+            ]
+          }
+        ],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [],
+        "media": [
+          {
+            "id": 973332923926696000,
+            "id_str": "973332923926695936",
+            "indices": [
+              268,
+              291
+            ],
+            "media_url": "http://pbs.twimg.com/media/DYH5IyrX0AAyfkz.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/DYH5IyrX0AAyfkz.jpg",
+            "url": "https://t.co/Ot0rUMugDj",
+            "display_url": "pic.twitter.com/Ot0rUMugDj",
+            "expanded_url": "https://twitter.com/Alcandelaria_/status/973332926946476033/photo/1",
+            "type": "photo",
+            "sizes": {
+              "medium": {
+                "w": 1200,
+                "h": 844,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "large": {
+                "w": 1201,
+                "h": 845,
+                "resize": "fit"
+              },
+              "small": {
+                "w": 680,
+                "h": 478,
+                "resize": "fit"
+              }
+            }
+          }
+        ]
+      },
+      "extended_entities": {
+        "media": [
+          {
+            "id": 973332923926696000,
+            "id_str": "973332923926695936",
+            "indices": [
+              268,
+              291
+            ],
+            "media_url": "http://pbs.twimg.com/media/DYH5IyrX0AAyfkz.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/DYH5IyrX0AAyfkz.jpg",
+            "url": "https://t.co/Ot0rUMugDj",
+            "display_url": "pic.twitter.com/Ot0rUMugDj",
+            "expanded_url": "https://twitter.com/Alcandelaria_/status/973332926946476033/photo/1",
+            "type": "photo",
+            "sizes": {
+              "medium": {
+                "w": 1200,
+                "h": 844,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "large": {
+                "w": 1201,
+                "h": 845,
+                "resize": "fit"
+              },
+              "small": {
+                "w": 680,
+                "h": 478,
+                "resize": "fit"
+              }
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "iso_language_code": "es",
+        "result_type": "recent"
+      },
+      "source": "<a href=\"http://www.hootsuite.com\" rel=\"nofollow\">Hootsuite</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 160786800,
+        "id_str": "160786800",
+        "name": "Alcaldía Candelaria",
+        "screen_name": "Alcandelaria_",
+        "location": "Bogotá",
+        "description": "Candelaria, Mejor para Todos 2016-2020",
+        "url": "https://t.co/2Cfy0G3gu5",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/2Cfy0G3gu5",
+                "expanded_url": "http://www.lacandelaria.gov.co",
+                "display_url": "lacandelaria.gov.co",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 12012,
+        "friends_count": 560,
+        "listed_count": 130,
+        "created_at": "Tue Jun 29 03:39:50 +0000 2010",
+        "favourites_count": 979,
+        "utc_offset": -18000,
+        "time_zone": "Bogota",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 14322,
+        "lang": "es",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "141214",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000091729379/9861a3ffdcfef21129361e02beaac69a.jpeg",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000091729379/9861a3ffdcfef21129361e02beaac69a.jpeg",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/959516004316479488/gniV3Wmi_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/959516004316479488/gniV3Wmi_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/160786800/1517514089",
+        "profile_link_color": "72ECFC",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "F6F6F6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "es"
+    },
+    {
+      "created_at": "Mon Mar 12 22:59:40 +0000 2018",
+      "id": 973332725393428500,
+      "id_str": "973332725393428480",
+      "full_text": "Concórdia anuncia a saída do técnico Mauro Ovelha. Clube deve anunciar o novo treinador nas próximas horas. Confira: https://t.co/hVbWM33wIn",
+      "truncated": false,
+      "display_text_range": [
+        0,
+        140
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/hVbWM33wIn",
+            "expanded_url": "https://goo.gl/TPwxDq",
+            "display_url": "goo.gl/TPwxDq",
+            "indices": [
+              117,
+              140
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "iso_language_code": "pt",
+        "result_type": "recent"
+      },
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 143865435,
+        "id_str": "143865435",
+        "name": "Rodrigo Goulart",
+        "screen_name": "goulart0rodrigo",
+        "location": "Chapecó-SC",
+        "description": "Editor de esportes e colunista do jornal Diário do Iguaçu e membro da Equipe Esporte Total da Rádio Chapecó.",
+        "url": "http://t.co/7PdYpX4mhN",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http://t.co/7PdYpX4mhN",
+                "expanded_url": "http://redecomsc.com.br/portal/resenhaesportiva",
+                "display_url": "redecomsc.com.br/portal/resenha…",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 3256,
+        "friends_count": 819,
+        "listed_count": 15,
+        "created_at": "Fri May 14 16:40:16 +0000 2010",
+        "favourites_count": 4401,
+        "utc_offset": -10800,
+        "time_zone": "Brasilia",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 16526,
+        "lang": "pt",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": true,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/378800000813161239/a25bd42d39aa7eb7f1ed49b7568d363c_normal.jpeg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000813161239/a25bd42d39aa7eb7f1ed49b7568d363c_normal.jpeg",
+        "profile_link_color": "1DA1F2",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": false,
+        "default_profile": true,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "pt"
+    },
+    {
+      "created_at": "Mon Mar 12 22:59:25 +0000 2018",
+      "id": 973332664659988500,
+      "id_str": "973332664659988487",
+      "full_text": "No Concórdia só tem guria linda, plmds",
+      "truncated": false,
+      "display_text_range": [
+        0,
+        38
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": []
+      },
+      "metadata": {
+        "iso_language_code": "pt",
+        "result_type": "recent"
+      },
+      "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 631553577,
+        "id_str": "631553577",
+        "name": "Vitorugo",
+        "screen_name": "vitorfialla_",
+        "location": "Porto Alegre, Brasil",
+        "description": "Idfc",
+        "url": "https://t.co/7iE2rQqpKb",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/7iE2rQqpKb",
+                "expanded_url": "https://curiouscat.me/vitorfialla_",
+                "display_url": "curiouscat.me/vitorfialla_",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 317,
+        "friends_count": 162,
+        "listed_count": 0,
+        "created_at": "Mon Jul 09 22:32:35 +0000 2012",
+        "favourites_count": 374,
+        "utc_offset": -10800,
+        "time_zone": "Brasilia",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 752,
+        "lang": "pt",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "50BBC7",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000162069403/2q8DPPHl.jpeg",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000162069403/2q8DPPHl.jpeg",
+        "profile_background_tile": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/972115891138760705/TXWTczBa_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/972115891138760705/TXWTczBa_normal.jpg",
+        "profile_link_color": "000303",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "A0C5C7",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "favorited": false,
+      "retweeted": false,
+      "lang": "pt"
+    },
+    {
+      "created_at": "Mon Mar 12 22:59:23 +0000 2018",
+      "id": 973332653968711700,
+      "id_str": "973332653968711680",
+      "full_text": "Mais um técnico demitido no Catarinense!\n\nhttps://t.co/vvoLHvYWJ3",
+      "truncated": false,
+      "display_text_range": [
+        0,
+        65
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/vvoLHvYWJ3",
+            "expanded_url": "https://globoesporte.globo.com/sc/futebol/times/concordia/noticia/vice-lanterna-concordia-anuncia-demissao-de-mauro-ovelha.ghtml",
+            "display_url": "globoesporte.globo.com/sc/futebol/tim…",
+            "indices": [
+              42,
+              65
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "iso_language_code": "pt",
+        "result_type": "recent"
+      },
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 216686903,
+        "id_str": "216686903",
+        "name": "GloboEsporteSC",
+        "screen_name": "GloboEsporteSC",
+        "location": "Florianópolis",
+        "description": "Perfil unificado do Globo Esporte e https://t.co/FMIfGc3isS. Tudo sobre o esporte em Santa Catarina!",
+        "url": "https://t.co/YM1TynxzbV",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/YM1TynxzbV",
+                "expanded_url": "http://globoesporte.com/sc",
+                "display_url": "globoesporte.com/sc",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "url": "https://t.co/FMIfGc3isS",
+                "expanded_url": "http://GloboEsporte.com/sc",
+                "display_url": "GloboEsporte.com/sc",
+                "indices": [
+                  36,
+                  59
+                ]
+              }
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 6809,
+        "friends_count": 30,
+        "listed_count": 37,
+        "created_at": "Wed Nov 17 13:01:03 +0000 2010",
+        "favourites_count": 3,
+        "utc_offset": -10800,
+        "time_zone": "Brasilia",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 35752,
+        "lang": "pt",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/831648284133429248/2EhzDBfz_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/831648284133429248/2EhzDBfz_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/216686903/1487115453",
+        "profile_link_color": "ABB8C2",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "000000",
+        "profile_text_color": "000000",
+        "profile_use_background_image": false,
+        "has_extended_profile": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "pt"
+    },
+    {
+      "created_at": "Mon Mar 12 22:59:17 +0000 2018",
+      "id": 973332631352938500,
+      "id_str": "973332631352938497",
+      "full_text": "Concórdia anuncia a saída do técnico Mauro Ovelha. Clube deve anunciar o novo treinador nas próximas horas. Confira: https://t.co/8dYxtJu8AB",
+      "truncated": false,
+      "display_text_range": [
+        0,
+        140
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/8dYxtJu8AB",
+            "expanded_url": "https://goo.gl/TPwxDq",
+            "display_url": "goo.gl/TPwxDq",
+            "indices": [
+              117,
+              140
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "iso_language_code": "pt",
+        "result_type": "recent"
+      },
+      "source": "<a href=\"http://www.hootsuite.com\" rel=\"nofollow\">Hootsuite</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 97470841,
+        "id_str": "97470841",
+        "name": "Diário do Iguaçu",
+        "screen_name": "diariodoiguacu",
+        "location": "Oeste de Santa Catarina",
+        "description": "",
+        "url": "https://t.co/6C6Zf25RbU",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/6C6Zf25RbU",
+                "expanded_url": "http://www.diariodoiguacu.com.br",
+                "display_url": "diariodoiguacu.com.br",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 2526,
+        "friends_count": 530,
+        "listed_count": 21,
+        "created_at": "Thu Dec 17 16:01:49 +0000 2009",
+        "favourites_count": 143,
+        "utc_offset": -10800,
+        "time_zone": "Brasilia",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 25089,
+        "lang": "pt",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/540901108458086400/hGNz0MUq.jpeg",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/540901108458086400/hGNz0MUq.jpeg",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/848882244190187520/fH5HFPD6_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/848882244190187520/fH5HFPD6_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/97470841/1516638598",
+        "profile_link_color": "ABB8C2",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 0,
+      "favorite_count": 1,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "pt"
+    },
+    {
+      "created_at": "Mon Mar 12 22:58:51 +0000 2018",
+      "id": 973332520182927400,
+      "id_str": "973332520182927360",
+      "full_text": "March 17 Concordia Meet Schedule https://t.co/eR2VpTwNMY",
+      "truncated": false,
+      "display_text_range": [
+        0,
+        32
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [],
+        "media": [
+          {
+            "id": 973332518459015200,
+            "id_str": "973332518459015168",
+            "indices": [
+              33,
+              56
+            ],
+            "media_url": "http://pbs.twimg.com/media/DYH4xMMWAAAG5_Q.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/DYH4xMMWAAAG5_Q.jpg",
+            "url": "https://t.co/eR2VpTwNMY",
+            "display_url": "pic.twitter.com/eR2VpTwNMY",
+            "expanded_url": "https://twitter.com/LNS_GatorThrows/status/973332520182927360/photo/1",
+            "type": "photo",
+            "sizes": {
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "medium": {
+                "w": 702,
+                "h": 924,
+                "resize": "fit"
+              },
+              "large": {
+                "w": 702,
+                "h": 924,
+                "resize": "fit"
+              },
+              "small": {
+                "w": 517,
+                "h": 680,
+                "resize": "fit"
+              }
+            }
+          }
+        ]
+      },
+      "extended_entities": {
+        "media": [
+          {
+            "id": 973332518459015200,
+            "id_str": "973332518459015168",
+            "indices": [
+              33,
+              56
+            ],
+            "media_url": "http://pbs.twimg.com/media/DYH4xMMWAAAG5_Q.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/DYH4xMMWAAAG5_Q.jpg",
+            "url": "https://t.co/eR2VpTwNMY",
+            "display_url": "pic.twitter.com/eR2VpTwNMY",
+            "expanded_url": "https://twitter.com/LNS_GatorThrows/status/973332520182927360/photo/1",
+            "type": "photo",
+            "sizes": {
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "medium": {
+                "w": 702,
+                "h": 924,
+                "resize": "fit"
+              },
+              "large": {
+                "w": 702,
+                "h": 924,
+                "resize": "fit"
+              },
+              "small": {
+                "w": 517,
+                "h": 680,
+                "resize": "fit"
+              }
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "iso_language_code": "en",
+        "result_type": "recent"
+      },
+      "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 772986260319117300,
+        "id_str": "772986260319117312",
+        "name": "LNS_GatorThrows",
+        "screen_name": "LNS_GatorThrows",
+        "location": "Lincoln, NE",
+        "description": "Lincoln North Star Field and Track - Shot Put and Discus throwers - Throwing Loud and Proud. Gator Strong!",
+        "url": null,
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 164,
+        "friends_count": 124,
+        "listed_count": 2,
+        "created_at": "Tue Sep 06 02:34:20 +0000 2016",
+        "favourites_count": 3143,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 3461,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "F5F8FA",
+        "profile_background_image_url": null,
+        "profile_background_image_url_https": null,
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/772990949802639360/6-G084cR_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/772990949802639360/6-G084cR_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/772986260319117312/1473131412",
+        "profile_link_color": "1DA1F2",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": false,
+        "default_profile": true,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "created_at": "Mon Mar 12 22:58:36 +0000 2018",
+      "id": 973332459235487700,
+      "id_str": "973332459235487744",
+      "full_text": "RT @Gral_JNoguera_S: RETENIDAS BEBIDAS ALCOHOLICAS EN LA CONCORDIA\nEFECTIVOS ADSCRITOS  A LA DIRECCIÓN DE INTELIGENCIA  Y ESTRATEGIAS POLIC…",
+      "truncated": false,
+      "display_text_range": [
+        0,
+        140
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [
+          {
+            "screen_name": "Gral_JNoguera_S",
+            "name": "Gral. José Noguera S",
+            "id": 921086714612940800,
+            "id_str": "921086714612940800",
+            "indices": [
+              3,
+              19
+            ]
+          }
+        ],
+        "urls": []
+      },
+      "metadata": {
+        "iso_language_code": "es",
+        "result_type": "recent"
+      },
+      "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 2714668744,
+        "id_str": "2714668744",
+        "name": "LiceoMilitarJauregui",
+        "screen_name": "LICMIJAU",
+        "location": "",
+        "description": "REVOLUCION PERMANENTE",
+        "url": null,
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 2099,
+        "friends_count": 3832,
+        "listed_count": 18,
+        "created_at": "Wed Jul 16 17:28:20 +0000 2014",
+        "favourites_count": 8940,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 27500,
+        "lang": "es",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/613010444521996288/wjaAmHsh.jpg",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/613010444521996288/wjaAmHsh.jpg",
+        "profile_background_tile": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/881147006948868096/zOvrWm-6_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/881147006948868096/zOvrWm-6_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/2714668744/1498916920",
+        "profile_link_color": "DD2E44",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "000000",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "has_extended_profile": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "created_at": "Thu Mar 08 02:21:02 +0000 2018",
+        "id": 971571462007115800,
+        "id_str": "971571462007115776",
+        "full_text": "RETENIDAS BEBIDAS ALCOHOLICAS EN LA CONCORDIA\nEFECTIVOS ADSCRITOS  A LA DIRECCIÓN DE INTELIGENCIA  Y ESTRATEGIAS POLICIALES DE POLITACHIRA  RETUVIERON LA CANTIDAD DE 145 CAJAS DE CERVEZA DE DIFERENTES  MARCAS EN UN ESTABLECIMIENTOS COMERCIAL UBICADO EN L… https://t.co/zEVQaE8Dxh https://t.co/eWEJCtyWCQ",
+        "truncated": false,
+        "display_text_range": [
+          0,
+          279
+        ],
+        "entities": {
+          "hashtags": [],
+          "symbols": [],
+          "user_mentions": [],
+          "urls": [
+            {
+              "url": "https://t.co/zEVQaE8Dxh",
+              "expanded_url": "http://ift.tt/2oVSqsG",
+              "display_url": "ift.tt/2oVSqsG",
+              "indices": [
+                256,
+                279
+              ]
+            }
+          ],
+          "media": [
+            {
+              "id": 971571460148953100,
+              "id_str": "971571460148953088",
+              "indices": [
+                280,
+                303
+              ],
+              "media_url": "http://pbs.twimg.com/media/DXu3GGwWAAAu_sU.jpg",
+              "media_url_https": "https://pbs.twimg.com/media/DXu3GGwWAAAu_sU.jpg",
+              "url": "https://t.co/eWEJCtyWCQ",
+              "display_url": "pic.twitter.com/eWEJCtyWCQ",
+              "expanded_url": "https://twitter.com/Gral_JNoguera_S/status/971571462007115776/photo/1",
+              "type": "photo",
+              "sizes": {
+                "thumb": {
+                  "w": 150,
+                  "h": 150,
+                  "resize": "crop"
+                },
+                "large": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                },
+                "small": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                },
+                "medium": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                }
+              }
+            }
+          ]
+        },
+        "extended_entities": {
+          "media": [
+            {
+              "id": 971571460148953100,
+              "id_str": "971571460148953088",
+              "indices": [
+                280,
+                303
+              ],
+              "media_url": "http://pbs.twimg.com/media/DXu3GGwWAAAu_sU.jpg",
+              "media_url_https": "https://pbs.twimg.com/media/DXu3GGwWAAAu_sU.jpg",
+              "url": "https://t.co/eWEJCtyWCQ",
+              "display_url": "pic.twitter.com/eWEJCtyWCQ",
+              "expanded_url": "https://twitter.com/Gral_JNoguera_S/status/971571462007115776/photo/1",
+              "type": "photo",
+              "sizes": {
+                "thumb": {
+                  "w": 150,
+                  "h": 150,
+                  "resize": "crop"
+                },
+                "large": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                },
+                "small": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                },
+                "medium": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                }
+              }
+            }
+          ]
+        },
+        "metadata": {
+          "iso_language_code": "es",
+          "result_type": "recent"
+        },
+        "source": "<a href=\"https://ifttt.com\" rel=\"nofollow\">IFTTT</a>",
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 921086714612940800,
+          "id_str": "921086714612940800",
+          "name": "Gral. José Noguera S",
+          "screen_name": "Gral_JNoguera_S",
+          "location": "Táchira, Venezuela",
+          "description": "Denuncias y Sugerencias a través del correo sugerenciaspolitachira@gmail.com  Trabajando para el Pueblo brindado tranquilidad al soberano",
+          "url": null,
+          "entities": {
+            "description": {
+              "urls": []
+            }
+          },
+          "protected": false,
+          "followers_count": 495,
+          "friends_count": 26,
+          "listed_count": 0,
+          "created_at": "Thu Oct 19 18:52:40 +0000 2017",
+          "favourites_count": 262,
+          "utc_offset": null,
+          "time_zone": null,
+          "geo_enabled": false,
+          "verified": false,
+          "statuses_count": 1440,
+          "lang": "es",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "is_translation_enabled": false,
+          "profile_background_color": "F5F8FA",
+          "profile_background_image_url": null,
+          "profile_background_image_url_https": null,
+          "profile_background_tile": false,
+          "profile_image_url": "http://pbs.twimg.com/profile_images/921103839532593152/OGBwJcCn_normal.jpg",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/921103839532593152/OGBwJcCn_normal.jpg",
+          "profile_banner_url": "https://pbs.twimg.com/profile_banners/921086714612940800/1508443241",
+          "profile_link_color": "1DA1F2",
+          "profile_sidebar_border_color": "C0DEED",
+          "profile_sidebar_fill_color": "DDEEF6",
+          "profile_text_color": "333333",
+          "profile_use_background_image": true,
+          "has_extended_profile": true,
+          "default_profile": true,
+          "default_profile_image": false,
+          "following": false,
+          "follow_request_sent": false,
+          "notifications": false,
+          "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 8,
+        "favorite_count": 7,
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "es"
+      },
+      "is_quote_status": false,
+      "retweet_count": 8,
+      "favorite_count": 0,
+      "favorited": false,
+      "retweeted": false,
+      "lang": "es"
+    },
+    {
+      "created_at": "Mon Mar 12 22:58:27 +0000 2018",
+      "id": 973332421088366600,
+      "id_str": "973332421088366592",
+      "full_text": "RT @Gral_JNoguera_S: Retencion  de cauchos en la Concordia:\nEFECTIVOS ADSCRITOS DIRECCIÓN DE INTELIGENCIA  Y ESTRATEGIAS  POLICIALES  RETUV…",
+      "truncated": false,
+      "display_text_range": [
+        0,
+        140
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [
+          {
+            "screen_name": "Gral_JNoguera_S",
+            "name": "Gral. José Noguera S",
+            "id": 921086714612940800,
+            "id_str": "921086714612940800",
+            "indices": [
+              3,
+              19
+            ]
+          }
+        ],
+        "urls": []
+      },
+      "metadata": {
+        "iso_language_code": "es",
+        "result_type": "recent"
+      },
+      "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 2714668744,
+        "id_str": "2714668744",
+        "name": "LiceoMilitarJauregui",
+        "screen_name": "LICMIJAU",
+        "location": "",
+        "description": "REVOLUCION PERMANENTE",
+        "url": null,
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 2099,
+        "friends_count": 3832,
+        "listed_count": 18,
+        "created_at": "Wed Jul 16 17:28:20 +0000 2014",
+        "favourites_count": 8940,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 27500,
+        "lang": "es",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/613010444521996288/wjaAmHsh.jpg",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/613010444521996288/wjaAmHsh.jpg",
+        "profile_background_tile": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/881147006948868096/zOvrWm-6_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/881147006948868096/zOvrWm-6_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/2714668744/1498916920",
+        "profile_link_color": "DD2E44",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "000000",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "has_extended_profile": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "created_at": "Thu Mar 08 01:47:11 +0000 2018",
+        "id": 971562944172646400,
+        "id_str": "971562944172646400",
+        "full_text": "Retencion  de cauchos en la Concordia:\nEFECTIVOS ADSCRITOS DIRECCIÓN DE INTELIGENCIA  Y ESTRATEGIAS  POLICIALES  RETUVIERON LA CANTIDAD DE 327 CAUCHOS DE AUTOMÓVIL DE DIFERENTES MEDIDAS LOS MISMOS ESTABAN GUARDADOS EN UN GALPON UBICADO EN LA URBANIZACION… https://t.co/wrUZaJB9yt https://t.co/1p4HELlZVu",
+        "truncated": false,
+        "display_text_range": [
+          0,
+          279
+        ],
+        "entities": {
+          "hashtags": [],
+          "symbols": [],
+          "user_mentions": [],
+          "urls": [
+            {
+              "url": "https://t.co/wrUZaJB9yt",
+              "expanded_url": "http://ift.tt/2D9nUR8",
+              "display_url": "ift.tt/2D9nUR8",
+              "indices": [
+                256,
+                279
+              ]
+            }
+          ],
+          "media": [
+            {
+              "id": 971562942691991600,
+              "id_str": "971562942691991552",
+              "indices": [
+                280,
+                303
+              ],
+              "media_url": "http://pbs.twimg.com/media/DXuvWUwW4AA8Q2A.jpg",
+              "media_url_https": "https://pbs.twimg.com/media/DXuvWUwW4AA8Q2A.jpg",
+              "url": "https://t.co/1p4HELlZVu",
+              "display_url": "pic.twitter.com/1p4HELlZVu",
+              "expanded_url": "https://twitter.com/Gral_JNoguera_S/status/971562944172646400/photo/1",
+              "type": "photo",
+              "sizes": {
+                "thumb": {
+                  "w": 150,
+                  "h": 150,
+                  "resize": "crop"
+                },
+                "medium": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                },
+                "small": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                },
+                "large": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                }
+              }
+            }
+          ]
+        },
+        "extended_entities": {
+          "media": [
+            {
+              "id": 971562942691991600,
+              "id_str": "971562942691991552",
+              "indices": [
+                280,
+                303
+              ],
+              "media_url": "http://pbs.twimg.com/media/DXuvWUwW4AA8Q2A.jpg",
+              "media_url_https": "https://pbs.twimg.com/media/DXuvWUwW4AA8Q2A.jpg",
+              "url": "https://t.co/1p4HELlZVu",
+              "display_url": "pic.twitter.com/1p4HELlZVu",
+              "expanded_url": "https://twitter.com/Gral_JNoguera_S/status/971562944172646400/photo/1",
+              "type": "photo",
+              "sizes": {
+                "thumb": {
+                  "w": 150,
+                  "h": 150,
+                  "resize": "crop"
+                },
+                "medium": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                },
+                "small": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                },
+                "large": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                }
+              }
+            }
+          ]
+        },
+        "metadata": {
+          "iso_language_code": "es",
+          "result_type": "recent"
+        },
+        "source": "<a href=\"https://ifttt.com\" rel=\"nofollow\">IFTTT</a>",
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 921086714612940800,
+          "id_str": "921086714612940800",
+          "name": "Gral. José Noguera S",
+          "screen_name": "Gral_JNoguera_S",
+          "location": "Táchira, Venezuela",
+          "description": "Denuncias y Sugerencias a través del correo sugerenciaspolitachira@gmail.com  Trabajando para el Pueblo brindado tranquilidad al soberano",
+          "url": null,
+          "entities": {
+            "description": {
+              "urls": []
+            }
+          },
+          "protected": false,
+          "followers_count": 495,
+          "friends_count": 26,
+          "listed_count": 0,
+          "created_at": "Thu Oct 19 18:52:40 +0000 2017",
+          "favourites_count": 262,
+          "utc_offset": null,
+          "time_zone": null,
+          "geo_enabled": false,
+          "verified": false,
+          "statuses_count": 1440,
+          "lang": "es",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "is_translation_enabled": false,
+          "profile_background_color": "F5F8FA",
+          "profile_background_image_url": null,
+          "profile_background_image_url_https": null,
+          "profile_background_tile": false,
+          "profile_image_url": "http://pbs.twimg.com/profile_images/921103839532593152/OGBwJcCn_normal.jpg",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/921103839532593152/OGBwJcCn_normal.jpg",
+          "profile_banner_url": "https://pbs.twimg.com/profile_banners/921086714612940800/1508443241",
+          "profile_link_color": "1DA1F2",
+          "profile_sidebar_border_color": "C0DEED",
+          "profile_sidebar_fill_color": "DDEEF6",
+          "profile_text_color": "333333",
+          "profile_use_background_image": true,
+          "has_extended_profile": true,
+          "default_profile": true,
+          "default_profile_image": false,
+          "following": false,
+          "follow_request_sent": false,
+          "notifications": false,
+          "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 5,
+        "favorite_count": 4,
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "es"
+      },
+      "is_quote_status": false,
+      "retweet_count": 5,
+      "favorite_count": 0,
+      "favorited": false,
+      "retweeted": false,
+      "lang": "es"
+    },
+    {
+      "created_at": "Mon Mar 12 22:58:22 +0000 2018",
+      "id": 973332400087404500,
+      "id_str": "973332400087404545",
+      "full_text": "RT @Gral_JNoguera_S: RETENIDAS 9 TONELADAS DE ALIMENTOS EN LA CONCORDIA\nEFECTIVOS ADSCRITOS  A LA DIRECCIÓN DE INTELIGENCIA  Y ESTRATEGIAS…",
+      "truncated": false,
+      "display_text_range": [
+        0,
+        139
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [
+          {
+            "screen_name": "Gral_JNoguera_S",
+            "name": "Gral. José Noguera S",
+            "id": 921086714612940800,
+            "id_str": "921086714612940800",
+            "indices": [
+              3,
+              19
+            ]
+          }
+        ],
+        "urls": []
+      },
+      "metadata": {
+        "iso_language_code": "es",
+        "result_type": "recent"
+      },
+      "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 2714668744,
+        "id_str": "2714668744",
+        "name": "LiceoMilitarJauregui",
+        "screen_name": "LICMIJAU",
+        "location": "",
+        "description": "REVOLUCION PERMANENTE",
+        "url": null,
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 2099,
+        "friends_count": 3832,
+        "listed_count": 18,
+        "created_at": "Wed Jul 16 17:28:20 +0000 2014",
+        "favourites_count": 8940,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 27500,
+        "lang": "es",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/613010444521996288/wjaAmHsh.jpg",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/613010444521996288/wjaAmHsh.jpg",
+        "profile_background_tile": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/881147006948868096/zOvrWm-6_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/881147006948868096/zOvrWm-6_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/2714668744/1498916920",
+        "profile_link_color": "DD2E44",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "000000",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "has_extended_profile": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "created_at": "Thu Mar 08 02:18:48 +0000 2018",
+        "id": 971570900377235500,
+        "id_str": "971570900377235461",
+        "full_text": "RETENIDAS 9 TONELADAS DE ALIMENTOS EN LA CONCORDIA\nEFECTIVOS ADSCRITOS  A LA DIRECCIÓN DE INTELIGENCIA  Y ESTRATEGIAS POLICIALES DE POLITACHIRA  RETUVIERON LA CANTIDAD DE 9 TONELADAS DE ALIMENTOS TALES COMO HARINA PAN, ARROZ, CREMA DE ARROZ, ACEITE COMES… https://t.co/vvZiHbD3Ul https://t.co/bgZSc3TFiJ",
+        "truncated": false,
+        "display_text_range": [
+          0,
+          279
+        ],
+        "entities": {
+          "hashtags": [],
+          "symbols": [],
+          "user_mentions": [],
+          "urls": [
+            {
+              "url": "https://t.co/vvZiHbD3Ul",
+              "expanded_url": "http://ift.tt/2D91vU3",
+              "display_url": "ift.tt/2D91vU3",
+              "indices": [
+                256,
+                279
+              ]
+            }
+          ],
+          "media": [
+            {
+              "id": 971570898481410000,
+              "id_str": "971570898481410048",
+              "indices": [
+                280,
+                303
+              ],
+              "media_url": "http://pbs.twimg.com/media/DXu2laYXcAAuGcL.jpg",
+              "media_url_https": "https://pbs.twimg.com/media/DXu2laYXcAAuGcL.jpg",
+              "url": "https://t.co/bgZSc3TFiJ",
+              "display_url": "pic.twitter.com/bgZSc3TFiJ",
+              "expanded_url": "https://twitter.com/Gral_JNoguera_S/status/971570900377235461/photo/1",
+              "type": "photo",
+              "sizes": {
+                "thumb": {
+                  "w": 150,
+                  "h": 150,
+                  "resize": "crop"
+                },
+                "medium": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                },
+                "large": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                },
+                "small": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                }
+              }
+            }
+          ]
+        },
+        "extended_entities": {
+          "media": [
+            {
+              "id": 971570898481410000,
+              "id_str": "971570898481410048",
+              "indices": [
+                280,
+                303
+              ],
+              "media_url": "http://pbs.twimg.com/media/DXu2laYXcAAuGcL.jpg",
+              "media_url_https": "https://pbs.twimg.com/media/DXu2laYXcAAuGcL.jpg",
+              "url": "https://t.co/bgZSc3TFiJ",
+              "display_url": "pic.twitter.com/bgZSc3TFiJ",
+              "expanded_url": "https://twitter.com/Gral_JNoguera_S/status/971570900377235461/photo/1",
+              "type": "photo",
+              "sizes": {
+                "thumb": {
+                  "w": 150,
+                  "h": 150,
+                  "resize": "crop"
+                },
+                "medium": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                },
+                "large": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                },
+                "small": {
+                  "w": 640,
+                  "h": 640,
+                  "resize": "fit"
+                }
+              }
+            }
+          ]
+        },
+        "metadata": {
+          "iso_language_code": "es",
+          "result_type": "recent"
+        },
+        "source": "<a href=\"https://ifttt.com\" rel=\"nofollow\">IFTTT</a>",
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 921086714612940800,
+          "id_str": "921086714612940800",
+          "name": "Gral. José Noguera S",
+          "screen_name": "Gral_JNoguera_S",
+          "location": "Táchira, Venezuela",
+          "description": "Denuncias y Sugerencias a través del correo sugerenciaspolitachira@gmail.com  Trabajando para el Pueblo brindado tranquilidad al soberano",
+          "url": null,
+          "entities": {
+            "description": {
+              "urls": []
+            }
+          },
+          "protected": false,
+          "followers_count": 495,
+          "friends_count": 26,
+          "listed_count": 0,
+          "created_at": "Thu Oct 19 18:52:40 +0000 2017",
+          "favourites_count": 262,
+          "utc_offset": null,
+          "time_zone": null,
+          "geo_enabled": false,
+          "verified": false,
+          "statuses_count": 1440,
+          "lang": "es",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "is_translation_enabled": false,
+          "profile_background_color": "F5F8FA",
+          "profile_background_image_url": null,
+          "profile_background_image_url_https": null,
+          "profile_background_tile": false,
+          "profile_image_url": "http://pbs.twimg.com/profile_images/921103839532593152/OGBwJcCn_normal.jpg",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/921103839532593152/OGBwJcCn_normal.jpg",
+          "profile_banner_url": "https://pbs.twimg.com/profile_banners/921086714612940800/1508443241",
+          "profile_link_color": "1DA1F2",
+          "profile_sidebar_border_color": "C0DEED",
+          "profile_sidebar_fill_color": "DDEEF6",
+          "profile_text_color": "333333",
+          "profile_use_background_image": true,
+          "has_extended_profile": true,
+          "default_profile": true,
+          "default_profile_image": false,
+          "following": false,
+          "follow_request_sent": false,
+          "notifications": false,
+          "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 6,
+        "favorite_count": 4,
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "es"
+      },
+      "is_quote_status": false,
+      "retweet_count": 6,
+      "favorite_count": 0,
+      "favorited": false,
+      "retweeted": false,
+      "lang": "es"
+    }
+  ],
+  "search_metadata": {
+    "completed_in": 0.082,
+    "max_id": 973332976783249400,
+    "max_id_str": "973332976783249408",
+    "next_results": "?max_id=973332400087404544&q=concordia&count=10&include_entities=1&result_type=recent",
+    "query": "concordia",
+    "refresh_url": "?since_id=973332976783249408&q=concordia&result_type=recent&include_entities=1",
+    "count": 10,
+    "since_id": 0,
+    "since_id_str": "0"
+  }
+}

@@ -54,6 +54,8 @@ public class TwitterController extends Controller {
 
     private HttpExecutionContext httpExecutionContext;
 
+    private String baseUrl = "https://api.twitter.com/1.1";
+
     /**
      * Constructor.
      * Play injects all the dependencies we need
@@ -90,6 +92,51 @@ public class TwitterController extends Controller {
     }
 
     /**
+     * Get the Json search file
+     * @param keyword String
+     * @param sessionTokenPair RequestToken
+     * @return CompletionStage<Result>
+     */
+    public CompletionStage<Result> getSearchJson(String keyword, RequestToken sessionTokenPair)
+    {
+        return ws.url(baseUrl + "/search/tweets.json")
+                .addQueryParameter("q", keyword)
+                .addQueryParameter("count", "10")
+                .addQueryParameter("result_type", "recent")
+                .addQueryParameter("tweet_mode", "extended")
+                .sign(new OAuthCalculator(TwitterController.KEY, sessionTokenPair))
+                .get() // THIS IS NOT BLOCKING! It returns a promise to the response. It comes from WSRequest.
+                .thenApply(result -> {
+                    JsonNode rootNode = result.asJson();
+                    try {
+                        // Map the json result to an actual object with Jackson
+                        ObjectMapper mapper = new ObjectMapper();
+                        SearchResult root = mapper.treeToValue(rootNode,
+                                SearchResult.class);
+
+                        // Get the current status cache
+                        List<models.twitter.Status> cachedStatuses = cache.get("cachedStatuses");
+
+                        // Add statuses to the cache, or initialize the variable if cache is empty
+                        if (cachedStatuses != null) {
+                            cachedStatuses.addAll(root.getStatuses());
+                        }
+                        else {
+                            cachedStatuses = root.getStatuses();
+                        }
+
+                        // Update the cache with the new statuses
+                        cache.set("cachedStatuses", cachedStatuses, 15*60);
+
+                        // Redirect to the form where all the statuses will be displayed
+                        return redirect(routes.TwitterController.searchForm());
+                    } catch (IOException e) {
+                        return ok(e.toString());
+                    }
+                });
+    }
+
+    /**
      * Retrieve the latest tweets given a keyword
      * @return CompletionStage<SearchResult>
      */
@@ -105,41 +152,7 @@ public class TwitterController extends Controller {
             }
             String keyword = keywordForm.get().getKeyword();
             // Query Twitter's API
-            return ws.url("https://api.twitter.com/1.1/search/tweets.json")
-                    .addQueryParameter("q", keyword)
-                    .addQueryParameter("count", "10")
-                    .addQueryParameter("result_type", "recent")
-                    .addQueryParameter("tweet_mode", "extended")
-                    .sign(new OAuthCalculator(TwitterController.KEY, sessionTokenPair.get()))
-                    .get() // THIS IS NOT BLOCKING! It returns a promise to the response. It comes from WSRequest.
-                    .thenApplyAsync(result -> {
-                        JsonNode rootNode = result.asJson();
-                        try {
-                            // Map the json result to an actual object with Jackson
-                            ObjectMapper mapper = new ObjectMapper();
-                            SearchResult root = mapper.treeToValue(rootNode,
-                                    SearchResult.class);
-
-                            // Get the current status cache
-                            List<models.twitter.Status> cachedStatuses = cache.get("cachedStatuses");
-
-                            // Add statuses to the cache, or initialize the variable if cache is empty
-                            if (cachedStatuses != null) {
-                                cachedStatuses.addAll(root.getStatuses());
-                            }
-                            else {
-                                cachedStatuses = root.getStatuses();
-                            }
-
-                            // Update the cache with the new statuses
-                            cache.set("cachedStatuses", cachedStatuses, 15*60);
-
-                            // Redirect to the form where all the statuses will be displayed
-                            return redirect(routes.TwitterController.searchForm());
-                        } catch (IOException e) {
-                            return ok(e.toString());
-                        }
-                    });
+            return getSearchJson(keyword, sessionTokenPair.get());
         }
         return CompletableFuture.completedFuture(redirect(routes.TwitterController.auth()));
     }
@@ -152,7 +165,7 @@ public class TwitterController extends Controller {
     public CompletionStage<Result> profile(String username) {
         Optional<RequestToken> sessionTokenPair = getSessionTokenPair();
         if (sessionTokenPair.isPresent()) {
-            return ws.url("https://api.twitter.com/1.1/statuses/user_timeline.json")
+            return ws.url(baseUrl + "/statuses/user_timeline.json")
                     .addQueryParameter("count", "10")
                     .addQueryParameter("tweet_mode", "extended")
                     .addQueryParameter("screen_name", username)
@@ -163,6 +176,7 @@ public class TwitterController extends Controller {
                         try {
                             // Map the json result to an actual object with Jackson
                             ObjectMapper mapper = new ObjectMapper();
+
                             // We have a list of Status, so we use Status[]
                             List<Status> root = Arrays.asList(mapper.treeToValue(rootNode,
                                     Status[].class));
@@ -213,6 +227,14 @@ public class TwitterController extends Controller {
             return Optional.of(new RequestToken(session("token"), session("secret")));
         }
         return Optional.empty();
+    }
+
+    public String getBaseUrl() {
+        return baseUrl;
+    }
+
+    public void setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
     }
 
 }
