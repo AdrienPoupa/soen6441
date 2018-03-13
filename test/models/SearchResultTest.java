@@ -1,10 +1,10 @@
-package models.twitter;
+package models;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import models.twitter.SearchResult;
+import models.SearchResult;
 
 /**
  * Test for the{@link SearchResult} class.

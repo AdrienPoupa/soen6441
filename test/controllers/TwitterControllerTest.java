@@ -2,8 +2,8 @@ package controllers;
 
 import akka.util.ByteString;
 import models.Keyword;
-import models.twitter.Status;
-import models.twitter.User;
+import models.Status;
+import models.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +19,7 @@ import play.routing.RoutingDsl;
 import play.server.Server;
 import play.test.WithBrowser;
 import play.twirl.api.Content;
-import views.html.twitter.search;
+import views.html.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -101,10 +101,10 @@ public class TwitterControllerTest extends WithBrowser {
      * We will go on the authentication page to check that the OAuth form is displayed
      */
     @Test
-    public void auth() {
+    public void testAuth() {
         // We have to run on port 9000 because of the callback URL
         running(testServer(9000), HTMLUNIT, browser -> {
-            browser.goTo("/twitter/auth");
+            browser.goTo("/auth");
             browser.await().untilPage().isLoaded();
             // SOEN6441 Concordia is the name of our app
             // If it's showing, we have the Authorize an application page showing up!
@@ -116,10 +116,10 @@ public class TwitterControllerTest extends WithBrowser {
      * After connection, make sure that the form is showing
      */
     @Test
-    public void searchForm() {
+    public void testSearchForm() {
         // We have to run on port 9000 because of the callback URL
         running(testServer(9000), HTMLUNIT, browser -> {
-            browser.goTo("/twitter/auth");
+            browser.goTo("/auth");
             browser.await().untilPage().isLoaded();
 
             // Use a dumb Twitter account to connect
@@ -141,7 +141,7 @@ public class TwitterControllerTest extends WithBrowser {
      * @throws TimeoutException exception
      */
     @Test
-    public void getSearchJson() throws InterruptedException, ExecutionException, TimeoutException {
+    public void testGetSearchJson() throws InterruptedException, ExecutionException, TimeoutException {
         client.getSearchJson("concordia", new OAuth.RequestToken("token", "secret"))
                 .toCompletableFuture().get(10, TimeUnit.SECONDS);
 
@@ -167,7 +167,7 @@ public class TwitterControllerTest extends WithBrowser {
      * Test the display of the search form
      */
     @Test
-    public void searchPost() {
+    public void testSearchPost() {
         Content html = search.render(formFactory.form(Keyword.class), new ArrayList<>());
         assertThat("text/html", is(html.contentType()));
         assertThat(html.body(), containsString("Search on Twitter"));
@@ -180,7 +180,7 @@ public class TwitterControllerTest extends WithBrowser {
      * @throws TimeoutException exception
      */
     @Test
-    public void profile() throws InterruptedException, ExecutionException, TimeoutException {
+    public void testProfile() throws InterruptedException, ExecutionException, TimeoutException {
         Result result = client.getProfileJson("Concordia", new OAuth.RequestToken("token", "secret"))
                 .toCompletableFuture().get(10, TimeUnit.SECONDS);
 
@@ -191,7 +191,7 @@ public class TwitterControllerTest extends WithBrowser {
         String stringBody = body.utf8String(); // get body as String.
 
         // Ensure that the first tweet is properly displayed
-        assertThat(stringBody, containsString("<li><a href=\"/twitter/profile/Concordia\">Concordia</a> wrote: " +
+        assertThat(stringBody, containsString("<li><a href=\"/profile/Concordia\">Concordia</a> wrote: " +
                 "What does big data look like? Check out the exhibition &#x27;The Material Turn&#x27; " +
                 "by @Milieux_news&#x27;s Kelly Thompson @FofaGallery: " +
                 "https://t.co/b04wWRNmPM Runs until April 13. https://t.co/ZJMV79FRLL</li>"));
@@ -214,7 +214,7 @@ public class TwitterControllerTest extends WithBrowser {
      * @throws TimeoutException exception
      */
     @Test
-    public void getProfileJson() throws InterruptedException, ExecutionException, TimeoutException {
+    public void testGetProfileJson() throws InterruptedException, ExecutionException, TimeoutException {
         client.getProfileJson("Concordia", new OAuth.RequestToken("token", "secret"))
                 .toCompletableFuture().get(10, TimeUnit.SECONDS);
 

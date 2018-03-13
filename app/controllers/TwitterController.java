@@ -3,8 +3,8 @@ package controllers;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import models.Keyword;
-import models.twitter.SearchResult;
-import models.twitter.Status;
+import models.Status;
+import models.SearchResult;
 import play.cache.SyncCacheApi;
 import play.data.Form;
 import play.data.FormFactory;
@@ -26,7 +26,7 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
-import views.html.twitter.*;
+import views.html.*;
 
 
 /**
@@ -81,7 +81,7 @@ public class TwitterController extends Controller {
         Optional<RequestToken> sessionTokenPair = getSessionTokenPair();
         if (sessionTokenPair.isPresent()) {
             // Get the previous tweets from the cache
-            List<models.twitter.Status> cachedStatuses = cache.get("cachedStatuses");
+            List<Status> cachedStatuses = cache.get("cachedStatuses");
             // If the cache is empty, create an empty ArrayList to avoid having an exception thrown
             if (cachedStatuses == null) {
                 cachedStatuses = new ArrayList<>();
@@ -115,7 +115,7 @@ public class TwitterController extends Controller {
                                 SearchResult.class);
 
                         // Get the current status cache
-                        List<models.twitter.Status> cachedStatuses = cache.get("cachedStatuses");
+                        List<Status> cachedStatuses = cache.get("cachedStatuses");
 
                         // Add statuses to the cache, or initialize the variable if cache is empty
                         if (cachedStatuses != null) {

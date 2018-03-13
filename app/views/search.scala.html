@@ -1,29 +1,33 @@
 @import java.util
-@(myForm: Form[Keyword], statuses: util.List[models.twitter.Status])
+@(myForm: Form[Keyword], statuses: util.List[Status])
 
 @master("Search on Twitter") {
-
     @if(flash.containsKey("error")) {
         @flash.get("error")
     }
 
     @helper.form(action = routes.TwitterController.searchPost()) {
-        <dl class=" " id="keyword_field">
-            <dt><label for="keyword">keyword</label></dt>
+        <dl id="keyword_field">
+            <dt><label for="keyword">Please enter the keyword of the tweets you want to search</label></dt>
             <dd>
-                <input type="text" id="keyword" name="keyword" value="" />
+                <input type="text" id="keyword" name="keyword" value="" placeholder="Keyword" />
             </dd>
-            <dd class="info">Required</dd>
         </dl>
 
         <button type="submit">Search</button>
     }
 
+    <br /><br />
+
 
     <ul>
+    @if(statuses.size() != 0) {
+        Here are your results. You can click on each user names to see their latest tweets.
+        <br /><br />
+    }
+
     @for(status <- statuses) {
         <li><a href="@routes.TwitterController.profile(status.getUser.getScreenName)">@status.getUser.getScreenName</a> wrote: @status.getFullText</li>
     }
     </ul>
-
 }

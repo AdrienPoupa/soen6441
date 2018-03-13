@@ -1,7 +1,6 @@
 @import java.util
 
-@import models.twitter.Status
-@(statuses: util.List[Status], user: models.twitter.User)
+@(statuses: util.List[Status], user: User)
 
 @master(user.getScreenName+"'s Twitter Profile") {
     @if(flash.containsKey("error")) {

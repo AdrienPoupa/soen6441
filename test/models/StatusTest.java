@@ -1,11 +1,11 @@
-package models.twitter;
+package models;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import models.twitter.Status;
-import models.twitter.User;
+import models.Status;
+import models.User;
 
 /**
  * Tests for the {@link Status} class.

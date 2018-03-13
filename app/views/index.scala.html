@@ -1,20 +1,10 @@
-@*
- * This template takes a single argument, a String containing a
- * message to display.
- *@
-@(message: String)
-
-@*
- * Call the `main` template with two arguments. The first
- * argument is a `String` with the title of the page, the second
- * argument is an `Html` object containing the body of the page.
- *@
-@main("Welcome to Play") {
-
-    @*
-     * Get an `Html` object by calling the built-in Play welcome
-     * template and passing a `String` message.
-     *@
-    @welcome(message, style = "java")
-
+@master("Welcome") {
+    Welcome to the project of LabK-Group3.
+    <br /><br />
+    We hope you will enjoy it!
+    <br /><br />
+    Start <a href="@routes.TwitterController.searchForm()">
+        searching
+    </a> for tweets now!
+    <br /><br />
 }
