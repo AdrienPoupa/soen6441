@@ -9,7 +9,9 @@ import models.Keyword;
  *
  */
 public class KeywordTest {
-
+    /**
+     * Getter test for Keyword
+     */
 	@Test
 	public void testGetKeyword() {
 		Keyword keyword=new Keyword();
@@ -18,6 +20,9 @@ public class KeywordTest {
 	
 	}
 
+    /**
+     * Setter test for Keyword
+     */
 	@Test
 	public void testSetKeyword() {
 		Keyword keyword=new Keyword();
