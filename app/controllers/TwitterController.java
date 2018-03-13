@@ -106,7 +106,7 @@ public class TwitterController extends Controller {
                 .addQueryParameter("tweet_mode", "extended")
                 .sign(new OAuthCalculator(TwitterController.KEY, sessionTokenPair))
                 .get() // THIS IS NOT BLOCKING! It returns a promise to the response. It comes from WSRequest.
-                .thenApply(result -> {
+                .thenApplyAsync(result -> {
                     JsonNode rootNode = result.asJson();
                     try {
                         // Map the json result to an actual object with Jackson
@@ -134,6 +134,40 @@ public class TwitterController extends Controller {
                         return ok(e.toString());
                     }
                 });
+    }
+
+    /**
+     * Get the Json profile file
+     * @param username String
+     * @param sessionTokenPair RequestToken
+     * @return CompletionStage<Result>
+     */
+    public CompletionStage<Result> getProfileJson(String username, RequestToken sessionTokenPair)
+    {
+        return ws.url(baseUrl + "/statuses/user_timeline.json")
+                .addQueryParameter("count", "10")
+                .addQueryParameter("tweet_mode", "extended")
+                .addQueryParameter("screen_name", username)
+                .sign(new OAuthCalculator(TwitterController.KEY, sessionTokenPair))
+                .get() // THIS IS NOT BLOCKING! It returns a promise to the response. It comes from WSRequest.
+                .thenApplyAsync(result -> {
+                    JsonNode rootNode = result.asJson();
+                    try {
+                        // Map the json result to an actual object with Jackson
+                        ObjectMapper mapper = new ObjectMapper();
+
+                        // We have a list of Status, so we use Status[]
+                        List<Status> root = Arrays.asList(mapper.treeToValue(rootNode,
+                                Status[].class));
+
+                        // Store the object in cache for 5 minutes
+                        cache.set("profile." + username, root, 5*60);
+
+                        return ok(profile.render(root, root.get(0).getUser()));
+                    } catch (IOException e) {
+                        return ok(e.toString());
+                    }
+                }, httpExecutionContext.current());
     }
 
     /**
@@ -165,27 +199,7 @@ public class TwitterController extends Controller {
     public CompletionStage<Result> profile(String username) {
         Optional<RequestToken> sessionTokenPair = getSessionTokenPair();
         if (sessionTokenPair.isPresent()) {
-            return ws.url(baseUrl + "/statuses/user_timeline.json")
-                    .addQueryParameter("count", "10")
-                    .addQueryParameter("tweet_mode", "extended")
-                    .addQueryParameter("screen_name", username)
-                    .sign(new OAuthCalculator(TwitterController.KEY, sessionTokenPair.get()))
-                    .get() // THIS IS NOT BLOCKING! It returns a promise to the response. It comes from WSRequest.
-                    .thenApplyAsync(result -> {
-                        JsonNode rootNode = result.asJson();
-                        try {
-                            // Map the json result to an actual object with Jackson
-                            ObjectMapper mapper = new ObjectMapper();
-
-                            // We have a list of Status, so we use Status[]
-                            List<Status> root = Arrays.asList(mapper.treeToValue(rootNode,
-                                    Status[].class));
-
-                            return ok(profile.render(root, root.get(0).getUser()));
-                        } catch (IOException e) {
-                            return ok(e.toString());
-                        }
-                    }, httpExecutionContext.current());
+            return getProfileJson(username, sessionTokenPair.get());
         }
         return CompletableFuture.completedFuture(redirect(routes.TwitterController.auth()));
     }

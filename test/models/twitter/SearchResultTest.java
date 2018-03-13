@@ -31,14 +31,14 @@ public class SearchResultTest{
 	public void testSetStatuses() {
 		SearchResult sr=new SearchResult();
 		sr.setStatuses(null);
-		assertEquals(null,sr.getStatuses());
+		assertNull(sr.getStatuses());
 	}
 
 	@Test
 	public void testGetStatuses() {
 		SearchResult sr=new SearchResult();
 		sr.setStatuses(null);
-		assertEquals(null,sr.getStatuses());
+		assertNull(sr.getStatuses());
 	}
 
 }

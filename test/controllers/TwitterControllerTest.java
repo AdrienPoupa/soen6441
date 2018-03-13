@@ -1,16 +1,21 @@
 package controllers;
 
+import akka.util.ByteString;
 import models.Keyword;
 import models.twitter.Status;
 import models.twitter.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import play.cache.SyncCacheApi;
 import play.data.FormFactory;
+import play.http.HttpEntity;
 import play.inject.guice.GuiceApplicationBuilder;
+import play.libs.concurrent.HttpExecutionContext;
 import play.libs.oauth.OAuth;
 import play.libs.ws.WSClient;
 import play.mvc.Http;
+import play.mvc.Result;
 import play.routing.RoutingDsl;
 import play.server.Server;
 import play.test.WithBrowser;
@@ -19,6 +24,7 @@ import views.html.twitter.search;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -36,33 +42,42 @@ public class TwitterControllerTest extends WithBrowser {
     private TwitterController client;
     private WSClient ws;
     private Server server;
-    private MockSyncCacheApi cache;
+    private SyncCacheApi cache;
     private FormFactory formFactory;
+    private HttpExecutionContext ec;
 
     /**
      * Setup the tests.
      */
     @Before
     public void setup() {
+        // Mock the Twitter's API response
+        server = Server.forRouter((components) -> RoutingDsl.fromComponents(components)
+                .GET("/search/tweets.json").routeTo(() ->
+                        ok().sendResource("search.json")
+                )
+                .GET("/statuses/user_timeline.json").routeTo(() ->
+                        ok().sendResource("profile.json")
+                )
+                .build()
+        );
+
+        // Get instances of the cache, the form factory and the HttpExecutionContext with the injector
+        cache = new GuiceApplicationBuilder().injector().instanceOf(SyncCacheApi.class);
+        formFactory = new GuiceApplicationBuilder().injector().instanceOf(FormFactory.class);
+        ec = new GuiceApplicationBuilder().injector().instanceOf(HttpExecutionContext.class);
+        ws = play.test.WSTestClient.newClient(server.httpPort());
+
+        // Create the client, set its base URL
+        client = new TwitterController(ws, formFactory, cache, ec);
+        client.setBaseUrl("");
+
+        // Mock the context and flash to render the templates
         Http.Context context = mock(Http.Context.class);
         Http.Flash flash = mock(Http.Flash.class);
 
         when(context.flash()).thenReturn(flash);
         Http.Context.current.set(context);
-
-        // Mock the search
-        server = Server.forRouter((components) -> RoutingDsl.fromComponents(components)
-                .GET("/search/tweets.json").routeTo(() ->
-                        ok().sendResource("search.json")
-                )
-                .build()
-        );
-        // Mock the cache
-        cache = new MockSyncCacheApi();
-        formFactory = new GuiceApplicationBuilder().injector().instanceOf(FormFactory.class);
-        ws = play.test.WSTestClient.newClient(server.httpPort());
-        client = new TwitterController(ws, formFactory, cache, null);
-        client.setBaseUrl("");
     }
 
     /**
@@ -113,9 +128,10 @@ public class TwitterControllerTest extends WithBrowser {
                 .toCompletableFuture().get(10, TimeUnit.SECONDS);
 
         // We should have 10 tweets
-        assertThat(cache.getCachedStatuses().size(), is(10));
+        List<Status> cachedStatuses = cache.get("cachedStatuses");
+        assertThat(cachedStatuses.size(), is(10));
 
-        Status status = cache.getCachedStatuses().get(0);
+        Status status = cachedStatuses.get(0);
         User user = status.getUser();
 
         // Test the first tweet
@@ -139,9 +155,68 @@ public class TwitterControllerTest extends WithBrowser {
         assertThat(html.body(), containsString("Search on Twitter"));
     }
 
+    /**
+     * Test the HTML generated
+     * @throws InterruptedException exception
+     * @throws ExecutionException exception
+     * @throws TimeoutException exception
+     */
     @Test
-    public void profile() {
+    public void profile() throws InterruptedException, ExecutionException, TimeoutException {
+        Result result = client.getProfileJson("Concordia", new OAuth.RequestToken("token", "secret"))
+                .toCompletableFuture().get(10, TimeUnit.SECONDS);
 
+        // Get the HTML body as string
+        HttpEntity httpEntity = result.body();
+        HttpEntity.Strict httpEntityStrict = (HttpEntity.Strict) httpEntity;
+        ByteString body = httpEntityStrict.data();
+        String stringBody = body.utf8String(); // get body as String.
+
+        // Ensure that the first tweet is properly displayed
+        assertThat(stringBody, containsString("<li><a href=\"/twitter/profile/Concordia\">Concordia</a> wrote: " +
+                "What does big data look like? Check out the exhibition &#x27;The Material Turn&#x27; " +
+                "by @Milieux_news&#x27;s Kelly Thompson @FofaGallery: " +
+                "https://t.co/b04wWRNmPM Runs until April 13. https://t.co/ZJMV79FRLL</li>"));
+
+        // Ensure that the profile is correctly displayed
+        assertThat(stringBody, containsString("<ul>\n" +
+                "        <li>User name: Concordia</li>\n" +
+                "        <li>Real name: Concordia University</li>\n" +
+                "        <li>Location: Montreal</li>\n" +
+                "        <li>Description: Located in the vibrant and cosmopolitan city of #Montreal, #Concordia University is one of Canada’s most innovative and diverse, comprehensive universities.</li>\n" +
+                "        <li>Followers: 68001</li>\n" +
+                "        <li>Friends: 1191</li>\n" +
+                "    </ul>"));
+    }
+
+    /**
+     * Test the profile Json parsing
+     * @throws InterruptedException exception
+     * @throws ExecutionException exception
+     * @throws TimeoutException exception
+     */
+    @Test
+    public void getProfileJson() throws InterruptedException, ExecutionException, TimeoutException {
+        client.getProfileJson("Concordia", new OAuth.RequestToken("token", "secret"))
+                .toCompletableFuture().get(10, TimeUnit.SECONDS);
+
+        List<Status> cachedStatuses = cache.get("profile.Concordia");
+
+        // We should have 10 tweets
+        assertThat(cachedStatuses.size(), is(10));
+
+        Status status = cachedStatuses.get(0);
+        User user = status.getUser();
+
+        // Test the first tweet
+        assertThat(status.getFullText(), is("What does big data look like? Check out the exhibition 'The Material Turn' by @Milieux_news's Kelly Thompson @FofaGallery: https://t.co/b04wWRNmPM Runs until April 13. https://t.co/ZJMV79FRLL"));
+        assertThat(user.getId(), is(18173399));
+        assertThat(user.getName(), is("Concordia University"));
+        assertThat(user.getScreenName(), is("Concordia"));
+        assertThat(user.getLocation(), is("Montreal"));
+        assertThat(user.getDescription(), is("Located in the vibrant and cosmopolitan city of #Montreal, #Concordia University is one of Canada’s most innovative and diverse, comprehensive universities."));
+        assertThat(user.getFollowers(), is("68001"));
+        assertThat(user.getFriends(), is("1191"));
     }
 
     /**

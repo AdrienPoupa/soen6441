@@ -1,0 +1,2256 @@
+[
+  {
+    "created_at": "Tue Mar 13 14:03:08 +0000 2018",
+    "id": 973560090220466200,
+    "id_str": "973560090220466176",
+    "full_text": "What does big data look like? Check out the exhibition 'The Material Turn' by @Milieux_news's Kelly Thompson @FofaGallery: https://t.co/b04wWRNmPM Runs until April 13. https://t.co/ZJMV79FRLL",
+    "truncated": false,
+    "display_text_range": [
+      0,
+      167
+    ],
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "Milieux_news",
+          "name": "Milieux Institute",
+          "id": 4898531429,
+          "id_str": "4898531429",
+          "indices": [
+            78,
+            91
+          ]
+        },
+        {
+          "screen_name": "FofaGallery",
+          "name": "Galerie FOFA Gallery",
+          "id": 309157590,
+          "id_str": "309157590",
+          "indices": [
+            109,
+            121
+          ]
+        }
+      ],
+      "urls": [
+        {
+          "url": "https://t.co/b04wWRNmPM",
+          "expanded_url": "http://bit.ly/2FrtmEU",
+          "display_url": "bit.ly/2FrtmEU",
+          "indices": [
+            123,
+            146
+          ]
+        }
+      ],
+      "media": [
+        {
+          "id": 973560025301086200,
+          "id_str": "973560025301086209",
+          "indices": [
+            168,
+            191
+          ],
+          "media_url": "http://pbs.twimg.com/media/DYLHr1OXcAEsIKY.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/DYLHr1OXcAEsIKY.jpg",
+          "url": "https://t.co/ZJMV79FRLL",
+          "display_url": "pic.twitter.com/ZJMV79FRLL",
+          "expanded_url": "https://twitter.com/Concordia/status/973560090220466176/photo/1",
+          "type": "photo",
+          "sizes": {
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "medium": {
+              "w": 620,
+              "h": 440,
+              "resize": "fit"
+            },
+            "large": {
+              "w": 620,
+              "h": 440,
+              "resize": "fit"
+            },
+            "small": {
+              "w": 620,
+              "h": 440,
+              "resize": "fit"
+            }
+          }
+        }
+      ]
+    },
+    "extended_entities": {
+      "media": [
+        {
+          "id": 973560025301086200,
+          "id_str": "973560025301086209",
+          "indices": [
+            168,
+            191
+          ],
+          "media_url": "http://pbs.twimg.com/media/DYLHr1OXcAEsIKY.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/DYLHr1OXcAEsIKY.jpg",
+          "url": "https://t.co/ZJMV79FRLL",
+          "display_url": "pic.twitter.com/ZJMV79FRLL",
+          "expanded_url": "https://twitter.com/Concordia/status/973560090220466176/photo/1",
+          "type": "photo",
+          "sizes": {
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "medium": {
+              "w": 620,
+              "h": 440,
+              "resize": "fit"
+            },
+            "large": {
+              "w": 620,
+              "h": 440,
+              "resize": "fit"
+            },
+            "small": {
+              "w": 620,
+              "h": 440,
+              "resize": "fit"
+            }
+          }
+        }
+      ]
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 18173399,
+      "id_str": "18173399",
+      "name": "Concordia University",
+      "screen_name": "Concordia",
+      "location": "Montreal",
+      "description": "Located in the vibrant and cosmopolitan city of #Montreal, #Concordia University is one of Canada’s most innovative and diverse, comprehensive universities.",
+      "url": "http://t.co/caOVwmyW9A",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/caOVwmyW9A",
+              "expanded_url": "http://concordia.ca",
+              "display_url": "concordia.ca",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 68001,
+      "friends_count": 1191,
+      "listed_count": 815,
+      "created_at": "Tue Dec 16 21:32:33 +0000 2008",
+      "favourites_count": 4757,
+      "utc_offset": -14400,
+      "time_zone": "Eastern Time (US & Canada)",
+      "geo_enabled": true,
+      "verified": false,
+      "statuses_count": 15264,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "FFFFFF",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/18173399/1513694237",
+      "profile_link_color": "1F98C7",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DAECF4",
+      "profile_text_color": "663B12",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false,
+      "translator_type": "none"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Mar 13 13:18:42 +0000 2018",
+    "id": 973548911905394700,
+    "id_str": "973548911905394688",
+    "full_text": "RT @ConcordiaAlumni: After two decades in front of the camera in TV journalism, @JournalismCU grad @TaniaKrywiak is now a lineup editor wit…",
+    "truncated": false,
+    "display_text_range": [
+      0,
+      140
+    ],
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "ConcordiaAlumni",
+          "name": "Concordia Alumni",
+          "id": 44360910,
+          "id_str": "44360910",
+          "indices": [
+            3,
+            19
+          ]
+        },
+        {
+          "screen_name": "JournalismCU",
+          "name": "Concordia Journalism",
+          "id": 89281456,
+          "id_str": "89281456",
+          "indices": [
+            80,
+            93
+          ]
+        },
+        {
+          "screen_name": "TaniaKrywiak",
+          "name": "Tania Krywiak",
+          "id": 719280498,
+          "id_str": "719280498",
+          "indices": [
+            99,
+            112
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 18173399,
+      "id_str": "18173399",
+      "name": "Concordia University",
+      "screen_name": "Concordia",
+      "location": "Montreal",
+      "description": "Located in the vibrant and cosmopolitan city of #Montreal, #Concordia University is one of Canada’s most innovative and diverse, comprehensive universities.",
+      "url": "http://t.co/caOVwmyW9A",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/caOVwmyW9A",
+              "expanded_url": "http://concordia.ca",
+              "display_url": "concordia.ca",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 68001,
+      "friends_count": 1191,
+      "listed_count": 815,
+      "created_at": "Tue Dec 16 21:32:33 +0000 2008",
+      "favourites_count": 4757,
+      "utc_offset": -14400,
+      "time_zone": "Eastern Time (US & Canada)",
+      "geo_enabled": true,
+      "verified": false,
+      "statuses_count": 15264,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "FFFFFF",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/18173399/1513694237",
+      "profile_link_color": "1F98C7",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DAECF4",
+      "profile_text_color": "663B12",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false,
+      "translator_type": "none"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Mon Mar 12 21:41:56 +0000 2018",
+      "id": 973313165286166500,
+      "id_str": "973313165286166528",
+      "full_text": "After two decades in front of the camera in TV journalism, @JournalismCU grad @TaniaKrywiak is now a lineup editor with @CTVMontreal News at Five. We wish her the best in her new role. Read more: https://t.co/tNkWVpPMku #CUalumni https://t.co/yEPykuavjm",
+      "truncated": false,
+      "display_text_range": [
+        0,
+        229
+      ],
+      "entities": {
+        "hashtags": [
+          {
+            "text": "CUalumni",
+            "indices": [
+              220,
+              229
+            ]
+          }
+        ],
+        "symbols": [],
+        "user_mentions": [
+          {
+            "screen_name": "JournalismCU",
+            "name": "Concordia Journalism",
+            "id": 89281456,
+            "id_str": "89281456",
+            "indices": [
+              59,
+              72
+            ]
+          },
+          {
+            "screen_name": "TaniaKrywiak",
+            "name": "Tania Krywiak",
+            "id": 719280498,
+            "id_str": "719280498",
+            "indices": [
+              78,
+              91
+            ]
+          },
+          {
+            "screen_name": "CTVMontreal",
+            "name": "CTV Montreal",
+            "id": 21106414,
+            "id_str": "21106414",
+            "indices": [
+              120,
+              132
+            ]
+          }
+        ],
+        "urls": [
+          {
+            "url": "https://t.co/tNkWVpPMku",
+            "expanded_url": "http://bit.ly/2FzsytP",
+            "display_url": "bit.ly/2FzsytP",
+            "indices": [
+              196,
+              219
+            ]
+          }
+        ],
+        "media": [
+          {
+            "id": 973313056464949200,
+            "id_str": "973313056464949248",
+            "indices": [
+              230,
+              253
+            ],
+            "media_url": "http://pbs.twimg.com/media/DYHnEWnX0AAA9Jk.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/DYHnEWnX0AAA9Jk.jpg",
+            "url": "https://t.co/yEPykuavjm",
+            "display_url": "pic.twitter.com/yEPykuavjm",
+            "expanded_url": "https://twitter.com/ConcordiaAlumni/status/973313165286166528/photo/1",
+            "type": "photo",
+            "sizes": {
+              "medium": {
+                "w": 300,
+                "h": 400,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "large": {
+                "w": 300,
+                "h": 400,
+                "resize": "fit"
+              },
+              "small": {
+                "w": 300,
+                "h": 400,
+                "resize": "fit"
+              }
+            }
+          }
+        ]
+      },
+      "extended_entities": {
+        "media": [
+          {
+            "id": 973313056464949200,
+            "id_str": "973313056464949248",
+            "indices": [
+              230,
+              253
+            ],
+            "media_url": "http://pbs.twimg.com/media/DYHnEWnX0AAA9Jk.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/DYHnEWnX0AAA9Jk.jpg",
+            "url": "https://t.co/yEPykuavjm",
+            "display_url": "pic.twitter.com/yEPykuavjm",
+            "expanded_url": "https://twitter.com/ConcordiaAlumni/status/973313165286166528/photo/1",
+            "type": "photo",
+            "sizes": {
+              "medium": {
+                "w": 300,
+                "h": 400,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "large": {
+                "w": 300,
+                "h": 400,
+                "resize": "fit"
+              },
+              "small": {
+                "w": 300,
+                "h": 400,
+                "resize": "fit"
+              }
+            }
+          },
+          {
+            "id": 973313105336983600,
+            "id_str": "973313105336983552",
+            "indices": [
+              230,
+              253
+            ],
+            "media_url": "http://pbs.twimg.com/media/DYHnHMrX4AAy2TP.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/DYHnHMrX4AAy2TP.jpg",
+            "url": "https://t.co/yEPykuavjm",
+            "display_url": "pic.twitter.com/yEPykuavjm",
+            "expanded_url": "https://twitter.com/ConcordiaAlumni/status/973313165286166528/photo/1",
+            "type": "photo",
+            "sizes": {
+              "large": {
+                "w": 1365,
+                "h": 2048,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "small": {
+                "w": 453,
+                "h": 680,
+                "resize": "fit"
+              },
+              "medium": {
+                "w": 800,
+                "h": 1200,
+                "resize": "fit"
+              }
+            }
+          },
+          {
+            "id": 973313118595178500,
+            "id_str": "973313118595178496",
+            "indices": [
+              230,
+              253
+            ],
+            "media_url": "http://pbs.twimg.com/media/DYHnH-EX4AAsLfM.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/DYHnH-EX4AAsLfM.jpg",
+            "url": "https://t.co/yEPykuavjm",
+            "display_url": "pic.twitter.com/yEPykuavjm",
+            "expanded_url": "https://twitter.com/ConcordiaAlumni/status/973313165286166528/photo/1",
+            "type": "photo",
+            "sizes": {
+              "small": {
+                "w": 598,
+                "h": 680,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "large": {
+                "w": 1802,
+                "h": 2048,
+                "resize": "fit"
+              },
+              "medium": {
+                "w": 1056,
+                "h": 1200,
+                "resize": "fit"
+              }
+            }
+          }
+        ]
+      },
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 44360910,
+        "id_str": "44360910",
+        "name": "Concordia Alumni",
+        "screen_name": "ConcordiaAlumni",
+        "location": "Montreal, Quebec, Canada",
+        "description": "We serve 200,000 alumni of @Concordia University and its founding institutions, Loyola College and Sir George Williams University. #CUalumni #NextGenNow",
+        "url": "https://t.co/mveRheWR9Q",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/mveRheWR9Q",
+                "expanded_url": "http://concordia.ca/alumni",
+                "display_url": "concordia.ca/alumni",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 3012,
+        "friends_count": 1903,
+        "listed_count": 84,
+        "created_at": "Wed Jun 03 13:45:09 +0000 2009",
+        "favourites_count": 2201,
+        "utc_offset": -14400,
+        "time_zone": "Eastern Time (US & Canada)",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 5998,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "EBEBEB",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme7/bg.gif",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme7/bg.gif",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/887746078174531584/JA_xt7f3_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/887746078174531584/JA_xt7f3_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/44360910/1512408541",
+        "profile_link_color": "990000",
+        "profile_sidebar_border_color": "DFDFDF",
+        "profile_sidebar_fill_color": "F3F3F3",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 2,
+      "favorite_count": 0,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    "is_quote_status": false,
+    "retweet_count": 2,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Mon Mar 12 20:37:14 +0000 2018",
+    "id": 973296882209448000,
+    "id_str": "973296882209447936",
+    "full_text": "Did you know #Concordia has a Safe Walk program available to all students, faculty and staff? To make a request, call security at 514-848-3717 https://t.co/rgLOv13bFw https://t.co/b81W7vFCih",
+    "truncated": false,
+    "display_text_range": [
+      0,
+      166
+    ],
+    "entities": {
+      "hashtags": [
+        {
+          "text": "Concordia",
+          "indices": [
+            13,
+            23
+          ]
+        }
+      ],
+      "symbols": [],
+      "user_mentions": [],
+      "urls": [
+        {
+          "url": "https://t.co/rgLOv13bFw",
+          "expanded_url": "http://bit.ly/2xfHDPQ",
+          "display_url": "bit.ly/2xfHDPQ",
+          "indices": [
+            143,
+            166
+          ]
+        }
+      ],
+      "media": [
+        {
+          "id": 973296703590805500,
+          "id_str": "973296703590805504",
+          "indices": [
+            167,
+            190
+          ],
+          "media_url": "http://pbs.twimg.com/media/DYHYMfaWsAA3lZW.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/DYHYMfaWsAA3lZW.jpg",
+          "url": "https://t.co/b81W7vFCih",
+          "display_url": "pic.twitter.com/b81W7vFCih",
+          "expanded_url": "https://twitter.com/Concordia/status/973296882209447936/photo/1",
+          "type": "photo",
+          "sizes": {
+            "small": {
+              "w": 618,
+              "h": 321,
+              "resize": "fit"
+            },
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "large": {
+              "w": 618,
+              "h": 321,
+              "resize": "fit"
+            },
+            "medium": {
+              "w": 618,
+              "h": 321,
+              "resize": "fit"
+            }
+          }
+        }
+      ]
+    },
+    "extended_entities": {
+      "media": [
+        {
+          "id": 973296703590805500,
+          "id_str": "973296703590805504",
+          "indices": [
+            167,
+            190
+          ],
+          "media_url": "http://pbs.twimg.com/media/DYHYMfaWsAA3lZW.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/DYHYMfaWsAA3lZW.jpg",
+          "url": "https://t.co/b81W7vFCih",
+          "display_url": "pic.twitter.com/b81W7vFCih",
+          "expanded_url": "https://twitter.com/Concordia/status/973296882209447936/photo/1",
+          "type": "photo",
+          "sizes": {
+            "small": {
+              "w": 618,
+              "h": 321,
+              "resize": "fit"
+            },
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "large": {
+              "w": 618,
+              "h": 321,
+              "resize": "fit"
+            },
+            "medium": {
+              "w": 618,
+              "h": 321,
+              "resize": "fit"
+            }
+          }
+        }
+      ]
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 18173399,
+      "id_str": "18173399",
+      "name": "Concordia University",
+      "screen_name": "Concordia",
+      "location": "Montreal",
+      "description": "Located in the vibrant and cosmopolitan city of #Montreal, #Concordia University is one of Canada’s most innovative and diverse, comprehensive universities.",
+      "url": "http://t.co/caOVwmyW9A",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/caOVwmyW9A",
+              "expanded_url": "http://concordia.ca",
+              "display_url": "concordia.ca",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 68001,
+      "friends_count": 1191,
+      "listed_count": 815,
+      "created_at": "Tue Dec 16 21:32:33 +0000 2008",
+      "favourites_count": 4757,
+      "utc_offset": -14400,
+      "time_zone": "Eastern Time (US & Canada)",
+      "geo_enabled": true,
+      "verified": false,
+      "statuses_count": 15264,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "FFFFFF",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/18173399/1513694237",
+      "profile_link_color": "1F98C7",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DAECF4",
+      "profile_text_color": "663B12",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false,
+      "translator_type": "none"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 1,
+    "favorite_count": 3,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Mon Mar 12 19:30:02 +0000 2018",
+    "id": 973279970901528600,
+    "id_str": "973279970901528583",
+    "full_text": "Support @5Days_Homeless! All this week support the #Concordia fundraising campaign https://t.co/UE7KBRGXzb Last day to donate is March 16 #5D4H https://t.co/uax3VQWWKd",
+    "truncated": false,
+    "display_text_range": [
+      0,
+      143
+    ],
+    "entities": {
+      "hashtags": [
+        {
+          "text": "Concordia",
+          "indices": [
+            51,
+            61
+          ]
+        },
+        {
+          "text": "5D4H",
+          "indices": [
+            138,
+            143
+          ]
+        }
+      ],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "5Days_Homeless",
+          "name": "5 Days For Homeless",
+          "id": 23710160,
+          "id_str": "23710160",
+          "indices": [
+            8,
+            23
+          ]
+        }
+      ],
+      "urls": [
+        {
+          "url": "https://t.co/UE7KBRGXzb",
+          "expanded_url": "http://bit.ly/2FvmAhN",
+          "display_url": "bit.ly/2FvmAhN",
+          "indices": [
+            83,
+            106
+          ]
+        }
+      ],
+      "media": [
+        {
+          "id": 973279614582841300,
+          "id_str": "973279614582841344",
+          "indices": [
+            144,
+            167
+          ],
+          "media_url": "http://pbs.twimg.com/media/DYHIpx5W4AATgST.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/DYHIpx5W4AATgST.jpg",
+          "url": "https://t.co/uax3VQWWKd",
+          "display_url": "pic.twitter.com/uax3VQWWKd",
+          "expanded_url": "https://twitter.com/Concordia/status/973279970901528583/photo/1",
+          "type": "photo",
+          "sizes": {
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "small": {
+              "w": 680,
+              "h": 453,
+              "resize": "fit"
+            },
+            "medium": {
+              "w": 1200,
+              "h": 800,
+              "resize": "fit"
+            },
+            "large": {
+              "w": 1280,
+              "h": 853,
+              "resize": "fit"
+            }
+          }
+        }
+      ]
+    },
+    "extended_entities": {
+      "media": [
+        {
+          "id": 973279614582841300,
+          "id_str": "973279614582841344",
+          "indices": [
+            144,
+            167
+          ],
+          "media_url": "http://pbs.twimg.com/media/DYHIpx5W4AATgST.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/DYHIpx5W4AATgST.jpg",
+          "url": "https://t.co/uax3VQWWKd",
+          "display_url": "pic.twitter.com/uax3VQWWKd",
+          "expanded_url": "https://twitter.com/Concordia/status/973279970901528583/photo/1",
+          "type": "photo",
+          "sizes": {
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "small": {
+              "w": 680,
+              "h": 453,
+              "resize": "fit"
+            },
+            "medium": {
+              "w": 1200,
+              "h": 800,
+              "resize": "fit"
+            },
+            "large": {
+              "w": 1280,
+              "h": 853,
+              "resize": "fit"
+            }
+          }
+        }
+      ]
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 18173399,
+      "id_str": "18173399",
+      "name": "Concordia University",
+      "screen_name": "Concordia",
+      "location": "Montreal",
+      "description": "Located in the vibrant and cosmopolitan city of #Montreal, #Concordia University is one of Canada’s most innovative and diverse, comprehensive universities.",
+      "url": "http://t.co/caOVwmyW9A",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/caOVwmyW9A",
+              "expanded_url": "http://concordia.ca",
+              "display_url": "concordia.ca",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 68001,
+      "friends_count": 1191,
+      "listed_count": 815,
+      "created_at": "Tue Dec 16 21:32:33 +0000 2008",
+      "favourites_count": 4757,
+      "utc_offset": -14400,
+      "time_zone": "Eastern Time (US & Canada)",
+      "geo_enabled": true,
+      "verified": false,
+      "statuses_count": 15264,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "FFFFFF",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/18173399/1513694237",
+      "profile_link_color": "1F98C7",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DAECF4",
+      "profile_text_color": "663B12",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false,
+      "translator_type": "none"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 2,
+    "favorite_count": 3,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Mon Mar 12 18:17:47 +0000 2018",
+    "id": 973261791114522600,
+    "id_str": "973261791114522625",
+    "full_text": "Haven't figured out the balancing act between work and school? Check out this week's Ask Meagan on the #Concordia app for advice! Don't have the app? Download it today! https://t.co/PgqPJF2hTE https://t.co/Ueoi4dVnfu",
+    "truncated": false,
+    "display_text_range": [
+      0,
+      192
+    ],
+    "entities": {
+      "hashtags": [
+        {
+          "text": "Concordia",
+          "indices": [
+            103,
+            113
+          ]
+        }
+      ],
+      "symbols": [],
+      "user_mentions": [],
+      "urls": [
+        {
+          "url": "https://t.co/PgqPJF2hTE",
+          "expanded_url": "http://bit.ly/2yPaZF3",
+          "display_url": "bit.ly/2yPaZF3",
+          "indices": [
+            169,
+            192
+          ]
+        }
+      ],
+      "media": [
+        {
+          "id": 973261573161652200,
+          "id_str": "973261573161652224",
+          "indices": [
+            193,
+            216
+          ],
+          "media_url": "http://pbs.twimg.com/tweet_video_thumb/DYG4PoXWkAA3HPA.jpg",
+          "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/DYG4PoXWkAA3HPA.jpg",
+          "url": "https://t.co/Ueoi4dVnfu",
+          "display_url": "pic.twitter.com/Ueoi4dVnfu",
+          "expanded_url": "https://twitter.com/Concordia/status/973261791114522625/photo/1",
+          "type": "photo",
+          "sizes": {
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "small": {
+              "w": 270,
+              "h": 360,
+              "resize": "fit"
+            },
+            "medium": {
+              "w": 270,
+              "h": 360,
+              "resize": "fit"
+            },
+            "large": {
+              "w": 270,
+              "h": 360,
+              "resize": "fit"
+            }
+          }
+        }
+      ]
+    },
+    "extended_entities": {
+      "media": [
+        {
+          "id": 973261573161652200,
+          "id_str": "973261573161652224",
+          "indices": [
+            193,
+            216
+          ],
+          "media_url": "http://pbs.twimg.com/tweet_video_thumb/DYG4PoXWkAA3HPA.jpg",
+          "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/DYG4PoXWkAA3HPA.jpg",
+          "url": "https://t.co/Ueoi4dVnfu",
+          "display_url": "pic.twitter.com/Ueoi4dVnfu",
+          "expanded_url": "https://twitter.com/Concordia/status/973261791114522625/photo/1",
+          "type": "animated_gif",
+          "sizes": {
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "small": {
+              "w": 270,
+              "h": 360,
+              "resize": "fit"
+            },
+            "medium": {
+              "w": 270,
+              "h": 360,
+              "resize": "fit"
+            },
+            "large": {
+              "w": 270,
+              "h": 360,
+              "resize": "fit"
+            }
+          },
+          "video_info": {
+            "aspect_ratio": [
+              3,
+              4
+            ],
+            "variants": [
+              {
+                "bitrate": 0,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/tweet_video/DYG4PoXWkAA3HPA.mp4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 18173399,
+      "id_str": "18173399",
+      "name": "Concordia University",
+      "screen_name": "Concordia",
+      "location": "Montreal",
+      "description": "Located in the vibrant and cosmopolitan city of #Montreal, #Concordia University is one of Canada’s most innovative and diverse, comprehensive universities.",
+      "url": "http://t.co/caOVwmyW9A",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/caOVwmyW9A",
+              "expanded_url": "http://concordia.ca",
+              "display_url": "concordia.ca",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 68001,
+      "friends_count": 1191,
+      "listed_count": 815,
+      "created_at": "Tue Dec 16 21:32:33 +0000 2008",
+      "favourites_count": 4757,
+      "utc_offset": -14400,
+      "time_zone": "Eastern Time (US & Canada)",
+      "geo_enabled": true,
+      "verified": false,
+      "statuses_count": 15264,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "FFFFFF",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/18173399/1513694237",
+      "profile_link_color": "1F98C7",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DAECF4",
+      "profile_text_color": "663B12",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false,
+      "translator_type": "none"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 3,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Mon Mar 12 15:36:39 +0000 2018",
+    "id": 973221236607213600,
+    "id_str": "973221236607213569",
+    "full_text": "Want to make #Montreal more #accessible? Have your say March 16&amp;17 with #EnableMTL: https://t.co/nDBBJ52g4v https://t.co/l911xQGJ9n",
+    "truncated": false,
+    "display_text_range": [
+      0,
+      111
+    ],
+    "entities": {
+      "hashtags": [
+        {
+          "text": "Montreal",
+          "indices": [
+            13,
+            22
+          ]
+        },
+        {
+          "text": "accessible",
+          "indices": [
+            28,
+            39
+          ]
+        },
+        {
+          "text": "EnableMTL",
+          "indices": [
+            76,
+            86
+          ]
+        }
+      ],
+      "symbols": [],
+      "user_mentions": [],
+      "urls": [
+        {
+          "url": "https://t.co/nDBBJ52g4v",
+          "expanded_url": "http://bit.ly/2FnxlT6",
+          "display_url": "bit.ly/2FnxlT6",
+          "indices": [
+            88,
+            111
+          ]
+        }
+      ],
+      "media": [
+        {
+          "id": 973221180747509800,
+          "id_str": "973221180747509760",
+          "indices": [
+            112,
+            135
+          ],
+          "media_url": "http://pbs.twimg.com/media/DYGTge5XcAAfYqo.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/DYGTge5XcAAfYqo.jpg",
+          "url": "https://t.co/l911xQGJ9n",
+          "display_url": "pic.twitter.com/l911xQGJ9n",
+          "expanded_url": "https://twitter.com/Concordia/status/973221236607213569/photo/1",
+          "type": "photo",
+          "sizes": {
+            "large": {
+              "w": 620,
+              "h": 440,
+              "resize": "fit"
+            },
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "medium": {
+              "w": 620,
+              "h": 440,
+              "resize": "fit"
+            },
+            "small": {
+              "w": 620,
+              "h": 440,
+              "resize": "fit"
+            }
+          }
+        }
+      ]
+    },
+    "extended_entities": {
+      "media": [
+        {
+          "id": 973221180747509800,
+          "id_str": "973221180747509760",
+          "indices": [
+            112,
+            135
+          ],
+          "media_url": "http://pbs.twimg.com/media/DYGTge5XcAAfYqo.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/DYGTge5XcAAfYqo.jpg",
+          "url": "https://t.co/l911xQGJ9n",
+          "display_url": "pic.twitter.com/l911xQGJ9n",
+          "expanded_url": "https://twitter.com/Concordia/status/973221236607213569/photo/1",
+          "type": "photo",
+          "sizes": {
+            "large": {
+              "w": 620,
+              "h": 440,
+              "resize": "fit"
+            },
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "medium": {
+              "w": 620,
+              "h": 440,
+              "resize": "fit"
+            },
+            "small": {
+              "w": 620,
+              "h": 440,
+              "resize": "fit"
+            }
+          }
+        }
+      ]
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 18173399,
+      "id_str": "18173399",
+      "name": "Concordia University",
+      "screen_name": "Concordia",
+      "location": "Montreal",
+      "description": "Located in the vibrant and cosmopolitan city of #Montreal, #Concordia University is one of Canada’s most innovative and diverse, comprehensive universities.",
+      "url": "http://t.co/caOVwmyW9A",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/caOVwmyW9A",
+              "expanded_url": "http://concordia.ca",
+              "display_url": "concordia.ca",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 68001,
+      "friends_count": 1191,
+      "listed_count": 815,
+      "created_at": "Tue Dec 16 21:32:33 +0000 2008",
+      "favourites_count": 4757,
+      "utc_offset": -14400,
+      "time_zone": "Eastern Time (US & Canada)",
+      "geo_enabled": true,
+      "verified": false,
+      "statuses_count": 15264,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "FFFFFF",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/18173399/1513694237",
+      "profile_link_color": "1F98C7",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DAECF4",
+      "profile_text_color": "663B12",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false,
+      "translator_type": "none"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 5,
+    "favorite_count": 4,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Mon Mar 12 14:15:55 +0000 2018",
+    "id": 973200920933818400,
+    "id_str": "973200920933818368",
+    "full_text": "Do you know someone extraordinary? Now's your chance to nominate #Concordia's next #CUhondoc! https://t.co/yiNc0YWwX6 Deadline is April 9. https://t.co/9zSUZruvCB",
+    "truncated": false,
+    "display_text_range": [
+      0,
+      138
+    ],
+    "entities": {
+      "hashtags": [
+        {
+          "text": "Concordia",
+          "indices": [
+            65,
+            75
+          ]
+        },
+        {
+          "text": "CUhondoc",
+          "indices": [
+            83,
+            92
+          ]
+        }
+      ],
+      "symbols": [],
+      "user_mentions": [],
+      "urls": [
+        {
+          "url": "https://t.co/yiNc0YWwX6",
+          "expanded_url": "http://bit.ly/2D4dbYp",
+          "display_url": "bit.ly/2D4dbYp",
+          "indices": [
+            94,
+            117
+          ]
+        }
+      ],
+      "media": [
+        {
+          "id": 973200858979749900,
+          "id_str": "973200858979749889",
+          "indices": [
+            139,
+            162
+          ],
+          "media_url": "http://pbs.twimg.com/tweet_video_thumb/DYGBBmaX0AEYl-B.jpg",
+          "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/DYGBBmaX0AEYl-B.jpg",
+          "url": "https://t.co/9zSUZruvCB",
+          "display_url": "pic.twitter.com/9zSUZruvCB",
+          "expanded_url": "https://twitter.com/Concordia/status/973200920933818368/photo/1",
+          "type": "photo",
+          "sizes": {
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "small": {
+              "w": 430,
+              "h": 242,
+              "resize": "fit"
+            },
+            "medium": {
+              "w": 430,
+              "h": 242,
+              "resize": "fit"
+            },
+            "large": {
+              "w": 430,
+              "h": 242,
+              "resize": "fit"
+            }
+          }
+        }
+      ]
+    },
+    "extended_entities": {
+      "media": [
+        {
+          "id": 973200858979749900,
+          "id_str": "973200858979749889",
+          "indices": [
+            139,
+            162
+          ],
+          "media_url": "http://pbs.twimg.com/tweet_video_thumb/DYGBBmaX0AEYl-B.jpg",
+          "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/DYGBBmaX0AEYl-B.jpg",
+          "url": "https://t.co/9zSUZruvCB",
+          "display_url": "pic.twitter.com/9zSUZruvCB",
+          "expanded_url": "https://twitter.com/Concordia/status/973200920933818368/photo/1",
+          "type": "animated_gif",
+          "sizes": {
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "small": {
+              "w": 430,
+              "h": 242,
+              "resize": "fit"
+            },
+            "medium": {
+              "w": 430,
+              "h": 242,
+              "resize": "fit"
+            },
+            "large": {
+              "w": 430,
+              "h": 242,
+              "resize": "fit"
+            }
+          },
+          "video_info": {
+            "aspect_ratio": [
+              215,
+              121
+            ],
+            "variants": [
+              {
+                "bitrate": 0,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/tweet_video/DYGBBmaX0AEYl-B.mp4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 18173399,
+      "id_str": "18173399",
+      "name": "Concordia University",
+      "screen_name": "Concordia",
+      "location": "Montreal",
+      "description": "Located in the vibrant and cosmopolitan city of #Montreal, #Concordia University is one of Canada’s most innovative and diverse, comprehensive universities.",
+      "url": "http://t.co/caOVwmyW9A",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/caOVwmyW9A",
+              "expanded_url": "http://concordia.ca",
+              "display_url": "concordia.ca",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 68001,
+      "friends_count": 1191,
+      "listed_count": 815,
+      "created_at": "Tue Dec 16 21:32:33 +0000 2008",
+      "favourites_count": 4757,
+      "utc_offset": -14400,
+      "time_zone": "Eastern Time (US & Canada)",
+      "geo_enabled": true,
+      "verified": false,
+      "statuses_count": 15264,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "FFFFFF",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/18173399/1513694237",
+      "profile_link_color": "1F98C7",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DAECF4",
+      "profile_text_color": "663B12",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false,
+      "translator_type": "none"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 1,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Mon Mar 12 13:18:54 +0000 2018",
+    "id": 973186573356470300,
+    "id_str": "973186573356470274",
+    "full_text": "@arianmorina Hello! Thanks for considering Concordia. Please follow @CUFutureStudent where you can ask all of your admission related questions and Concordia staff will be happy to answer you.",
+    "truncated": false,
+    "display_text_range": [
+      13,
+      191
+    ],
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "arianmorina",
+          "name": "Arian",
+          "id": 23191629,
+          "id_str": "23191629",
+          "indices": [
+            0,
+            12
+          ]
+        },
+        {
+          "screen_name": "CUFutureStudent",
+          "name": "Concordia Admissions",
+          "id": 216376676,
+          "id_str": "216376676",
+          "indices": [
+            68,
+            84
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": 973105532650311700,
+    "in_reply_to_status_id_str": "973105532650311680",
+    "in_reply_to_user_id": 23191629,
+    "in_reply_to_user_id_str": "23191629",
+    "in_reply_to_screen_name": "arianmorina",
+    "user": {
+      "id": 18173399,
+      "id_str": "18173399",
+      "name": "Concordia University",
+      "screen_name": "Concordia",
+      "location": "Montreal",
+      "description": "Located in the vibrant and cosmopolitan city of #Montreal, #Concordia University is one of Canada’s most innovative and diverse, comprehensive universities.",
+      "url": "http://t.co/caOVwmyW9A",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/caOVwmyW9A",
+              "expanded_url": "http://concordia.ca",
+              "display_url": "concordia.ca",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 68001,
+      "friends_count": 1191,
+      "listed_count": 815,
+      "created_at": "Tue Dec 16 21:32:33 +0000 2008",
+      "favourites_count": 4757,
+      "utc_offset": -14400,
+      "time_zone": "Eastern Time (US & Canada)",
+      "geo_enabled": true,
+      "verified": false,
+      "statuses_count": 15264,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "FFFFFF",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/18173399/1513694237",
+      "profile_link_color": "1F98C7",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DAECF4",
+      "profile_text_color": "663B12",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false,
+      "translator_type": "none"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 1,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Fri Mar 09 22:07:52 +0000 2018",
+    "id": 972232529607524400,
+    "id_str": "972232529607524353",
+    "full_text": "It's time to #SpringForward! Don't forget to set your clock on Sunday, March 11. #DaylightSavingTime https://t.co/1YTrV1Ne78",
+    "truncated": false,
+    "display_text_range": [
+      0,
+      100
+    ],
+    "entities": {
+      "hashtags": [
+        {
+          "text": "SpringForward",
+          "indices": [
+            13,
+            27
+          ]
+        },
+        {
+          "text": "DaylightSavingTime",
+          "indices": [
+            81,
+            100
+          ]
+        }
+      ],
+      "symbols": [],
+      "user_mentions": [],
+      "urls": [],
+      "media": [
+        {
+          "id": 972232420299890700,
+          "id_str": "972232420299890690",
+          "indices": [
+            101,
+            124
+          ],
+          "media_url": "http://pbs.twimg.com/tweet_video_thumb/DX4QPDMX4AIi5IM.jpg",
+          "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/DX4QPDMX4AIi5IM.jpg",
+          "url": "https://t.co/1YTrV1Ne78",
+          "display_url": "pic.twitter.com/1YTrV1Ne78",
+          "expanded_url": "https://twitter.com/Concordia/status/972232529607524353/photo/1",
+          "type": "photo",
+          "sizes": {
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "small": {
+              "w": 234,
+              "h": 176,
+              "resize": "fit"
+            },
+            "medium": {
+              "w": 234,
+              "h": 176,
+              "resize": "fit"
+            },
+            "large": {
+              "w": 234,
+              "h": 176,
+              "resize": "fit"
+            }
+          }
+        }
+      ]
+    },
+    "extended_entities": {
+      "media": [
+        {
+          "id": 972232420299890700,
+          "id_str": "972232420299890690",
+          "indices": [
+            101,
+            124
+          ],
+          "media_url": "http://pbs.twimg.com/tweet_video_thumb/DX4QPDMX4AIi5IM.jpg",
+          "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/DX4QPDMX4AIi5IM.jpg",
+          "url": "https://t.co/1YTrV1Ne78",
+          "display_url": "pic.twitter.com/1YTrV1Ne78",
+          "expanded_url": "https://twitter.com/Concordia/status/972232529607524353/photo/1",
+          "type": "animated_gif",
+          "sizes": {
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "small": {
+              "w": 234,
+              "h": 176,
+              "resize": "fit"
+            },
+            "medium": {
+              "w": 234,
+              "h": 176,
+              "resize": "fit"
+            },
+            "large": {
+              "w": 234,
+              "h": 176,
+              "resize": "fit"
+            }
+          },
+          "video_info": {
+            "aspect_ratio": [
+              117,
+              88
+            ],
+            "variants": [
+              {
+                "bitrate": 0,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/tweet_video/DX4QPDMX4AIi5IM.mp4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 18173399,
+      "id_str": "18173399",
+      "name": "Concordia University",
+      "screen_name": "Concordia",
+      "location": "Montreal",
+      "description": "Located in the vibrant and cosmopolitan city of #Montreal, #Concordia University is one of Canada’s most innovative and diverse, comprehensive universities.",
+      "url": "http://t.co/caOVwmyW9A",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/caOVwmyW9A",
+              "expanded_url": "http://concordia.ca",
+              "display_url": "concordia.ca",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 68001,
+      "friends_count": 1191,
+      "listed_count": 815,
+      "created_at": "Tue Dec 16 21:32:33 +0000 2008",
+      "favourites_count": 4757,
+      "utc_offset": -14400,
+      "time_zone": "Eastern Time (US & Canada)",
+      "geo_enabled": true,
+      "verified": false,
+      "statuses_count": 15264,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "FFFFFF",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/18173399/1513694237",
+      "profile_link_color": "1F98C7",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DAECF4",
+      "profile_text_color": "663B12",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false,
+      "translator_type": "none"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 2,
+    "favorite_count": 3,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Fri Mar 09 21:03:11 +0000 2018",
+    "id": 972216248066035700,
+    "id_str": "972216248066035713",
+    "full_text": "RT @CentrePerform: Next #PERFORMCentre Colloquium, Mar 21: Nicola Palmarini, Global Manager of #AI for Healthy Aging at @IBMResearch is @Co…",
+    "truncated": false,
+    "display_text_range": [
+      0,
+      140
+    ],
+    "entities": {
+      "hashtags": [
+        {
+          "text": "PERFORMCentre",
+          "indices": [
+            24,
+            38
+          ]
+        },
+        {
+          "text": "AI",
+          "indices": [
+            95,
+            98
+          ]
+        }
+      ],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "CentrePerform",
+          "name": "PERFORM Centre",
+          "id": 3293206197,
+          "id_str": "3293206197",
+          "indices": [
+            3,
+            17
+          ]
+        },
+        {
+          "screen_name": "IBMResearch",
+          "name": "IBM Research",
+          "id": 16319797,
+          "id_str": "16319797",
+          "indices": [
+            120,
+            132
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 18173399,
+      "id_str": "18173399",
+      "name": "Concordia University",
+      "screen_name": "Concordia",
+      "location": "Montreal",
+      "description": "Located in the vibrant and cosmopolitan city of #Montreal, #Concordia University is one of Canada’s most innovative and diverse, comprehensive universities.",
+      "url": "http://t.co/caOVwmyW9A",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/caOVwmyW9A",
+              "expanded_url": "http://concordia.ca",
+              "display_url": "concordia.ca",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 68001,
+      "friends_count": 1191,
+      "listed_count": 815,
+      "created_at": "Tue Dec 16 21:32:33 +0000 2008",
+      "favourites_count": 4757,
+      "utc_offset": -14400,
+      "time_zone": "Eastern Time (US & Canada)",
+      "geo_enabled": true,
+      "verified": false,
+      "statuses_count": 15264,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "FFFFFF",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/475786448730222593/tajoXnd2.jpeg",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/887741098424193024/EAz1Brtj_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/18173399/1513694237",
+      "profile_link_color": "1F98C7",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DAECF4",
+      "profile_text_color": "663B12",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false,
+      "translator_type": "none"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Fri Mar 09 20:48:48 +0000 2018",
+      "id": 972212631191814100,
+      "id_str": "972212631191814144",
+      "full_text": "Next #PERFORMCentre Colloquium, Mar 21: Nicola Palmarini, Global Manager of #AI for Healthy Aging at @IBMResearch is @Concordia on using AI to empowering older adults to live independently.\nhttps://t.co/2OWhJQqQcU\n#concordiauniversity #aging @nipalm",
+      "truncated": false,
+      "display_text_range": [
+        0,
+        249
+      ],
+      "entities": {
+        "hashtags": [
+          {
+            "text": "PERFORMCentre",
+            "indices": [
+              5,
+              19
+            ]
+          },
+          {
+            "text": "AI",
+            "indices": [
+              76,
+              79
+            ]
+          },
+          {
+            "text": "concordiauniversity",
+            "indices": [
+              214,
+              234
+            ]
+          },
+          {
+            "text": "aging",
+            "indices": [
+              235,
+              241
+            ]
+          }
+        ],
+        "symbols": [],
+        "user_mentions": [
+          {
+            "screen_name": "IBMResearch",
+            "name": "IBM Research",
+            "id": 16319797,
+            "id_str": "16319797",
+            "indices": [
+              101,
+              113
+            ]
+          },
+          {
+            "screen_name": "Concordia",
+            "name": "Concordia University",
+            "id": 18173399,
+            "id_str": "18173399",
+            "indices": [
+              117,
+              127
+            ]
+          },
+          {
+            "screen_name": "nipalm",
+            "name": "nicola palmarini",
+            "id": 14157696,
+            "id_str": "14157696",
+            "indices": [
+              242,
+              249
+            ]
+          }
+        ],
+        "urls": [
+          {
+            "url": "https://t.co/2OWhJQqQcU",
+            "expanded_url": "http://bit.ly/2Fq8DBu",
+            "display_url": "bit.ly/2Fq8DBu",
+            "indices": [
+              190,
+              213
+            ]
+          }
+        ]
+      },
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 3293206197,
+        "id_str": "3293206197",
+        "name": "PERFORM Centre",
+        "screen_name": "CentrePerform",
+        "location": "Montréal, Québec",
+        "description": "PERFORM is a research centre at Concordia  University that brings research, education, and the community together  under one roof to promote healthy living.",
+        "url": "https://t.co/PSB7Sl7V4O",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/PSB7Sl7V4O",
+                "expanded_url": "http://concordia.ca/perform",
+                "display_url": "concordia.ca/perform",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 403,
+        "friends_count": 479,
+        "listed_count": 22,
+        "created_at": "Thu May 21 19:56:31 +0000 2015",
+        "favourites_count": 245,
+        "utc_offset": -14400,
+        "time_zone": "Eastern Time (US & Canada)",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 550,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "DBE9ED",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme17/bg.gif",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme17/bg.gif",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/935903003307053056/QfZSHVly_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/935903003307053056/QfZSHVly_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/3293206197/1513614072",
+        "profile_link_color": "CC3366",
+        "profile_sidebar_border_color": "DBE9ED",
+        "profile_sidebar_fill_color": "E6F6F9",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 3,
+      "favorite_count": 1,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    "is_quote_status": false,
+    "retweet_count": 3,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "en"
+  }
+]
