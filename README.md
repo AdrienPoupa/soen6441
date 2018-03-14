@@ -34,16 +34,8 @@ There are several demonstration files available in this template.
 
 - HomeController.java:
 
-  Shows how to handle simple HTTP requests.
+  Index page.
 
-- AsyncController.java:
-
-  Shows how to do asynchronous programming when handling a request.
-
-- CountController.java:
-
-  Shows how to inject a component into a controller and use the component when
-  handling requests.
   
 ## Models
 
@@ -60,29 +52,13 @@ There are several models used in this project. They are simple POJO (Plain Old J
 - User.java:
 
   Handles the user included in both Search and Profile.
-
-## Components
-
-- Module.java:
-
-  Shows how to use Guice to bind all the components needed by your application.
-
-- Counter.java:
-
-  An example of a component that contains state, in this case a simple counter.
-
-- ApplicationTimer.java:
-
-  An example of a component that starts when the application starts and stops
-  when the application stops.
-
-## Filters
-
-- ExampleFilter.java
-
-  A simple filter that adds a header to every response.
   
-## Methods
+- Keyword.java:
+
+  Shows the form to enter the keyword.
+  
+## TwitterController Methods
+
 - searchForm:
 
   searchForm method gets the previous tweets from the cache.If cache is empty an 
@@ -94,7 +70,7 @@ There are several models used in this project. They are simple POJO (Plain Old J
   
 - getProfileJson:
 
- This method displays the profile file.
+  This method displays the profile file.
  
 - searchPost:
 
@@ -109,6 +85,7 @@ There are several models used in this project. They are simple POJO (Plain Old J
   login into twitter application user interface using oAuth.
   
 ## Tests
+
 - TestIndex: For HomeController
 
 - TestgetKeyword: For Keyword
