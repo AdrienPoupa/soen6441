@@ -16,6 +16,8 @@ public class Status {
 
     private User user;
 
+    private int id;
+
     /**
      * Get the user
      * @return User
@@ -41,10 +43,26 @@ public class Status {
     }
 
     /**
-     * Set the tweet contennt
+     * Set the tweet content
      * @param fullText text
      */
     public void setFullText(String fullText) {
         this.fullText = fullText;
+    }
+
+    /**
+     * Get the tweet ID
+     * @return
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Set the tweet ID
+     * @param id ID
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 }

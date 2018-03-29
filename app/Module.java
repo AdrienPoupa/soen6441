@@ -1,5 +1,8 @@
+import actors.*;
 import com.google.inject.AbstractModule;
-import java.time.Clock;
+import play.libs.akka.AkkaGuiceSupport;
+import services.TwitterApi;
+import services.TwitterImpl;
 
 /**
  * This class is a Guice module that tells Guice how to bind several
@@ -11,12 +14,15 @@ import java.time.Clock;
  * adding `play.modules.enabled` settings to the `application.conf`
  * configuration file.
  */
-public class Module extends AbstractModule {
+@SuppressWarnings("unused")
+public class Module extends AbstractModule implements AkkaGuiceSupport {
 
     @Override
     public void configure() {
-        // Use the system clock as the default implementation of Clock
-        bind(Clock.class).toInstance(Clock.systemDefaultZone());
+        bindActor(SearchResultsActor.class, "searchResultsActor");
+        bindActor(UserParentActor.class, "userParentActor");
+        bindActorFactory(UserActor.class, UserActor.Factory.class);
+        bind(TwitterApi.class).to(TwitterImpl.class);
     }
 
 }

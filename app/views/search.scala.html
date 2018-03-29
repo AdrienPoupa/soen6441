@@ -1,5 +1,5 @@
 @import java.util
-@(myForm: Form[Keyword], statuses: util.List[Status])
+@(myForm: Form[Keyword], searchResults: util.List[Status])
 
 @master("Search on Twitter") {
     @if(flash.containsKey("error")) {
@@ -21,12 +21,12 @@
 
 
     <ul>
-    @if(statuses.size() != 0) {
+    @if(searchResults.size() != 0) {
         Here are your results. You can click on each user names to see their latest tweets.
         <br /><br />
     }
 
-    @for(status <- statuses) {
+    @for(status <- searchResults) {
         <li><a href="@routes.TwitterController.profile(status.getUser.getScreenName)">@status.getUser.getScreenName</a> wrote: @status.getFullText</li>
     }
     </ul>

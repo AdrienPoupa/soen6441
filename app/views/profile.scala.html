@@ -1,6 +1,6 @@
 @import java.util
 
-@(statuses: util.List[Status], user: User)
+@(searchResults: util.List[Status], user: User)
 
 @master(user.getScreenName+"'s Twitter Profile") {
     @if(flash.containsKey("error")) {
@@ -17,7 +17,7 @@
     </ul>
 
     <ul>
-    @for(status <- statuses) {
+    @for(status <- searchResults) {
         <li><a href="@routes.TwitterController.profile(status.getUser.getScreenName)">@status.getUser.getScreenName</a> wrote: @status.getFullText</li>
     }
     </ul>

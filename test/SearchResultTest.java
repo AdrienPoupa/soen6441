@@ -31,7 +31,7 @@ public class SearchResultTest{
 	}
 
     /**
-     * Setter test for Statuses
+     * Setter test for SearchResults
      */
 	@Test
 	public void testSetStatuses() {
@@ -41,7 +41,7 @@ public class SearchResultTest{
 	}
 
     /**
-     * Getter test for Statuses
+     * Getter test for SearchResults
      */
 	@Test
 	public void testGetStatuses() {
