@@ -20,6 +20,9 @@ public class Status {
 
     private String id;
 
+    /**
+     * Default constructor
+     */
     public Status() {
     }
 
@@ -71,10 +74,19 @@ public class Status {
         this.id = id;
     }
 
+    /**
+     * Fake attribute used by frontend JS
+     * @return String status
+     */
     public String getType() {
         return "status";
     }
 
+    /**
+     * Override equals method, used for the Sets
+     * @param o object to compare
+     * @return boolean Statuses same or not
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -83,6 +95,10 @@ public class Status {
         return id.equals(status.getId());
     }
 
+    /**
+     * Override equals method, used for the Sets
+     * @return int hashCode
+     */
     @Override
     public int hashCode() {
         return Objects.hash(id);

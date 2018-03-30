@@ -5,6 +5,9 @@ import models.Status;
 
 import java.util.Set;
 
+/**
+ * Class containing all the Messages sent/received by the actors
+ */
 public final class Messages {
 
     public static final class WatchSearchResults {

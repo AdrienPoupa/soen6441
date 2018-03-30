@@ -12,6 +12,10 @@ import java.util.concurrent.TimeUnit;
 import static akka.pattern.PatternsCS.ask;
 import static akka.pattern.PatternsCS.pipe;
 
+/**
+ * UserParentActor for UserActor
+ * Inspired by https://github.com/playframework/play-java-websocket-example/blob/2.6.x/app/actors/UserParentActor.java
+ */
 public class UserParentActor extends AbstractActor implements InjectedActorSupport {
 
     private final Timeout timeout = new Timeout(2, TimeUnit.SECONDS);

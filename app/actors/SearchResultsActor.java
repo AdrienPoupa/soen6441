@@ -10,9 +10,7 @@ import scala.concurrent.duration.Duration;
 import services.TwitterService;
 
 import javax.inject.Inject;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -20,6 +18,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * This actor contains a set of searchResults internally that may be used by
  * all websocket clients.
+ * Inspired by https://github.com/playframework/play-java-websocket-example/blob/2.6.x/app/actors/StocksActor.java
  */
 public class SearchResultsActor extends AbstractActorWithTimers {
 

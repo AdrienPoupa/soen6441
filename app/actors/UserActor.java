@@ -18,7 +18,6 @@ import akka.stream.javadsl.*;
 import akka.util.Timeout;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.inject.assistedinject.Assisted;
-import models.SearchResult;
 import models.Status;
 import play.libs.Json;
 import play.libs.akka.InjectedActorSupport;
@@ -27,7 +26,6 @@ import scala.concurrent.duration.Duration;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CompletionStage;
@@ -39,6 +37,7 @@ import static akka.pattern.PatternsCS.ask;
  * The broker between the WebSocket and the SearchResultsActor(s).
  * The UserActor holds the connection and sends serialized
  * JSON data to the client.
+ * Inspired from https://github.com/playframework/play-java-websocket-example/blob/2.6.x/app/actors/UserActor.java
  */
 public class UserActor extends AbstractActor implements InjectedActorSupport {
 
@@ -48,7 +47,6 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
 
     private final Map<String, UniqueKillSwitch> searchResultsMap = new HashMap<>();
 
-    private final String id;
     private final ActorRef searchResultsActor;
     private final Materializer mat;
 
@@ -59,7 +57,6 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
     public UserActor(@Assisted String id,
                      @Named("searchResultsActor") ActorRef searchResultsActor,
                      Materializer mat) {
-        this.id = id;
         this.searchResultsActor = searchResultsActor;
         this.searchResultsActor.tell(new Messages.RegisterActor(), self());
         this.mat = mat;
@@ -84,7 +81,6 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
         // searchResults as JSON to the browser) and the actor as the sink (receiving any JSON messages
         // from the browse), using a coupled sink and source.
         this.websocketFlow = Flow.fromSinkAndSourceCoupled(jsonSink, hubSource)
-                //.log("actorWebsocketFlow", logger)
                 .watchTermination((n, stage) -> {
                     // Stop the searchResultsActor
                     stage.thenAccept(f -> context().stop(searchResultsActor));
