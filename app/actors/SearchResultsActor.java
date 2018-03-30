@@ -64,12 +64,20 @@ public class SearchResultsActor extends AbstractActorWithTimers {
                         try {
                             SearchResult searchResults = twitterService.getTweets(keyword).toCompletableFuture().get();
 
+                            // Copy the current state of statuses in a temporary variable
+                            Set<Status> oldStatuses = new HashSet<>(statuses);
+
                             // Add all the statuses to the list, now filtered to only add the new ones
-                            // TODO: filter to get only the new ones!
                             statuses.addAll(searchResults.getStatuses());
 
+                            // Copy the current state of statuses after addition in a temporary variable
+                            Set<Status> newStatuses = new HashSet<>(statuses);
+
+                            // Get the new statuses only by doing new - old = what we have to display
+                            newStatuses.removeAll(oldStatuses);
+
                             Messages.StatusesMessage statusesMessage =
-                                    new Messages.StatusesMessage(statuses, keyword);
+                                    new Messages.StatusesMessage(newStatuses, keyword);
 
                             userActor.tell(statusesMessage, self());
                         } catch (InterruptedException | ExecutionException e) {
