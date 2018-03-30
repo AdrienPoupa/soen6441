@@ -39,10 +39,6 @@ public class WebSocketController extends Controller {
         this.userParentActor = userParentActor;
     }
 
-    public Result testWs() {
-        return ok(views.html.testws.render(request()));
-    }
-
     /**
      * Generate the WebSocket
      * @return WebSocket

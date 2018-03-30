@@ -10,7 +10,7 @@
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/twitter-favicon.png")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/simple-sidebar.css")">
     </head>
-    <body>
+    <body data-ws-url="@routes.WebSocketController.ws.webSocketURL(request)">
         <div id="wrapper" class="toggled">
                 <!-- Sidebar -->
             <div id="sidebar-wrapper">
@@ -21,7 +21,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="@routes.TwitterController.searchForm()">Search</a>
+                        <a href="@routes.TwitterController.search()">Search</a>
                     </li>
                 </ul>
             </div>
@@ -36,10 +36,11 @@
             </div>
                 <!-- /#page-content-wrapper -->
         </div>
-            <!-- /#wrapper -->
-            <!-- Bootstrap core JavaScript -->
+        <!-- /#wrapper -->
+        <!-- Bootstrap core JavaScript -->
         <script src="@routes.Assets.versioned("javascripts/jquery.min.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/bootstrap.bundle.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/menu.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/index.js")"></script>
     </body>
 </html>

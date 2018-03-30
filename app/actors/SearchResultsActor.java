@@ -32,15 +32,25 @@ public class SearchResultsActor extends AbstractActorWithTimers {
 
     private Set<Status> statuses;
 
+    /**
+     * Dummy inner class used for the timer
+     */
     private static final class Tick {
     }
 
+    /**
+     * Start the time, create a Tick every 5 seconds
+     */
     @Override
     public void preStart() {
         getTimers().startPeriodicTimer("Timer", new Tick(),
                 Duration.create(5, TimeUnit.SECONDS));
     }
 
+    /**
+     * Constructor
+     * @param twitterService twitterService used to retrieve the tweets
+     */
     @Inject
     public SearchResultsActor(TwitterService twitterService) {
         this.twitterService = twitterService;
@@ -49,6 +59,10 @@ public class SearchResultsActor extends AbstractActorWithTimers {
         this.statuses = new HashSet<>();
     }
 
+    /**
+     * Handle the incoming messages
+     * @return Receive receive
+     */
     @Override
     public Receive createReceive() {
         return receiveBuilder()
@@ -108,6 +122,7 @@ public class SearchResultsActor extends AbstractActorWithTimers {
                             e.printStackTrace();
                         }
                     }
-                }).build();
+                })
+                .build();
     }
 }

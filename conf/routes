@@ -9,9 +9,8 @@ GET     /                           controllers.TwitterController.index
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 # Twitter API
-GET     /search             controllers.TwitterController.searchForm()
-POST    /search             controllers.TwitterController.searchPost()
+GET     /search             controllers.TwitterController.search()
 GET     /profile/:username  controllers.TwitterController.profile(username: String)
 
+# WebSocket
 GET     /ws                         controllers.WebSocketController.ws
-GET     /testWs                        controllers.WebSocketController.testWs

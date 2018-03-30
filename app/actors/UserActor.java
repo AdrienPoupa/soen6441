@@ -48,17 +48,23 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
     private final Map<String, UniqueKillSwitch> searchResultsMap = new HashMap<>();
 
     private final ActorRef searchResultsActor;
+
     private final Materializer mat;
 
     private final Sink<JsonNode, NotUsed> hubSink;
     private final Flow<JsonNode, JsonNode, NotUsed> websocketFlow;
+
+    @Override
+    public void preStart() {
+        context().actorSelection("/user/searchResultsActor/")
+                 .tell(new Messages.RegisterActor(), self());
+    }
 
     @Inject
     public UserActor(@Assisted String id,
                      @Named("searchResultsActor") ActorRef searchResultsActor,
                      Materializer mat) {
         this.searchResultsActor = searchResultsActor;
-        this.searchResultsActor.tell(new Messages.RegisterActor(), self());
         this.mat = mat;
 
         Pair<Sink<JsonNode, NotUsed>, Source<JsonNode, NotUsed>> sinkSourcePair =

@@ -1,6 +1,5 @@
 import akka.util.ByteString;
 import controllers.TwitterController;
-import models.Keyword;
 import models.Status;
 import models.User;
 import org.junit.*;
@@ -20,7 +19,6 @@ import play.twirl.api.Content;
 import views.html.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -32,7 +30,6 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static play.mvc.Results.ok;
-import static play.test.Helpers.*;
 
 /**
  * TwitterController test class
@@ -98,43 +95,6 @@ public class TwitterControllerTest extends WithBrowser {
     }
 
     /**
-     * We will go on the authentication page to check that the OAuth form is displayed
-     */
-    @Test
-    public void testAuth() {
-        // We have to run on port 9000 because of the callback URL
-        running(testServer(9000), HTMLUNIT, browser -> {
-            browser.goTo("/auth");
-            browser.await().untilPage().isLoaded();
-            // SOEN6441 Concordia is the name of our app
-            // If it's showing, we have the Authorize an application page showing up!
-            assertThat(browser.pageSource(), containsString("SOEN6441 Concordia"));
-        });
-    }
-
-    /**
-     * After connection, make sure that the form is showing
-     */
-    @Test
-    public void testSearchForm() {
-        // We have to run on port 9000 because of the callback URL
-        running(testServer(9000), HTMLUNIT, browser -> {
-            browser.goTo("/auth");
-            browser.await().untilPage().isLoaded();
-
-            // Use a dumb Twitter account to connect
-            browser.$("#username_or_email").fill().with("soen6441");
-            browser.$("#password").fill().with("S0en6441");
-            browser.$("#allow").click();
-            browser.await().untilPage().isLoaded();
-
-            // We are logged in. Now the page we have should be either the app, or Twitter requesting additional information
-            // but this still means that we logged in correctly
-            assertTrue(browser.pageSource().contains("TweetAnalytics") || browser.pageSource().contains("Verify your identity"));
-        });
-    }
-
-    /**
      * Given a static json file (we do not query Twitter API), make sure that we parse the statuses
      * @throws InterruptedException exception
      * @throws ExecutionException exception
@@ -168,7 +128,7 @@ public class TwitterControllerTest extends WithBrowser {
      */
     @Test
     public void testSearchPost() {
-        Content html = search.render(formFactory.form(Keyword.class), new ArrayList<>());
+        Content html = search.render();
         assertThat("text/html", is(html.contentType()));
         assertThat(html.body(), containsString("Search on Twitter"));
     }
@@ -235,23 +195,5 @@ public class TwitterControllerTest extends WithBrowser {
         assertThat(user.getDescription(), is("Located in the vibrant and cosmopolitan city of #Montreal, #Concordia University is one of Canada’s most innovative and diverse, comprehensive universities."));
         assertThat(user.getFollowers(), is("68001"));
         assertThat(user.getFriends(), is("1191"));
-    }
-
-    /**
-     * Getter test for base URL
-     */
-    @Test
-    public void testGetBaseUrl() {
-        client.setBaseUrl("test");
-        assertEquals("test", client.getBaseUrl());
-    }
-
-    /**
-     * Setter test for base URL
-     */
-    @Test
-    public void testSetBaseUrl() {
-        client.setBaseUrl("test");
-        assertEquals("test", client.getBaseUrl());
     }
 }
