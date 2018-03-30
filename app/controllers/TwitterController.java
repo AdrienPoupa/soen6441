@@ -22,7 +22,6 @@ import views.html.*;
 /**
  * TwitterController
  * Implements the TweetAnalytics app using Twitter's API
- * Inspired from: https://www.playframework.com/documentation/2.6.x/JavaOAuth
  * @author Adrien Poupa
  */
 public class TwitterController extends Controller {

@@ -31,7 +31,6 @@ public class UserParentActor extends AbstractActor implements InjectedActorSuppo
 
     @Inject
     public UserParentActor(UserActor.Factory childFactory) {
-        System.out.println("in UserParentActor constructor");
         this.childFactory = childFactory;
         this.defaultSearchResults = new HashSet<>();
     }
@@ -40,12 +39,8 @@ public class UserParentActor extends AbstractActor implements InjectedActorSuppo
     public Receive createReceive() {
         return receiveBuilder()
                 .match(UserParentActor.Create.class, create -> {
-                    System.out.println("in UserParentActor createReceive");
-                    System.out.println("create.id="+create.id);
                     ActorRef child = injectedChild(() -> childFactory.create(create.id), "userActor-" + create.id);
-                    System.out.println("child="+child);
                     CompletionStage<Object> future = ask(child, new Messages.WatchSearchResults(defaultSearchResults), timeout);
-                    System.out.println("ask child");
                     pipe(future, context().dispatcher()).to(sender());
                 }).build();
     }

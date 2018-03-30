@@ -18,6 +18,20 @@ public class Status {
 
     private int id;
 
+    public boolean isDisplayed() {
+        return displayed;
+    }
+
+    public void setDisplayed(boolean displayed) {
+        this.displayed = displayed;
+    }
+
+    private boolean displayed;
+
+    public Status() {
+        displayed = false;
+    }
+
     /**
      * Get the user
      * @return User

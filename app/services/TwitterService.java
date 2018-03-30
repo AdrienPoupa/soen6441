@@ -14,7 +14,7 @@ import java.util.concurrent.CompletionStage;
 public class TwitterService {
 
     @Inject
-    TwitterApi twImpl;
+    private TwitterApi twImpl;
 
     public CompletionStage<SearchResult> getTweets(final String keywords) {
             return twImpl.search(keywords)

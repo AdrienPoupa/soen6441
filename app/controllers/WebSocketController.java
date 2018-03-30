@@ -48,16 +48,12 @@ public class WebSocketController extends Controller {
      * @return WebSocket
      */
     public WebSocket ws() {
-        System.out.println("in WS function1");
         return WebSocket.Json.acceptOrResult(request -> {
-            System.out.println("in WS function2");
             if (sameOriginCheck(request)) {
-                System.out.println("in WS function sameOriginCheck");
                 final CompletionStage<Flow<JsonNode, JsonNode, NotUsed>> future = wsFutureFlow(request);
                 final CompletionStage<Either<Result, Flow<JsonNode, JsonNode, ?>>> stage = future.thenApply(Either::Right);
                 return stage.exceptionally(this::logException);
             } else {
-                System.out.println("in WS function forbiddenResult");
                 return forbiddenResult();
             }
         });
@@ -71,7 +67,6 @@ public class WebSocketController extends Controller {
     @SuppressWarnings("unchecked")
     private CompletionStage<Flow<JsonNode, JsonNode, NotUsed>> wsFutureFlow(Http.RequestHeader request) {
         long id = request.asScala().id();
-        System.out.println("wsFutureFlow ID:"+id);
         UserParentActor.Create create = new UserParentActor.Create(Long.toString(id));
 
         return ask(userParentActor, create, t).thenApply((Object flow) -> {

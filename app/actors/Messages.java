@@ -13,7 +13,6 @@ public final class Messages {
 
         public WatchSearchResults(Set<String> queries) {
             this.queries = requireNonNull(queries);
-            System.out.println("creating WatchSearchResults:"+queries.toString());
         }
 
         @Override
@@ -41,6 +40,16 @@ public final class Messages {
         public SearchResults(Set<SearchResult> searchResults) {
             this.searchResults = requireNonNull(searchResults);
         }
+    }
+
+    public static class SearchResultsMessage {
+        public final SearchResult searchResult;
+        public SearchResultsMessage(SearchResult searchResult) {
+            this.searchResult = searchResult;
+        }
+    }
+
+    public static class RegisterActor {
     }
 }
 
