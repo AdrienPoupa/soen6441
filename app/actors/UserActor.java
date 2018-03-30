@@ -29,6 +29,7 @@ import javax.inject.Named;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.TimeUnit;
 
@@ -74,14 +75,16 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
         Sink<JsonNode, CompletionStage<Done>> jsonSink = Sink.foreach((JsonNode json) -> {
             // When the user types in a stock in the upper right corner, this is triggered,
             String query = json.findPath("query").asText();
-            addSearchResults(query);
+            if (query != null) {
+                addSearchResults(query);
+            }
         });
 
         // Put the source and sink together to make a flow of hub source as output (aggregating all
         // searchResults as JSON to the browser) and the actor as the sink (receiving any JSON messages
         // from the browse), using a coupled sink and source.
         this.websocketFlow = Flow.fromSinkAndSourceCoupled(jsonSink, hubSource)
-                .log("actorWebsocketFlow", logger)
+                //.log("actorWebsocketFlow", logger)
                 .watchTermination((n, stage) -> {
                     // Stop the searchResultsActor
                     stage.thenAccept(f -> context().stop(searchResultsActor));
@@ -101,18 +104,23 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
         return receiveBuilder()
                 .match(WatchSearchResults.class, watchSearchResults -> {
                     logger.info("Received message WatchSearchResults {}", watchSearchResults);
-                    addSearchResults(watchSearchResults.query);
-                    sender().tell(websocketFlow, self());
+                    if (watchSearchResults != null) {
+                        addSearchResults(watchSearchResults.query);
+                        sender().tell(websocketFlow, self());
+                    }
                 })
                 .match(UnwatchSearchResults.class, unwatchSearchResults -> {
                     logger.info("Received message UnwatchSearchResults {}", unwatchSearchResults);
-                    unwatchSearchResults(unwatchSearchResults.query);
+                    if (unwatchSearchResults != null) {
+                        unwatchSearchResults(unwatchSearchResults.query);
+                    }
                 })
-                .match(Messages.SearchResultsMessage.class, message -> {
-                    logger.info("Received message SearchResultsMessage {}", message);
-                    SearchResult searchResults = message.searchResult;
-                    addSearchResult(searchResults);
-                    sender().tell(websocketFlow, self());
+                .match(Messages.StatusesMessage.class, message -> {
+                    logger.info("Received message StatusesMessage {}", message);
+                    if (message != null) {
+                        addStatuses(message);
+                        sender().tell(websocketFlow, self());
+                    }
                 })
                 .build();
     }
@@ -122,29 +130,18 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
      */
     private void addSearchResults(String query) {
         // Ask the searchResultsActor for a stream containing these searchResults.
-        CompletionStage<SearchResults> future = ask(searchResultsActor, new WatchSearchResults(query), timeout)
+        ask(searchResultsActor, new WatchSearchResults(query), timeout)
                 .thenApply(SearchResults.class::cast);
-
-        // when we get the response back, we want to turn that into a flow by creating a single
-        // source and a single sink, so we merge all of the stock sources together into one by
-        // pointing them to the hubSink, so we can add them dynamically even after the flow
-        // has started.
-        /*future.thenAccept((SearchResults newSearchResults) -> {
-            newSearchResults.searchResults.forEach(searchResult -> {
-                if (!searchResultsMap.containsKey(searchResult.getQuery())) {
-                    addSearchResult(searchResult);
-                }
-            });
-        });*/
     }
 
     /**
      * Adds a single stock to the hub.
      */
-    private void addSearchResult(SearchResult searchResult) {
-        logger.info("Adding search result {}", searchResult);
+    private void addStatuses(Messages.StatusesMessage message) {
+        Set<Status> statuses = message.statuses;
+        String query = message.query;
 
-        List<Status> statuses = searchResult.getStatuses();
+        logger.info("Adding statuses {}", statuses);
 
         // Do not flood everything if we have no statuses
         if (statuses == null) {
@@ -160,7 +157,7 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
         final Flow<JsonNode, JsonNode, UniqueKillSwitch> killswitchFlow = Flow.of(JsonNode.class)
                 .joinMat(KillSwitches.singleBidi(), Keep.right());
         // Set up a complete runnable graph from the stock source to the hub's sink
-        String name = "searchresult-" + searchResult.getQuery();
+        String name = "searchresult-" + query;
         final RunnableGraph<UniqueKillSwitch> graph = getSource
                 .viaMat(killswitchFlow, Keep.right())
                 .to(hubSink)
@@ -170,7 +167,7 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
         UniqueKillSwitch killSwitch = graph.run(mat);
 
         // Pull out the kill switch so we can stop it when we want to unwatch a stock.
-        searchResultsMap.put(searchResult.getQuery(), killSwitch);
+        searchResultsMap.put(query, killSwitch);
     }
 
     private void unwatchSearchResults(String query) {

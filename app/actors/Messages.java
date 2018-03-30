@@ -1,6 +1,9 @@
 package actors;
 
 import models.SearchResult;
+import models.Status;
+
+import java.util.Set;
 
 public final class Messages {
 
@@ -38,10 +41,12 @@ public final class Messages {
         }
     }
 
-    public static class SearchResultsMessage {
-        public final SearchResult searchResult;
-        public SearchResultsMessage(SearchResult searchResult) {
-            this.searchResult = searchResult;
+    public static class StatusesMessage {
+        public final Set<Status> statuses;
+        public final String query;
+        public StatusesMessage(Set<Status> statuses, String query) {
+            this.statuses = statuses;
+            this.query = query;
         }
     }
 

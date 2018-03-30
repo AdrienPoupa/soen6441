@@ -7,23 +7,27 @@
         ws.onmessage = function(event) {
             var message;
             message = JSON.parse(event.data);
-            console.log(message);
+            //console.log(message);
             switch (message.type) {
                 case "stockhistory":
                     return populateStockHistory(message);
                 case "stockupdate":
                     return updateStockChart(message);
+                case "status":
+                    return console.log(message);
                 default:
                     return console.log(message);
             }
         };
         return $("#addsymbolform").submit(function(event) {
             event.preventDefault();
-            console.log("Sending WS with value "+$("#addsymboltext").val());
-            ws.send(JSON.stringify({
-                query: $("#addsymboltext").val()
-            }));
-            return $("#addsymboltext").val("");
+            if ($("#addsymboltext").val() != '') {
+                console.log("Sending WS with value "+$("#addsymboltext").val());
+                ws.send(JSON.stringify({
+                    query: $("#addsymboltext").val()
+                }));
+                return $("#addsymboltext").val("");
+            }
         });
     });
 

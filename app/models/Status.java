@@ -3,6 +3,8 @@ package models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Objects;
+
 /**
  * A Status returned from Twitter's Profile API
  * @author Adrien Poupa
@@ -16,7 +18,7 @@ public class Status {
 
     private User user;
 
-    private int id;
+    private String id;
 
     public Status() {
     }
@@ -57,7 +59,7 @@ public class Status {
      * Get the tweet ID
      * @return
      */
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -65,11 +67,24 @@ public class Status {
      * Set the tweet ID
      * @param id ID
      */
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
     public String getType() {
         return "status";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Status status = (Status) o;
+        return id.equals(status.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
