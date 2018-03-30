@@ -1,13 +1,8 @@
 package models;
 
-import scala.concurrent.duration.Duration;
-import scala.concurrent.duration.FiniteDuration;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.concurrent.TimeUnit;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * Map SearchResults to an object
@@ -20,8 +15,6 @@ public class SearchResult {
 
     protected List<Status> statuses;
 
-    private static final FiniteDuration duration = Duration.create(5, TimeUnit.SECONDS);
-
     public SearchResult() {
     }
 
@@ -30,14 +23,6 @@ public class SearchResult {
      * @return List<Status> statuses
      */
     public List<Status> getStatuses() {
-        return statuses;
-    }
-
-    /**
-     * Get statuses
-     * @return List<Status> statuses
-     */
-    public List<Status> getUpdatedStatuses() {
         return statuses;
     }
 
@@ -63,13 +48,5 @@ public class SearchResult {
      */
     public void setQuery(String query) {
         this.query = query;
-    }
-
-    public Optional<Status> getUnreadStatus() {
-        Optional<Status> unreadStatus = statuses.stream().filter(status -> !status.isDisplayed()).findFirst();
-
-        unreadStatus.ifPresent(status -> status.setDisplayed(true));
-
-        return unreadStatus;
     }
 }

@@ -6,8 +6,6 @@ import akka.util.Timeout;
 import play.libs.akka.InjectedActorSupport;
 
 import javax.inject.Inject;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.TimeUnit;
 
@@ -17,7 +15,7 @@ import static akka.pattern.PatternsCS.pipe;
 public class UserParentActor extends AbstractActor implements InjectedActorSupport {
 
     private final Timeout timeout = new Timeout(2, TimeUnit.SECONDS);
-    private final Set<String> defaultSearchResults;
+    private final String query;
 
     public static class Create {
         final String id;
@@ -32,7 +30,7 @@ public class UserParentActor extends AbstractActor implements InjectedActorSuppo
     @Inject
     public UserParentActor(UserActor.Factory childFactory) {
         this.childFactory = childFactory;
-        this.defaultSearchResults = new HashSet<>();
+        this.query = null;
     }
 
     @Override
@@ -40,7 +38,7 @@ public class UserParentActor extends AbstractActor implements InjectedActorSuppo
         return receiveBuilder()
                 .match(UserParentActor.Create.class, create -> {
                     ActorRef child = injectedChild(() -> childFactory.create(create.id), "userActor-" + create.id);
-                    CompletionStage<Object> future = ask(child, new Messages.WatchSearchResults(defaultSearchResults), timeout);
+                    CompletionStage<Object> future = ask(child, new Messages.WatchSearchResults(query), timeout);
                     pipe(future, context().dispatcher()).to(sender());
                 }).build();
     }

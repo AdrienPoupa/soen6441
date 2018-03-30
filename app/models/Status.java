@@ -18,18 +18,7 @@ public class Status {
 
     private int id;
 
-    public boolean isDisplayed() {
-        return displayed;
-    }
-
-    public void setDisplayed(boolean displayed) {
-        this.displayed = displayed;
-    }
-
-    private boolean displayed;
-
     public Status() {
-        displayed = false;
     }
 
     /**
@@ -78,5 +67,9 @@ public class Status {
      */
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getType() {
+        return "status";
     }
 }

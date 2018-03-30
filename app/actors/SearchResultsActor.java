@@ -5,15 +5,14 @@ import akka.actor.ActorRef;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 import models.SearchResult;
-
-import java.util.*;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-
-import javax.inject.Inject;
 import scala.concurrent.duration.Duration;
 import services.TwitterService;
+
+import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 
 /**
  * This actor contains a set of searchResults internally that may be used by
@@ -21,15 +20,13 @@ import services.TwitterService;
  */
 public class SearchResultsActor extends AbstractActorWithTimers {
 
-    private final Map<String, SearchResult> searchResultMap = new HashMap<>();
-
-    private final LoggingAdapter log = Logging.getLogger(getContext().system(), this);
-
     private final TwitterService twitterService;
 
     private List<ActorRef> userActors;
 
     private String keyword;
+
+    private final LoggingAdapter logger = Logging.getLogger(getContext().system(), this);
 
     private static final class Tick {
     }
@@ -50,37 +47,32 @@ public class SearchResultsActor extends AbstractActorWithTimers {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(Messages.RegisterActor.class, msg -> userActors.add(sender()))
+                .match(Messages.RegisterActor.class, message -> userActors.add(sender()))
                 .match(Tick.class, message -> {
-                    // Every 5 seconds, check for new tweets
+                    logger.info("Received message Tick {}", message);
+                    // Every 5 seconds, check for new tweets if we have a keyword
                     if (keyword != null) {
                         try {
-                            log.info("tick: getTweets for keyword "+keyword);
                             SearchResult searchResults = twitterService.getTweets(keyword).toCompletableFuture().get();
 
                             Messages.SearchResultsMessage searchResultsMessage =
                                     new Messages.SearchResultsMessage(searchResults);
+
                             userActors.forEach(ar -> ar.tell(searchResultsMessage, self()));
                         } catch (InterruptedException | ExecutionException e) {
-                            log.info("tick error:"+ Arrays.toString(e.getStackTrace()));
                             e.printStackTrace();
                         }
                     }
                 })
-                .match(Messages.WatchSearchResults.class, watchSearchResults -> {
-                    Set<SearchResult> searchResults = watchSearchResults.queries.stream()
-                            // Here we have to create a new SearchResult after getting the result from Twitter
-                            .map(query -> searchResultMap.compute(query, (k, v) -> {
-                                keyword = k;
-                                try {
-                                    return twitterService.getTweets(k).toCompletableFuture().get();
-                                } catch (InterruptedException | ExecutionException e) {
-                                    e.printStackTrace();
-                                    return null;
-                                }
-                            }))
-                            .collect(Collectors.toSet());
-                    sender().tell(new Messages.SearchResults(searchResults), self());
+                .match(Messages.WatchSearchResults.class, message -> {
+                    logger.info("Received message WatchSearchResults {}", message);
+                    keyword = message.query;
+                    try {
+                        SearchResult searchResults = twitterService.getTweets(message.query).toCompletableFuture().get();
+                        sender().tell(new Messages.SearchResults(searchResults), self());
+                    } catch (InterruptedException | ExecutionException e) {
+                        e.printStackTrace();
+                    }
                 }).build();
     }
 }

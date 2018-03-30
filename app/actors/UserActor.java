@@ -19,13 +19,16 @@ import akka.util.Timeout;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.inject.assistedinject.Assisted;
 import models.SearchResult;
+import models.Status;
 import play.libs.Json;
 import play.libs.akka.InjectedActorSupport;
 import scala.concurrent.duration.Duration;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.TimeUnit;
 
@@ -71,7 +74,7 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
         Sink<JsonNode, CompletionStage<Done>> jsonSink = Sink.foreach((JsonNode json) -> {
             // When the user types in a stock in the upper right corner, this is triggered,
             String query = json.findPath("query").asText();
-            addSearchResults(Collections.singleton(query));
+            addSearchResults(query);
         });
 
         // Put the source and sink together to make a flow of hub source as output (aggregating all
@@ -97,15 +100,16 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
     public Receive createReceive() {
         return receiveBuilder()
                 .match(WatchSearchResults.class, watchSearchResults -> {
-                    logger.info("Received message {}", watchSearchResults);
-                    addSearchResults(watchSearchResults.queries);
+                    logger.info("Received message WatchSearchResults {}", watchSearchResults);
+                    addSearchResults(watchSearchResults.query);
                     sender().tell(websocketFlow, self());
                 })
                 .match(UnwatchSearchResults.class, unwatchSearchResults -> {
-                    logger.info("Received message {}", unwatchSearchResults);
-                    unwatchSearchResults(unwatchSearchResults.queries);
+                    logger.info("Received message UnwatchSearchResults {}", unwatchSearchResults);
+                    unwatchSearchResults(unwatchSearchResults.query);
                 })
                 .match(Messages.SearchResultsMessage.class, message -> {
+                    logger.info("Received message SearchResultsMessage {}", message);
                     SearchResult searchResults = message.searchResult;
                     addSearchResult(searchResults);
                     sender().tell(websocketFlow, self());
@@ -116,9 +120,9 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
     /**
      * Adds several searchResults to the hub, by asking the SearchResults actor for SearchResults.
      */
-    private void addSearchResults(Set<String> queries) {
+    private void addSearchResults(String query) {
         // Ask the searchResultsActor for a stream containing these searchResults.
-        CompletionStage<SearchResults> future = ask(searchResultsActor, new WatchSearchResults(queries), timeout)
+        CompletionStage<SearchResults> future = ask(searchResultsActor, new WatchSearchResults(query), timeout)
                 .thenApply(SearchResults.class::cast);
 
         // when we get the response back, we want to turn that into a flow by creating a single
@@ -140,13 +144,15 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
     private void addSearchResult(SearchResult searchResult) {
         logger.info("Adding search result {}", searchResult);
 
+        List<Status> statuses = searchResult.getStatuses();
+
         // Do not flood everything if we have no statuses
-        if (searchResult.getStatuses() == null) {
+        if (statuses == null) {
             logger.info("Statuses were null");
             return;
         }
 
-        Source<JsonNode, NotUsed> getSource = Source.from(searchResult.getStatuses())
+        Source<JsonNode, NotUsed> getSource = Source.from(statuses)
                 .map(Json::toJson);
 
         // Set up a flow that will let us pull out a killswitch for this specific stock,
@@ -167,11 +173,9 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
         searchResultsMap.put(searchResult.getQuery(), killSwitch);
     }
 
-    private void unwatchSearchResults(Set<String> queries) {
-        queries.forEach(query -> {
-            searchResultsMap.get(query).shutdown();
-            searchResultsMap.remove(query);
-        });
+    private void unwatchSearchResults(String query) {
+        searchResultsMap.get(query).shutdown();
+        searchResultsMap.remove(query);
     }
 
     public interface Factory {

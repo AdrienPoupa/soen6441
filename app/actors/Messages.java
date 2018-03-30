@@ -2,43 +2,39 @@ package actors;
 
 import models.SearchResult;
 
-import java.util.Set;
-
-import static java.util.Objects.requireNonNull;
-
 public final class Messages {
 
     public static final class WatchSearchResults {
-        final Set<String> queries;
+        final String query;
 
-        public WatchSearchResults(Set<String> queries) {
-            this.queries = requireNonNull(queries);
+        public WatchSearchResults(String query) {
+            this.query = query;
         }
 
         @Override
         public String toString() {
-            return "WatchSearchResults(" + queries.toString() + ")";
+            return "WatchSearchResults(" + query + ")";
         }
     }
 
     public static final class UnwatchSearchResults {
-        final Set<String> queries;
+        final String query;
 
-        public UnwatchSearchResults(Set<String> queries) {
-            this.queries = requireNonNull(queries);
+        public UnwatchSearchResults(String query) {
+            this.query = query;
         }
 
         @Override
         public String toString() {
-            return "UnwatchSearchResults(" + queries.toString() + ")";
+            return "UnwatchSearchResults(" + query + ")";
         }
     }
 
     public static class SearchResults {
-        final Set<SearchResult> searchResults;
+        final SearchResult searchResults;
 
-        public SearchResults(Set<SearchResult> searchResults) {
-            this.searchResults = requireNonNull(searchResults);
+        public SearchResults(SearchResult searchResults) {
+            this.searchResults = searchResults;
         }
     }
 
