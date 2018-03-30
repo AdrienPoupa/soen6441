@@ -34,14 +34,6 @@ public class TwitterController extends Controller {
     }
 
     /**
-     * Show the index
-     * @return CompletionStage<Result> page
-     */
-    public CompletionStage<Result> index() {
-        return CompletableFuture.completedFuture(ok(index.render()));
-    }
-
-    /**
      * Search form page (GET page)
      * Displays the form
      * @return CompletionStage<SearchResult>
