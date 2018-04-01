@@ -4,7 +4,6 @@ import akka.actor.AbstractActorWithTimers;
 import akka.actor.ActorRef;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
-import models.SearchResult;
 import models.Status;
 import scala.concurrent.duration.Duration;
 import services.TwitterService;
@@ -12,7 +11,6 @@ import services.TwitterService;
 import javax.inject.Inject;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -74,9 +72,7 @@ public class SearchResultsActor extends AbstractActorWithTimers {
                     logger.info("Received message Tick {}", message);
                     if (message != null && keyword != null) {
                         // Every 5 seconds, check for new tweets if we have a keyword
-                        try {
-                            SearchResult searchResults = twitterService.getTweets(keyword).toCompletableFuture().get();
-
+                        twitterService.getTweets(keyword).thenAcceptAsync(searchResults -> {
                             // Copy the current state of statuses in a temporary variable
                             Set<Status> oldStatuses = new HashSet<>(statuses);
 
@@ -93,9 +89,7 @@ public class SearchResultsActor extends AbstractActorWithTimers {
                                     new Messages.StatusesMessage(newStatuses, keyword);
 
                             userActor.tell(statusesMessage, self());
-                        } catch (InterruptedException | ExecutionException e) {
-                            e.printStackTrace();
-                        }
+                        });
                     }
                 })
                 .match(Messages.WatchSearchResults.class, message -> {
@@ -105,9 +99,7 @@ public class SearchResultsActor extends AbstractActorWithTimers {
                         // Set the keyword
                         keyword = message.query;
 
-                        try {
-                            SearchResult searchResults = twitterService.getTweets(keyword).toCompletableFuture().get();
-
+                        twitterService.getTweets(keyword).thenAcceptAsync(searchResults -> {
                             // This is the first time we want to watch a (new) keyword: reset the list
                             this.statuses = new HashSet<>();
 
@@ -118,9 +110,7 @@ public class SearchResultsActor extends AbstractActorWithTimers {
                                     new Messages.StatusesMessage(statuses, keyword);
 
                             userActor.tell(statusesMessage, self());
-                        } catch (InterruptedException | ExecutionException e) {
-                            e.printStackTrace();
-                        }
+                        });
                     }
                 })
                 .build();
