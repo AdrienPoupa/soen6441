@@ -2,7 +2,7 @@ import actors.*;
 import com.google.inject.AbstractModule;
 import play.libs.akka.AkkaGuiceSupport;
 import services.TwitterApi;
-import services.TwitterImpl;
+import services.TwitterImplementation;
 
 /**
  * This class is a Guice module that tells Guice how to bind several
@@ -22,7 +22,7 @@ public class Module extends AbstractModule implements AkkaGuiceSupport {
         bindActor(SearchResultsActor.class, "searchResultsActor");
         bindActor(UserParentActor.class, "userParentActor");
         bindActorFactory(UserActor.class, UserActor.Factory.class);
-        bind(TwitterApi.class).to(TwitterImpl.class);
+        bind(TwitterApi.class).to(TwitterImplementation.class);
     }
 
 }

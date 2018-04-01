@@ -9,7 +9,7 @@ import java.util.concurrent.CompletionStage;
 /**
  * Live implementation
  */
-public class TwitterImpl implements TwitterApi {
+public class TwitterImplementation implements TwitterApi {
 
     private String baseUrl = "https://api.twitter.com/1.1";
 

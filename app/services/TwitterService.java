@@ -14,10 +14,10 @@ import java.util.concurrent.CompletionStage;
 public class TwitterService {
 
     @Inject
-    private TwitterApi twImpl;
+    private TwitterApi twitterImplementation;
 
     public CompletionStage<SearchResult> getTweets(final String keywords) {
-            return twImpl.search(keywords)
+            return twitterImplementation.search(keywords)
                     .thenApplyAsync(WSResponse::asJson)
                     .thenApplyAsync(result -> {
                         try {
@@ -32,7 +32,7 @@ public class TwitterService {
     }
 
     public CompletionStage<List<Status>> getProfile(final String username) {
-        return twImpl.profile(username)
+        return twitterImplementation.profile(username)
                     .thenApplyAsync(WSResponse::asJson)
                     .thenApplyAsync(result -> {
                         try {
