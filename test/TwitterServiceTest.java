@@ -1,3 +1,6 @@
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.TreeNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import models.SearchResult;
 import models.Status;
 import models.User;
@@ -12,6 +15,11 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertNull;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 import static play.inject.Bindings.bind;
 import static org.hamcrest.core.Is.is;
 
@@ -19,11 +27,9 @@ public class TwitterServiceTest {
 
     private static TwitterService twitterService;
 
-    private static Injector testApp;
-
     @BeforeClass
     public static void initTestApp() {
-        testApp = new GuiceInjectorBuilder()
+        Injector testApp = new GuiceInjectorBuilder()
                 .overrides(bind(TwitterApi.class).to(TwitterTestImplementation.class))
                 .build();
         twitterService = testApp.instanceOf(TwitterService.class);
@@ -58,6 +64,23 @@ public class TwitterServiceTest {
     }
 
     /**
+     * Test the tweets Json parsing exception
+     */
+    @Test
+    public void testGetTweetsException() {
+        ObjectMapper om = mock(ObjectMapper.class);
+        try {
+            when(om.treeToValue(any(TreeNode.class), eq(SearchResult.class))).thenThrow(new JsonProcessingException("") {});
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        twitterService.setMapper(om);
+        SearchResult searchResult = twitterService.parseTweets(null);
+        twitterService.setMapper(new ObjectMapper());
+        assertNull(searchResult);
+    }
+
+    /**
      * Test the profile Json parsing
      * @throws InterruptedException exception
      * @throws ExecutionException exception
@@ -82,5 +105,22 @@ public class TwitterServiceTest {
         assertThat(user.getDescription(), is("Located in the vibrant and cosmopolitan city of #Montreal, #Concordia University is one of Canada’s most innovative and diverse, comprehensive universities."));
         assertThat(user.getFollowers(), is("68001"));
         assertThat(user.getFriends(), is("1191"));
+    }
+
+    /**
+     * Test the profile Json parsing exception
+     */
+    @Test
+    public void testGetProfileException() {
+        ObjectMapper om = mock(ObjectMapper.class);
+        try {
+            when(om.treeToValue(any(TreeNode.class), eq(Status[].class))).thenThrow(new JsonProcessingException("") {});
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        twitterService.setMapper(om);
+        List<Status> statuses = twitterService.parseStatuses(null);
+        twitterService.setMapper(new ObjectMapper());
+        assertNull(statuses);
     }
 }

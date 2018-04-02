@@ -47,8 +47,7 @@ public class WebSocketController extends Controller {
         return WebSocket.Json.acceptOrResult(request -> {
             if (sameOriginCheck(request)) {
                 final CompletionStage<Flow<JsonNode, JsonNode, NotUsed>> future = wsFutureFlow(request);
-                final CompletionStage<Either<Result, Flow<JsonNode, JsonNode, ?>>> stage = future.thenApply(Either::Right);
-                return stage.exceptionally(this::logException);
+                return future.thenApply(Either::Right);
             } else {
                 return forbiddenResult();
             }
@@ -83,17 +82,6 @@ public class WebSocketController extends Controller {
     }
 
     /**
-     * Log an exception
-     * @param throwable exception to log
-     * @return Either Result or Flow<JsonNode, JsonNode, ?>
-     */
-    private Either<Result, Flow<JsonNode, JsonNode, ?>> logException(Throwable throwable) {
-        logger.error("Cannot create websocket", throwable);
-        Result result = Results.internalServerError("error");
-        return Either.Left(result);
-    }
-
-    /**
      * Checks that the WebSocket comes from the same origin.  This is necessary to protect
      * against Cross-Site WebSocket Hijacking as WebSocket does not implement Same Origin Policy.
      * <p>
@@ -103,10 +91,7 @@ public class WebSocketController extends Controller {
     private boolean sameOriginCheck(Http.RequestHeader rh) {
         final Optional<String> origin = rh.header("Origin");
 
-        if (! origin.isPresent()) {
-            logger.error("originCheck: rejecting request because no Origin header found");
-            return false;
-        } else if (originMatches(origin.get())) {
+        if (originMatches(origin.get())) {
             logger.debug("originCheck: originValue = " + origin);
             return true;
         } else {

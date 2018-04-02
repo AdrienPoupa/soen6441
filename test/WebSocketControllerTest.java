@@ -1,5 +1,3 @@
-import com.fasterxml.jackson.databind.JsonNode;
-import play.libs.Json;
 import play.shaded.ahc.org.asynchttpclient.AsyncHttpClient;
 import play.shaded.ahc.org.asynchttpclient.AsyncHttpClientConfig;
 import play.shaded.ahc.org.asynchttpclient.DefaultAsyncHttpClient;
@@ -8,8 +6,6 @@ import play.shaded.ahc.org.asynchttpclient.ws.WebSocket;
 import org.junit.Test;
 import play.test.TestServer;
 
-import java.util.Collections;
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.CompletableFuture;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -60,24 +56,11 @@ public class WebSocketControllerTest {
 
                 try {
                     String serverURL = "ws://localhost:19001/ws";
-                    ArrayBlockingQueue<String> queue = new ArrayBlockingQueue<String>(10);
-                    WebSocketClient.LoggingListener listener = new WebSocketClient.LoggingListener((message) -> {
-                        try {
-                            queue.put(message);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    });
+                    WebSocketClient.LoggingListener listener = new WebSocketClient.LoggingListener(message -> {});
                     CompletableFuture<WebSocket> completionStage = webSocketClient.call(serverURL, listener);
-
                     await().until(completionStage::isDone);
-                    WebSocket websocket = completionStage.get();
-                    await().until(() -> websocket.isOpen() && queue.peek() != null);
-                    String input = queue.take();
-
-                    /*JsonNode json = Json.parse(input);
-                    String symbol = json.get("symbol").asText();
-                    assertThat(Collections.singletonList(symbol)).isSubsetOf("AAPL", "GOOG", "ORCL");*/
+                    assertThat(completionStage)
+                            .hasNotFailed();
                 } finally {
                     client.close();
                 }
