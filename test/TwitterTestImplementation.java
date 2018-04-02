@@ -4,6 +4,7 @@ import play.libs.ws.WSResponse;
 import play.routing.RoutingDsl;
 import play.server.Server;
 import services.TwitterApi;
+import services.TwitterImplementation;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
@@ -19,11 +20,9 @@ public class TwitterTestImplementation implements TwitterApi {
 
     private Server server;
 
-    private String bearer;
+    private TwitterImplementation twitterImplementation;
 
     public TwitterTestImplementation() {
-        bearer = "";
-
         // Mock the Twitter's API response
         server = Server.forRouter((components) -> RoutingDsl.fromComponents(components)
                 .GET("/search/tweets.json").routeTo(() ->
@@ -37,27 +36,19 @@ public class TwitterTestImplementation implements TwitterApi {
 
         // Get test instance of WSClient
         ws = play.test.WSTestClient.newClient(server.httpPort());
+
+        twitterImplementation = new TwitterImplementation(ws);
+        twitterImplementation.setBaseUrl("");
     }
 
     @Override
     public CompletionStage<WSResponse> search(String keyword) {
-        return ws.url("/search/tweets.json")
-                .addHeader("Authorization", bearer)
-                .addQueryParameter("q", keyword)
-                .addQueryParameter("count", "10")
-                .addQueryParameter("result_type", "recent")
-                .addQueryParameter("tweet_mode", "extended")
-                .get(); // THIS IS NOT BLOCKING! It returns a promise to the response. It comes from WSRequest.
+        return twitterImplementation.search(keyword);
     }
 
     @Override
     public CompletionStage<WSResponse> profile(String username) {
-        return ws.url("/statuses/user_timeline.json")
-                .addHeader("Authorization", bearer)
-                .addQueryParameter("count", "10")
-                .addQueryParameter("tweet_mode", "extended")
-                .addQueryParameter("screen_name", username)
-                .get(); // THIS IS NOT BLOCKING! It returns a promise to the response. It comes from WSRequest.
+        return twitterImplementation.profile(username);
     }
 
     /**

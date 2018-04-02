@@ -15,8 +15,12 @@ public class TwitterImplementation implements TwitterApi {
 
     private String bearer = "Bearer AAAAAAAAAAAAAAAAAAAAACNX4wAAAAAANxPR9wla73%2B0iOw1Ls%2BSRhWpx6k%3D090bl90Kgf0hfAIAY1VemZ8FxVelwsvqlqO7j0041j9ivKxFgz";
 
-    @Inject
     private WSClient ws;
+
+    @Inject
+    public TwitterImplementation(WSClient ws) {
+        this.ws = ws;
+    }
 
     @Override
     public CompletionStage<WSResponse> search(String keyword) {
@@ -37,5 +41,9 @@ public class TwitterImplementation implements TwitterApi {
                 .addQueryParameter("tweet_mode", "extended")
                 .addQueryParameter("screen_name", username)
                 .get(); // THIS IS NOT BLOCKING! It returns a promise to the response. It comes from WSRequest.
+    }
+
+    public void setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
     }
 }

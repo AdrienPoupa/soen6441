@@ -1,6 +1,5 @@
 package controllers;
 
-import play.cache.SyncCacheApi;
 import play.libs.concurrent.HttpExecutionContext;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -20,15 +19,12 @@ import views.html.*;
  */
 public class TwitterController extends Controller {
 
-    private SyncCacheApi cache;
-
     private TwitterService twitterService;
 
     private HttpExecutionContext httpExecutionContext;
 
     @Inject
-    public TwitterController(TwitterService twitterService, SyncCacheApi cache, HttpExecutionContext ec) {
-        this.cache = cache;
+    public TwitterController(TwitterService twitterService, HttpExecutionContext ec) {
         this.httpExecutionContext = ec;
         this.twitterService = twitterService;
     }

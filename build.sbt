@@ -17,6 +17,7 @@ libraryDependencies += "com.h2database" % "h2" % "1.4.196"
 libraryDependencies += "org.assertj" % "assertj-core" % "3.8.0" % Test
 libraryDependencies += "org.awaitility" % "awaitility" % "3.0.0" % Test
 libraryDependencies += "org.mockito" % "mockito-core" % "1.10.19" % Test
+libraryDependencies += "nl.jqno.equalsverifier" % "equalsverifier" % "2.4.5" % Test
 
 libraryDependencies += jcache
 

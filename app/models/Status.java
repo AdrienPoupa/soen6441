@@ -10,7 +10,7 @@ import java.util.Objects;
  * @author Adrien Poupa
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Status {
+public final class Status {
 
     // The API returns full_text but Jackson wants to use camelCase
     @JsonProperty("full_text")
@@ -92,7 +92,8 @@ public class Status {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Status status = (Status) o;
-        return id.equals(status.getId());
+        return Objects.equals(fullText, status.fullText) &&
+                Objects.equals(id, status.id);
     }
 
     /**
@@ -101,6 +102,6 @@ public class Status {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(fullText, id);
     }
 }

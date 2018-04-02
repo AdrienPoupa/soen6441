@@ -1,22 +1,21 @@
-import models.Status;
-import models.User;
+import controllers.TwitterController;
 import org.junit.*;
 import play.inject.Injector;
+import play.inject.guice.GuiceApplicationBuilder;
 import play.inject.guice.GuiceInjectorBuilder;
+import play.libs.concurrent.HttpExecutionContext;
 import play.mvc.Http;
-import play.twirl.api.Content;
+import play.mvc.Result;
 import services.TwitterApi;
 import services.TwitterService;
-import views.html.*;
-
-import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static play.inject.Bindings.bind;
+import static play.mvc.Http.Status.OK;
+import static play.test.Helpers.contentAsString;
 
 /**
  * TwitterController test class
@@ -26,14 +25,21 @@ public class TwitterControllerTest {
 
     private static TwitterService twitterService;
 
+    private static TwitterController twitterController;
+
     private static Injector testApp;
 
     @BeforeClass
     public static void initTestApp() {
+        Http.Context context = mock(Http.Context.class);
+        Http.Context.current.set(context);
+        HttpExecutionContext ec = new GuiceApplicationBuilder().injector().instanceOf(HttpExecutionContext.class);
+
         testApp = new GuiceInjectorBuilder()
                 .overrides(bind(TwitterApi.class).to(TwitterTestImplementation.class))
                 .build();
         twitterService = testApp.instanceOf(TwitterService.class);
+        twitterController = new TwitterController(twitterService, ec);
     }
 
     /**
@@ -50,10 +56,12 @@ public class TwitterControllerTest {
      * Test the display of the search form
      */
     @Test
-    public void testSearch() {
-        Content html = search.render();
-        assertThat("text/html", is(html.contentType()));
-        assertThat(html.body(), containsString("Search on Twitter"));
+    public void testSearch() throws ExecutionException, InterruptedException {
+        Result result = twitterController.search().toCompletableFuture().get();
+        assertEquals(OK, result.status());
+        assertEquals("text/html", result.contentType().get());
+        assertEquals("utf-8", result.charset().get());
+        assertTrue(contentAsString(result).contains("Search on Twitter"));
     }
 
     /**
@@ -61,16 +69,12 @@ public class TwitterControllerTest {
      */
     @Test
     public void testProfile() throws ExecutionException, InterruptedException {
-        List<Status> statuses = twitterService.getProfile("concordia")
-                .toCompletableFuture().get();
+        Result result = twitterController.profile("concordia").toCompletableFuture().get();
+        assertEquals(OK, result.status());
+        assertEquals("text/html", result.contentType().get());
+        assertEquals("utf-8", result.charset().get());
 
-        User user = statuses.get(0).getUser();
-
-        Content html = profile.render(statuses, user);
-
-        assertThat("text/html", is(html.contentType()));
-
-        assertThat(html.body(), containsString("<ul>\n" +
+        assertThat(contentAsString(result), containsString("<ul>\n" +
                 "        <li>User name: Concordia</li>\n" +
                 "        <li>Real name: Concordia University</li>\n" +
                 "        <li>Location: Montreal</li>\n" +
