@@ -10,9 +10,9 @@
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/twitter-favicon.png")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/simple-sidebar.css")">
     </head>
-    <body data-ws-url="@routes.WebSocketController.ws.webSocketURL(request)">
+    <body data-ws-url="ws://localhost:9000/ws">
         <div id="wrapper" class="toggled">
-                <!-- Sidebar -->
+            <!-- Sidebar -->
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
                     <li class="sidebar-brand">

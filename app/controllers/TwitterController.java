@@ -49,11 +49,6 @@ public class TwitterController extends Controller {
      */
     public CompletionStage<Result> profile(String username) {
         return twitterService.getProfile(username)
-                             .thenApplyAsync(result -> {
-                                // Store the object in cache for 5 minutes
-                                cache.set("profile." + username, result, 5*60);
-                                return result;
-                             })
                              .thenApplyAsync(result -> ok(profile.render(result, result.get(0).getUser())),
                                      httpExecutionContext.current());
     }

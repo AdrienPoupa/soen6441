@@ -21,6 +21,9 @@ public class UserParentActor extends AbstractActor implements InjectedActorSuppo
     private final Timeout timeout = new Timeout(2, TimeUnit.SECONDS);
     private final String query;
 
+    /**
+     * Create UserParentActor Message
+     */
     public static class Create {
         final String id;
 

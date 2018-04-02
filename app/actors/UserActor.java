@@ -79,7 +79,7 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
             // When the user types in a stock in the upper right corner, this is triggered,
             String query = json.findPath("query").asText();
             if (query != null) {
-                addSearchResults(query);
+                searchResultsActor.tell(new WatchSearchResults(query), self());
             }
         });
 
@@ -107,14 +107,16 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
                 .match(WatchSearchResults.class, watchSearchResults -> {
                     logger.info("Received message WatchSearchResults {}", watchSearchResults);
                     if (watchSearchResults != null) {
-                        addSearchResults(watchSearchResults.query);
+                        // Ask the searchResultsActor for a stream containing these searchResults.
+                        searchResultsActor.tell(new WatchSearchResults(watchSearchResults.query), self());
                         sender().tell(websocketFlow, self());
                     }
                 })
                 .match(UnwatchSearchResults.class, unwatchSearchResults -> {
                     logger.info("Received message UnwatchSearchResults {}", unwatchSearchResults);
                     if (unwatchSearchResults != null) {
-                        unwatchSearchResults(unwatchSearchResults.query);
+                        searchResultsMap.get(unwatchSearchResults.query).shutdown();
+                        searchResultsMap.remove(unwatchSearchResults.query);
                     }
                 })
                 .match(Messages.StatusesMessage.class, message -> {
@@ -125,15 +127,6 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
                     }
                 })
                 .build();
-    }
-
-    /**
-     * Adds several searchResults to the hub, by asking the SearchResults actor for SearchResults.
-     */
-    private void addSearchResults(String query) {
-        // Ask the searchResultsActor for a stream containing these searchResults.
-        ask(searchResultsActor, new WatchSearchResults(query), timeout)
-                .thenApply(SearchResults.class::cast);
     }
 
     /**
@@ -170,11 +163,6 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
 
         // Pull out the kill switch so we can stop it when we want to unwatch a stock.
         searchResultsMap.put(query, killSwitch);
-    }
-
-    private void unwatchSearchResults(String query) {
-        searchResultsMap.get(query).shutdown();
-        searchResultsMap.remove(query);
     }
 
     public interface Factory {
