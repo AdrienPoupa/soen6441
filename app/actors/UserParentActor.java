@@ -21,17 +21,6 @@ public class UserParentActor extends AbstractActor implements InjectedActorSuppo
     private final Timeout timeout = new Timeout(2, TimeUnit.SECONDS);
     private final String query;
 
-    /**
-     * Create UserParentActor Message
-     */
-    public static class Create {
-        final String id;
-
-        public Create(String id) {
-            this.id = id;
-        }
-    }
-
     private final UserActor.Factory childFactory;
 
     @Inject
@@ -43,7 +32,7 @@ public class UserParentActor extends AbstractActor implements InjectedActorSuppo
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(UserParentActor.Create.class, create -> {
+                .match(Messages.UserParentActorCreate.class, create -> {
                     ActorRef child = injectedChild(() -> childFactory.create(create.id), "userActor-" + create.id);
                     CompletionStage<Object> future = ask(child, new Messages.WatchSearchResults(query), timeout);
                     pipe(future, context().dispatcher()).to(sender());

@@ -11,8 +11,27 @@ import java.util.Set;
  */
 public final class Messages {
 
+    /**
+     * Create UserParentActor Message
+     */
+    public static final class UserParentActorCreate {
+        public final String id;
+
+        public UserParentActorCreate(String id) {
+            this.id = id;
+        }
+
+        @Override
+        public String toString() {
+            return "UserParentActorCreate(" + id + ")";
+        }
+    }
+
+    /**
+     * WatchSearchResults Message
+     */
     public static final class WatchSearchResults {
-        final String query;
+        public final String query;
 
         public WatchSearchResults(String query) {
             this.query = query;
@@ -24,8 +43,11 @@ public final class Messages {
         }
     }
 
+    /**
+     * UnwatchSearchResults Message
+     */
     public static final class UnwatchSearchResults {
-        final String query;
+        public final String query;
 
         public UnwatchSearchResults(String query) {
             this.query = query;
@@ -37,8 +59,11 @@ public final class Messages {
         }
     }
 
-    public static class SearchResults {
-        final SearchResult searchResults;
+    /**
+     * SearchResults Message
+     */
+    public static final class SearchResults {
+        public final SearchResult searchResults;
 
         public SearchResults(SearchResult searchResults) {
             this.searchResults = searchResults;
@@ -46,11 +71,14 @@ public final class Messages {
 
         @Override
         public String toString() {
-            return "SearchResults(" + searchResults.toString() + ")";
+            return "SearchResults(" + searchResults.getQuery() + ")";
         }
     }
 
-    public static class StatusesMessage {
+    /**
+     * StatusesMessage Message
+     */
+    public static final class StatusesMessage {
         public final Set<Status> statuses;
         public final String query;
 
@@ -65,11 +93,19 @@ public final class Messages {
         }
     }
 
-    public static class RegisterActor {
+    /**
+     * RegisterActor Message
+     */
+    public static final class RegisterActor {
         @Override
         public String toString() {
             return "RegisterActor";
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Messages";
     }
 }
 

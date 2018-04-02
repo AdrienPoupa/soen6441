@@ -7,4 +7,4 @@ addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.6.11")
 // basis using disablePlugins(PlayEnhancer) in your build.sbt
 addSbtPlugin("com.typesafe.sbt" % "sbt-play-enhancer" % "1.2.2")
 
-addSbtPlugin("com.github.sbt" % "sbt-jacoco" % "3.0.3")
+addSbtPlugin("com.github.sbt" % "sbt-jacoco" % "3.1.0-M3")

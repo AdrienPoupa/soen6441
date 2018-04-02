@@ -1,5 +1,6 @@
 package controllers;
 
+import actors.Messages;
 import play.mvc.*;
 
 import java.util.concurrent.CompletableFuture;
@@ -62,7 +63,7 @@ public class WebSocketController extends Controller {
     @SuppressWarnings("unchecked")
     private CompletionStage<Flow<JsonNode, JsonNode, NotUsed>> wsFutureFlow(Http.RequestHeader request) {
         long id = request.asScala().id();
-        UserParentActor.Create create = new UserParentActor.Create(Long.toString(id));
+        Messages.UserParentActorCreate create = new Messages.UserParentActorCreate(Long.toString(id));
 
         return ask(userParentActor, create, t).thenApply((Object flow) -> {
             final Flow<JsonNode, JsonNode, NotUsed> f = (Flow<JsonNode, JsonNode, NotUsed>) flow;
