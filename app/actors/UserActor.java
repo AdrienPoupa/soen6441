@@ -1,6 +1,5 @@
 package actors;
 
-import actors.Messages.SearchResults;
 import actors.Messages.UnwatchSearchResults;
 import actors.Messages.WatchSearchResults;
 import akka.Done;
@@ -15,13 +14,11 @@ import akka.stream.KillSwitches;
 import akka.stream.Materializer;
 import akka.stream.UniqueKillSwitch;
 import akka.stream.javadsl.*;
-import akka.util.Timeout;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.inject.assistedinject.Assisted;
 import models.Status;
 import play.libs.Json;
 import play.libs.akka.InjectedActorSupport;
-import scala.concurrent.duration.Duration;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -29,9 +26,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CompletionStage;
-import java.util.concurrent.TimeUnit;
-
-import static akka.pattern.PatternsCS.ask;
 
 /**
  * The broker between the WebSocket and the SearchResultsActor(s).
@@ -40,8 +34,6 @@ import static akka.pattern.PatternsCS.ask;
  * Inspired from https://github.com/playframework/play-java-websocket-example/blob/2.6.x/app/actors/UserActor.java
  */
 public class UserActor extends AbstractActor implements InjectedActorSupport {
-
-    private final Timeout timeout = new Timeout(Duration.create(5, TimeUnit.SECONDS));
 
     private final LoggingAdapter logger = Logging.getLogger(getContext().system(), this);
 
