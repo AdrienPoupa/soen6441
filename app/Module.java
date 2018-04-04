@@ -19,7 +19,6 @@ public class Module extends AbstractModule implements AkkaGuiceSupport {
 
     @Override
     public void configure() {
-        bindActor(SearchResultsActor.class, "searchResultsActor");
         bindActor(UserParentActor.class, "userParentActor");
         bindActorFactory(UserActor.class, UserActor.Factory.class);
         bind(TwitterApi.class).to(TwitterImplementation.class);

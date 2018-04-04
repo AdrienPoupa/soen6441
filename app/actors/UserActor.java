@@ -7,6 +7,7 @@ import akka.NotUsed;
 import akka.actor.AbstractActor;
 import akka.actor.Actor;
 import akka.actor.ActorRef;
+import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 import akka.japi.Pair;
@@ -15,13 +16,11 @@ import akka.stream.Materializer;
 import akka.stream.UniqueKillSwitch;
 import akka.stream.javadsl.*;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.google.inject.assistedinject.Assisted;
+import com.google.inject.Injector;
 import models.Status;
 import play.libs.Json;
-import play.libs.akka.InjectedActorSupport;
 
 import javax.inject.Inject;
-import javax.inject.Named;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -33,7 +32,7 @@ import java.util.concurrent.CompletionStage;
  * JSON data to the client.
  * Inspired from https://github.com/playframework/play-java-websocket-example/blob/2.6.x/app/actors/UserActor.java
  */
-public class UserActor extends AbstractActor implements InjectedActorSupport {
+public class UserActor extends AbstractActor {
 
     private final LoggingAdapter logger = Logging.getLogger(getContext().system(), this);
 
@@ -46,12 +45,6 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
     private Sink<JsonNode, NotUsed> hubSink;
     private Flow<JsonNode, JsonNode, NotUsed> websocketFlow;
 
-    @Override
-    public void preStart() {
-        context().actorSelection("/user/searchResultsActor/")
-                 .tell(new Messages.RegisterActor(), self());
-    }
-
     public UserActor() {
         searchResultsActor = null;
         mat = null;
@@ -60,11 +53,11 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
     }
 
     @Inject
-    public UserActor(@Assisted String id,
-                     @Named("searchResultsActor") ActorRef searchResultsActor,
-                     Materializer mat) {
-        this.searchResultsActor = searchResultsActor;
+    public UserActor(Injector injector, Materializer mat) {
+        this.searchResultsActor = getContext().actorOf(Props.create(GuiceInjectedActor.class, injector,
+                SearchResultsActor.class));
         this.mat = mat;
+        searchResultsActor.tell(new Messages.RegisterActor(), self());
         createSink();
     }
 
