@@ -3,6 +3,8 @@ import models.SearchResult;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.HashSet;
+
 /**
  * Messages tests
  * @author Adrien Poupa
@@ -40,7 +42,7 @@ public class MessagesTest {
 
     @Test
     public void testStatusesMessages() {
-        Messages.StatusesMessage statusesMessage = new Messages.StatusesMessage(null, "test");
+        Messages.StatusesMessage statusesMessage = new Messages.StatusesMessage(new HashSet<>(), "test");
         Assert.assertEquals("test", statusesMessage.query);
         Assert.assertEquals("StatusesMessage(test)", statusesMessage.toString());
     }

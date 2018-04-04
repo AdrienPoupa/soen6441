@@ -5,6 +5,8 @@ import models.Status;
 
 import java.util.Set;
 
+import static java.util.Objects.requireNonNull;
+
 /**
  * Class containing all the Messages sent/received by the actors
  * @author Adrien Poupa
@@ -18,7 +20,7 @@ public final class Messages {
         public final String id;
 
         public UserParentActorCreate(String id) {
-            this.id = id;
+            this.id = requireNonNull(id);
         }
 
         @Override
@@ -34,7 +36,7 @@ public final class Messages {
         public final String query;
 
         public WatchSearchResults(String query) {
-            this.query = query;
+            this.query = requireNonNull(query);
         }
 
         @Override
@@ -50,7 +52,7 @@ public final class Messages {
         public final String query;
 
         public UnwatchSearchResults(String query) {
-            this.query = query;
+            this.query = requireNonNull(query);
         }
 
         @Override
@@ -66,7 +68,7 @@ public final class Messages {
         public final SearchResult searchResults;
 
         public SearchResults(SearchResult searchResults) {
-            this.searchResults = searchResults;
+            this.searchResults = requireNonNull(searchResults);
         }
 
         @Override
@@ -83,8 +85,8 @@ public final class Messages {
         public final String query;
 
         public StatusesMessage(Set<Status> statuses, String query) {
-            this.statuses = statuses;
-            this.query = query;
+            this.statuses = requireNonNull(statuses);
+            this.query = requireNonNull(query);
         }
 
         @Override

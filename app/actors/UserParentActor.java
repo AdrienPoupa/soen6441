@@ -26,7 +26,7 @@ public class UserParentActor extends AbstractActor implements InjectedActorSuppo
     @Inject
     public UserParentActor(UserActor.Factory childFactory) {
         this.childFactory = childFactory;
-        this.query = null;
+        this.query = "test"; // default keyword
     }
 
     @Override

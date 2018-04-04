@@ -37,19 +37,26 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
 
     private final LoggingAdapter logger = Logging.getLogger(getContext().system(), this);
 
-    private final Map<String, UniqueKillSwitch> searchResultsMap = new HashMap<>();
+    private Map<String, UniqueKillSwitch> searchResultsMap = new HashMap<>();
 
-    private final ActorRef searchResultsActor;
+    private ActorRef searchResultsActor;
 
-    private final Materializer mat;
+    private Materializer mat;
 
-    private final Sink<JsonNode, NotUsed> hubSink;
-    private final Flow<JsonNode, JsonNode, NotUsed> websocketFlow;
+    private Sink<JsonNode, NotUsed> hubSink;
+    private Flow<JsonNode, JsonNode, NotUsed> websocketFlow;
 
     @Override
     public void preStart() {
         context().actorSelection("/user/searchResultsActor/")
                  .tell(new Messages.RegisterActor(), self());
+    }
+
+    public UserActor() {
+        searchResultsActor = null;
+        mat = null;
+        hubSink = null;
+        websocketFlow = null;
     }
 
     @Inject
@@ -58,21 +65,22 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
                      Materializer mat) {
         this.searchResultsActor = searchResultsActor;
         this.mat = mat;
+        createSink();
+    }
 
+    public void createSink() {
         Pair<Sink<JsonNode, NotUsed>, Source<JsonNode, NotUsed>> sinkSourcePair =
                 MergeHub.of(JsonNode.class, 16)
-                .toMat(BroadcastHub.of(JsonNode.class, 256), Keep.both())
-                .run(mat);
+                        .toMat(BroadcastHub.of(JsonNode.class, 256), Keep.both())
+                        .run(mat);
 
-        this.hubSink = sinkSourcePair.first();
+        hubSink = sinkSourcePair.first();
         Source<JsonNode, NotUsed> hubSource = sinkSourcePair.second();
 
         Sink<JsonNode, CompletionStage<Done>> jsonSink = Sink.foreach((JsonNode json) -> {
             // When the user types in a stock in the upper right corner, this is triggered,
             String query = json.findPath("query").asText();
-            if (query != null) {
-                searchResultsActor.tell(new WatchSearchResults(query), self());
-            }
+            searchResultsActor.tell(new WatchSearchResults(query), self());
         });
 
         // Put the source and sink together to make a flow of hub source as output (aggregating all
@@ -124,17 +132,11 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
     /**
      * Adds a single stock to the hub.
      */
-    private void addStatuses(Messages.StatusesMessage message) {
+    public void addStatuses(Messages.StatusesMessage message) {
         Set<Status> statuses = message.statuses;
         String query = message.query;
 
         logger.info("Adding statuses {}", statuses);
-
-        // Do not flood everything if we have no statuses
-        if (statuses == null) {
-            logger.info("Statuses were null");
-            return;
-        }
 
         Source<JsonNode, NotUsed> getSource = Source.from(statuses)
                 .map(Json::toJson);
@@ -159,5 +161,29 @@ public class UserActor extends AbstractActor implements InjectedActorSupport {
 
     public interface Factory {
         Actor create(String id);
+    }
+
+    public void setSearchResultsActor(ActorRef searchResultsActor) {
+        this.searchResultsActor = searchResultsActor;
+    }
+
+    public void setMat(Materializer mat) {
+        this.mat = mat;
+    }
+
+    public Map<String, UniqueKillSwitch> getSearchResultsMap() {
+        return searchResultsMap;
+    }
+
+    public void setSearchResultsMap(Map<String, UniqueKillSwitch> searchResultsMap) {
+        this.searchResultsMap = searchResultsMap;
+    }
+
+    public ActorRef getSearchResultsActor() {
+        return searchResultsActor;
+    }
+
+    public Materializer getMat() {
+        return mat;
     }
 }
