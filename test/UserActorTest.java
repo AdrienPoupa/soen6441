@@ -97,4 +97,16 @@ public class UserActorTest {
         userActor.setSearchResultsMap(null);
         Assert.assertNull(userActor.getSearchResultsMap());
     }
+
+    @Test
+    public void testSetJsonSink() {
+        userActor.setJsonSink(null);
+        Assert.assertNull(userActor.getJsonSink());
+    }
+
+    @Test
+    public void testSetQuery() {
+        userActor.setQuery("concordia");
+        Assert.assertEquals("concordia", userActor.getQuery());
+    }
 }

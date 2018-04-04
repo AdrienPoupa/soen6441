@@ -18,6 +18,7 @@ import java.util.concurrent.TimeUnit;
  * This actor contains a set of searchResults internally that may be used by
  * all websocket clients.
  * Inspired by https://github.com/playframework/play-java-websocket-example/blob/2.6.x/app/actors/StocksActor.java
+ * @author Adrien Poupa
  */
 public class SearchResultsActor extends AbstractActorWithTimers {
 

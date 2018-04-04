@@ -40,9 +40,14 @@ public class UserActor extends AbstractActor {
 
     private ActorRef searchResultsActor;
 
+    private String query;
+
     private Materializer mat;
 
     private Sink<JsonNode, NotUsed> hubSink;
+
+    private Sink<JsonNode, CompletionStage<Done>> jsonSink;
+
     private Flow<JsonNode, JsonNode, NotUsed> websocketFlow;
 
     public UserActor() {
@@ -50,6 +55,7 @@ public class UserActor extends AbstractActor {
         mat = null;
         hubSink = null;
         websocketFlow = null;
+        query = null;
     }
 
     @Inject
@@ -70,15 +76,15 @@ public class UserActor extends AbstractActor {
         hubSink = sinkSourcePair.first();
         Source<JsonNode, NotUsed> hubSource = sinkSourcePair.second();
 
-        Sink<JsonNode, CompletionStage<Done>> jsonSink = Sink.foreach((JsonNode json) -> {
+        jsonSink = Sink.foreach((JsonNode json) -> {
             // When the user types in a stock in the upper right corner, this is triggered,
-            String query = json.findPath("query").asText();
+            query = json.findPath("query").asText();
             searchResultsActor.tell(new WatchSearchResults(query), self());
         });
 
         // Put the source and sink together to make a flow of hub source as output (aggregating all
         // searchResults as JSON to the browser) and the actor as the sink (receiving any JSON messages
-        // from the browse), using a coupled sink and source.
+        // from the browser), using a coupled sink and source.
         this.websocketFlow = Flow.fromSinkAndSourceCoupled(jsonSink, hubSource)
                 .watchTermination((n, stage) -> {
                     // Stop the searchResultsActor
@@ -178,5 +184,21 @@ public class UserActor extends AbstractActor {
 
     public Materializer getMat() {
         return mat;
+    }
+
+    public String getQuery() {
+        return query;
+    }
+
+    public void setQuery(String query) {
+        this.query = query;
+    }
+
+    public Sink<JsonNode, CompletionStage<Done>> getJsonSink() {
+        return jsonSink;
+    }
+
+    public void setJsonSink(Sink<JsonNode, CompletionStage<Done>> jsonSink) {
+        this.jsonSink = jsonSink;
     }
 }
