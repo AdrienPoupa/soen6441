@@ -226,64 +226,64 @@ WebSocketController.java
 
 - testGetKeyword: For SearchResultsActorMessages
 
--testSetKeyword: For SearchResultsActorMessages
+- testSetKeyword: For SearchResultsActorMessages
 
--testGetStatuses:For SearchResultsActorMessages
+- testGetStatuses:For SearchResultsActorMessages
 
--testSetStatuses:For SearchResultsActorMessages
+- testSetStatuses:For SearchResultsActorMessages
 
--testGetTwitterService :For SearchResultsActorMessages
+- testGetTwitterService :For SearchResultsActorMessages
 
--testSetTwitterService: For SearchResultsActorMessages
+- testSetTwitterService: For SearchResultsActorMessages
 
 - testTickClass: For SearchResultsActorMessages
 
 - testSearchResultsActor: For SearchResultActor
 
--testGetUser: For Status
+- testGetUser: For Status
 
--testSetUser: For Status
+- testSetUser: For Status
 
--testGetFullText: For Status
+- testGetFullText: For Status
 
--testSetFullText: For Status
+- testSetFullText: For Status
 
--testGetType : For Status
+- testGetType : For Status
 
--testGetId : For Status
+- testGetId : For Status
 
--testSetId:For Status
+- testSetId:For Status
 
--equalsContract: For Status
+- equalsContract: For Status
 
--testUserActor: For UserActor
+- testUserActor: For UserActor
 
--testSetSearchResultsActor: For UserActor
+- testSetSearchResultsActor: For UserActor
 
--testSetMaterializer: For UserActor
+- testSetMaterializer: For UserActor
 
--testSetSearchResultsMap: For UserActor
+- testSetSearchResultsMap: For UserActor
 
--testGetLocation: For User
+- testGetLocation: For User
 
--testSetLocation: For User
+- testSetLocation: For User
 
--testGetDescription: For User
+- testGetDescription: For User
 
--testSetDescription : For User
+- testSetDescription : For User
 
--testGetFollowers :For User
+- testGetFollowers :For User
 
--testSetFollowers: For User
+- testSetFollowers: For User
 
--testGetFriends: For User
+- testGetFriends: For User
 
--testSetFriends: For User
+- testSetFriends: For User
 
--testGetId :For User
+- testGetId :For User
 
--testSetName: For User
+- testSetName: For User
 
--testGetScreenName : For User
+- testGetScreenName : For User
 
--testSetScreenName : For User
+- testSetScreenName : For User
