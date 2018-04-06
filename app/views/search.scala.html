@@ -1,13 +1,16 @@
 @master("Search on Twitter") {
     <div id="search">
         <form id="searchTweetsForm">
-            <input id="keyword" type="text" placeholder="Keywords" value="test">
+            <input id="query" type="text" placeholder="Keywords" value="test">
             <button type="submit" class="btn">Search Tweets</button>
         </form>
 
-        <div id="placeholderText">Searching for tweets containing "test"</div>
-
-        <ul id="tweetsList">
-        </ul>
+        <div id="tweets"></div>
     </div>
+    <style>
+        .results {
+            max-height: 500px;
+            overflow: auto;
+        }
+    </style>
 }

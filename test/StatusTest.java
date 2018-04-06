@@ -86,6 +86,26 @@ public class StatusTest{
 	}
 
 	/**
+	 * Getter test for FullText
+	 */
+	@Test
+	public void testGetQuery() {
+		Status status = new Status();
+		status.setQuery("concordia");
+		assertEquals("concordia", status.getQuery());
+	}
+
+	/**
+	 * Setter test for FullText
+	 */
+	@Test
+	public void testSetQuery() {
+		Status status = new Status();
+		status.setQuery("concordia");
+		assertEquals("concordia", status.getQuery());
+	}
+
+	/**
 	 * Verify Equals and HashCode
 	 */
 	@Test

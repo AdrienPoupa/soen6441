@@ -38,9 +38,7 @@ public class UserActor extends AbstractActor {
 
     private Map<String, UniqueKillSwitch> searchResultsMap = new HashMap<>();
 
-    private ActorRef searchResultsActor;
-
-    private String query;
+    private Map<String, ActorRef> searchResultsActors;
 
     private Materializer mat;
 
@@ -50,20 +48,21 @@ public class UserActor extends AbstractActor {
 
     private Flow<JsonNode, JsonNode, NotUsed> websocketFlow;
 
+    private Injector injector;
+
     public UserActor() {
-        searchResultsActor = null;
+        searchResultsActors = null;
         mat = null;
         hubSink = null;
         websocketFlow = null;
-        query = null;
+        injector = null;
     }
 
     @Inject
     public UserActor(Injector injector, Materializer mat) {
-        this.searchResultsActor = getContext().actorOf(Props.create(GuiceInjectedActor.class, injector,
-                SearchResultsActor.class));
+        this.searchResultsActors = new HashMap<>();
         this.mat = mat;
-        searchResultsActor.tell(new Messages.RegisterActor(), self());
+        this.injector = injector;
         createSink();
     }
 
@@ -78,8 +77,8 @@ public class UserActor extends AbstractActor {
 
         jsonSink = Sink.foreach((JsonNode json) -> {
             // When the user types in a stock in the upper right corner, this is triggered,
-            query = json.findPath("query").asText();
-            searchResultsActor.tell(new WatchSearchResults(query), self());
+            String queryRequest = json.findPath("query").asText();
+            askForStatuses(queryRequest);
         });
 
         // Put the source and sink together to make a flow of hub source as output (aggregating all
@@ -87,14 +86,32 @@ public class UserActor extends AbstractActor {
         // from the browser), using a coupled sink and source.
         this.websocketFlow = Flow.fromSinkAndSourceCoupled(jsonSink, hubSource)
                 .watchTermination((n, stage) -> {
-                    // Stop the searchResultsActor
-                    stage.thenAccept(f -> context().stop(searchResultsActor));
+                    // Stop the searchResultsActors
+                    searchResultsActors.forEach((query, actor) -> stage.thenAccept(f -> context().stop(actor)));
 
                     // When the flow shuts down, make sure this actor also stops.
                     stage.thenAccept(f -> context().stop(self()));
 
                     return NotUsed.getInstance();
                 });
+    }
+
+    /**
+     * If there already exists a SearchResultsActor for the keyword we want, ask it for updates
+     * Otherwise, create a new one, register the UserActor and wait the results
+     * @param query
+     */
+    private void askForStatuses(String query) {
+        ActorRef actorForQuery = searchResultsActors.get(query);
+        if (actorForQuery != null) {
+            actorForQuery.tell(new WatchSearchResults(query), self());
+        } else {
+            actorForQuery = getContext().actorOf(Props.create(GuiceInjectedActor.class, injector,
+                    SearchResultsActor.class));
+            searchResultsActors.put(query, actorForQuery);
+            actorForQuery.tell(new Messages.RegisterActor(), self());
+            actorForQuery.tell(new WatchSearchResults(query), self());
+        }
     }
 
     /**
@@ -106,8 +123,8 @@ public class UserActor extends AbstractActor {
                 .match(WatchSearchResults.class, watchSearchResults -> {
                     logger.info("Received message WatchSearchResults {}", watchSearchResults);
                     if (watchSearchResults != null) {
-                        // Ask the searchResultsActor for a stream containing these searchResults.
-                        searchResultsActor.tell(new WatchSearchResults(watchSearchResults.query), self());
+                        // Ask the searchResultsActors for a stream containing these searchResults
+                        askForStatuses(watchSearchResults.query);
                         sender().tell(websocketFlow, self());
                     }
                 })
@@ -129,13 +146,13 @@ public class UserActor extends AbstractActor {
     }
 
     /**
-     * Adds a single stock to the hub.
+     * Adds a statuses to the hub.
      */
     public void addStatuses(Messages.StatusesMessage message) {
         Set<Status> statuses = message.statuses;
         String query = message.query;
 
-        logger.info("Adding statuses {}", statuses);
+        logger.info("Adding statuses {} for query {}", statuses, query);
 
         Source<JsonNode, NotUsed> getSource = Source.from(statuses)
                 .map(Json::toJson);
@@ -162,10 +179,6 @@ public class UserActor extends AbstractActor {
         Actor create(String id);
     }
 
-    public void setSearchResultsActor(ActorRef searchResultsActor) {
-        this.searchResultsActor = searchResultsActor;
-    }
-
     public void setMat(Materializer mat) {
         this.mat = mat;
     }
@@ -178,20 +191,8 @@ public class UserActor extends AbstractActor {
         this.searchResultsMap = searchResultsMap;
     }
 
-    public ActorRef getSearchResultsActor() {
-        return searchResultsActor;
-    }
-
     public Materializer getMat() {
         return mat;
-    }
-
-    public String getQuery() {
-        return query;
-    }
-
-    public void setQuery(String query) {
-        this.query = query;
     }
 
     public Sink<JsonNode, CompletionStage<Done>> getJsonSink() {
@@ -200,5 +201,13 @@ public class UserActor extends AbstractActor {
 
     public void setJsonSink(Sink<JsonNode, CompletionStage<Done>> jsonSink) {
         this.jsonSink = jsonSink;
+    }
+
+    public Map<String, ActorRef> getSearchResultsActors() {
+        return searchResultsActors;
+    }
+
+    public void setSearchResultsActors(Map<String, ActorRef> searchResultsActors) {
+        this.searchResultsActors = searchResultsActors;
     }
 }

@@ -20,6 +20,8 @@ public final class Status {
 
     private String id;
 
+    private String query;
+
     /**
      * Default constructor
      */
@@ -83,6 +85,22 @@ public final class Status {
     }
 
     /**
+     * Set search Query
+     * @return String query
+     */
+    public String getQuery() {
+        return query;
+    }
+
+    /**
+     * Get search Query
+     * @param query query
+     */
+    public void setQuery(String query) {
+        this.query = query;
+    }
+
+    /**
      * Override equals method, used for the Sets
      * @param o object to compare
      * @return boolean Statuses same or not
@@ -93,6 +111,7 @@ public final class Status {
         if (o == null || getClass() != o.getClass()) return false;
         Status status = (Status) o;
         return Objects.equals(fullText, status.fullText) &&
+                Objects.equals(query, status.query) &&
                 Objects.equals(id, status.id);
     }
 
@@ -102,6 +121,6 @@ public final class Status {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(fullText, id);
+        return Objects.hash(fullText, id, query);
     }
 }

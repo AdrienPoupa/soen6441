@@ -1,6 +1,7 @@
 import actors.SearchResultsActor;
 import actors.UserActor;
 import akka.Done;
+import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.stream.ActorMaterializer;
@@ -20,6 +21,8 @@ import play.inject.guice.GuiceInjectorBuilder;
 import services.TwitterApi;
 import services.TwitterService;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
@@ -75,7 +78,9 @@ public class StreamTest {
             final SearchResultsActor searchResultsActorSync = subjectSra.underlyingActor();
             searchResultsActorSync.setTwitterService(twitterService);
 
-            userActor.setSearchResultsActor(subjectSra);
+            Map<String, ActorRef> searchResultsActorsMap = new HashMap<>();
+            searchResultsActorsMap.put("concordia", subjectSra);
+            userActor.setSearchResultsActors(searchResultsActorsMap);
             userActor.createSink();
 
 
@@ -90,7 +95,7 @@ public class StreamTest {
 
             future.toCompletableFuture().get();
 
-            Assert.assertEquals("concordia", userActor.getQuery());
+            Assert.assertEquals("concordia", userActor.getSearchResultsActors().entrySet().iterator().next().getKey());
         }};
 
     }

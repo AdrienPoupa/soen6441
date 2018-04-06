@@ -1,6 +1,7 @@
 import actors.Messages;
 import actors.SearchResultsActor;
 import actors.UserActor;
+import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.stream.ActorMaterializer;
@@ -17,7 +18,9 @@ import play.inject.guice.GuiceInjectorBuilder;
 import services.TwitterApi;
 import services.TwitterService;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 import static play.inject.Bindings.bind;
 
@@ -65,7 +68,9 @@ public class UserActorTest {
             final SearchResultsActor searchResultsActorSync = subjectSra.underlyingActor();
             searchResultsActorSync.setTwitterService(twitterService);
 
-            userActor.setSearchResultsActor(subjectSra);
+            Map<String, ActorRef> searchResultsActorsMap = new HashMap<>();
+            searchResultsActorsMap.put("concordia", subjectSra);
+            userActor.setSearchResultsActors(searchResultsActorsMap);
             userActor.createSink();
 
             subject.tell(new Messages.WatchSearchResults("concordia"), getRef()); // test registration
@@ -82,8 +87,8 @@ public class UserActorTest {
 
     @Test
     public void testSetSearchResultsActor() {
-        userActor.setSearchResultsActor(null);
-        Assert.assertNull(userActor.getSearchResultsActor());
+        userActor.setSearchResultsActors(null);
+        Assert.assertNull(userActor.getSearchResultsActors());
     }
 
     @Test
@@ -102,11 +107,5 @@ public class UserActorTest {
     public void testSetJsonSink() {
         userActor.setJsonSink(null);
         Assert.assertNull(userActor.getJsonSink());
-    }
-
-    @Test
-    public void testSetQuery() {
-        userActor.setQuery("concordia");
-        Assert.assertEquals("concordia", userActor.getQuery());
     }
 }

@@ -66,7 +66,7 @@ public class SearchResultsActorMessagesTest {
     public void testTickMessage() {
         Set<Status> statusesSet = new HashSet<>();
         searchResultsActorSync.setStatuses(statusesSet);
-        searchResultsActorSync.setKeyword("concordia");
+        searchResultsActorSync.setQuery("concordia");
         searchResultsActorSync.setTwitterService(twitterService);
         CompletableFuture<Void> completionStage = searchResultsActorSync.tickMessage().toCompletableFuture();
         await().until(completionStage::isDone);
@@ -77,14 +77,14 @@ public class SearchResultsActorMessagesTest {
         User user = status.getUser();
 
         // Test the first tweet
-        assertThat(status.getFullText(), is("No Concórdia só tem guria linda, plmds"));
-        assertThat(user.getId(), is(631553577));
-        assertThat(user.getName(), is("Vitorugo"));
-        assertThat(user.getScreenName(), is("vitorfialla_"));
-        assertThat(user.getLocation(), is("Porto Alegre, Brasil"));
-        assertThat(user.getDescription(), is("Idfc"));
-        assertThat(user.getFollowers(), is("317"));
-        assertThat(user.getFriends(), is("162"));
+        assertThat(status.getFullText(), is("Concórdia anuncia a saída do técnico Mauro Ovelha. Clube deve anunciar o novo treinador nas próximas horas. Confira: https://t.co/hVbWM33wIn"));
+        assertThat(user.getId(), is(143865435));
+        assertThat(user.getName(), is("Rodrigo Goulart"));
+        assertThat(user.getScreenName(), is("goulart0rodrigo"));
+        assertThat(user.getLocation(), is("Chapecó-SC"));
+        assertThat(user.getDescription(), is("Editor de esportes e colunista do jornal Diário do Iguaçu e membro da Equipe Esporte Total da Rádio Chapecó."));
+        assertThat(user.getFollowers(), is("3256"));
+        assertThat(user.getFriends(), is("819"));
     }
 
     @Test
@@ -102,26 +102,26 @@ public class SearchResultsActorMessagesTest {
         User user = status.getUser();
 
         // Test the first tweet
-        assertThat(status.getFullText(), is("No Concórdia só tem guria linda, plmds"));
-        assertThat(user.getId(), is(631553577));
-        assertThat(user.getName(), is("Vitorugo"));
-        assertThat(user.getScreenName(), is("vitorfialla_"));
-        assertThat(user.getLocation(), is("Porto Alegre, Brasil"));
-        assertThat(user.getDescription(), is("Idfc"));
-        assertThat(user.getFollowers(), is("317"));
-        assertThat(user.getFriends(), is("162"));
+        assertThat(status.getFullText(), is("Concórdia anuncia a saída do técnico Mauro Ovelha. Clube deve anunciar o novo treinador nas próximas horas. Confira: https://t.co/hVbWM33wIn"));
+        assertThat(user.getId(), is(143865435));
+        assertThat(user.getName(), is("Rodrigo Goulart"));
+        assertThat(user.getScreenName(), is("goulart0rodrigo"));
+        assertThat(user.getLocation(), is("Chapecó-SC"));
+        assertThat(user.getDescription(), is("Editor de esportes e colunista do jornal Diário do Iguaçu e membro da Equipe Esporte Total da Rádio Chapecó."));
+        assertThat(user.getFollowers(), is("3256"));
+        assertThat(user.getFriends(), is("819"));
     }
 
     @Test
     public void testGetKeyword() {
-        searchResultsActorSync.setKeyword("test");
-        Assert.assertEquals("test", searchResultsActorSync.getKeyword());
+        searchResultsActorSync.setQuery("test");
+        Assert.assertEquals("test", searchResultsActorSync.getQuery());
     }
 
     @Test
     public void testSetKeyword() {
-        searchResultsActorSync.setKeyword("test");
-        Assert.assertEquals("test", searchResultsActorSync.getKeyword());
+        searchResultsActorSync.setQuery("test");
+        Assert.assertEquals("test", searchResultsActorSync.getQuery());
     }
 
     @Test

@@ -27,7 +27,7 @@ public class SearchResultsActor extends AbstractActorWithTimers {
 
     private ActorRef userActor;
 
-    private String keyword;
+    private String query;
 
     private final LoggingAdapter logger = Logging.getLogger(getContext().system(), this);
 
@@ -53,7 +53,7 @@ public class SearchResultsActor extends AbstractActorWithTimers {
      */
     public SearchResultsActor() {
         this.userActor = null;
-        this.keyword = null;
+        this.query = null;
         this.statuses = new HashSet<>();
     }
 
@@ -71,7 +71,7 @@ public class SearchResultsActor extends AbstractActorWithTimers {
                 })
                 .match(Tick.class, message -> {
                     logger.info("Received message Tick {}", message);
-                    if (keyword != null) {
+                    if (query != null) {
                         tickMessage();
                     }
                 })
@@ -89,18 +89,20 @@ public class SearchResultsActor extends AbstractActorWithTimers {
      * @param message message to handle
      */
     public CompletionStage<Void> watchSearchResult(Messages.WatchSearchResults message) {
-        // Set the keyword
-        keyword = message.query;
+        // Set the query
+        query = message.query;
 
-        return twitterService.getTweets(keyword).thenAcceptAsync(searchResults -> {
-            // This is the first time we want to watch a (new) keyword: reset the list
+        return twitterService.getTweets(query).thenAcceptAsync(searchResults -> {
+            // This is the first time we want to watch a (new) query: reset the list
             this.statuses = new HashSet<>();
 
             // Add all the statuses to the list
             statuses.addAll(searchResults.getStatuses());
 
+            statuses.forEach(status -> status.setQuery(query));
+
             Messages.StatusesMessage statusesMessage =
-                    new Messages.StatusesMessage(statuses, keyword);
+                    new Messages.StatusesMessage(statuses, query);
 
             userActor.tell(statusesMessage, self());
         });
@@ -110,8 +112,8 @@ public class SearchResultsActor extends AbstractActorWithTimers {
      * watchSearchResult message handling
      */
     public CompletionStage<Void> tickMessage() {
-        // Every 5 seconds, check for new tweets if we have a keyword
-        return twitterService.getTweets(keyword).thenAcceptAsync(searchResults -> {
+        // Every 5 seconds, check for new tweets if we have a query
+        return twitterService.getTweets(query).thenAcceptAsync(searchResults -> {
             // Copy the current state of statuses in a temporary variable
             Set<Status> oldStatuses = new HashSet<>(statuses);
 
@@ -124,8 +126,10 @@ public class SearchResultsActor extends AbstractActorWithTimers {
             // Get the new statuses only by doing new - old = what we have to display
             newStatuses.removeAll(oldStatuses);
 
+            newStatuses.forEach(status -> status.setQuery(query));
+
             Messages.StatusesMessage statusesMessage =
-                    new Messages.StatusesMessage(newStatuses, keyword);
+                    new Messages.StatusesMessage(newStatuses, query);
 
             userActor.tell(statusesMessage, self());
         });
@@ -133,18 +137,18 @@ public class SearchResultsActor extends AbstractActorWithTimers {
 
     /**
      * Keyword getter
-     * @return String keyword
+     * @return String query
      */
-    public String getKeyword() {
-        return keyword;
+    public String getQuery() {
+        return query;
     }
 
     /**
-     * Setter for the keyword
-     * @param keyword String keyword
+     * Setter for the query
+     * @param query String query
      */
-    public void setKeyword(String keyword) {
-        this.keyword = keyword;
+    public void setQuery(String query) {
+        this.query = query;
     }
 
     /**
