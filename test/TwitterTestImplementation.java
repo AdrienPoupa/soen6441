@@ -37,6 +37,8 @@ public class TwitterTestImplementation implements TwitterApi {
         // Get test instance of WSClient
         ws = play.test.WSTestClient.newClient(server.httpPort());
 
+        // Here we will use the "real" implementation but with the mock server created above
+        // Therefore, we will achieve code coverage but not call the live Twitter API!
         twitterImplementation = new TwitterImplementation(ws);
         twitterImplementation.setBaseUrl("");
     }

@@ -49,7 +49,7 @@ public class TwitterService {
             // We have a list of Status, so we use Status[]
             return Arrays.asList(mapper.treeToValue(result,
                     Status[].class));
-        } catch (Exception e) {
+        } catch (JsonProcessingException e) {
             return null;
         }
     }
