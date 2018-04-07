@@ -33,14 +33,6 @@ public class MessagesTest {
     }
 
     @Test
-    public void testSearchResults() {
-        SearchResult searchResult = new SearchResult();
-        searchResult.setQuery("test");
-        Messages.SearchResults searchResults = new Messages.SearchResults(searchResult);
-        Assert.assertEquals("SearchResults(test)", searchResults.toString());
-    }
-
-    @Test
     public void testStatusesMessages() {
         Messages.StatusesMessage statusesMessage = new Messages.StatusesMessage(new HashSet<>(), "test");
         Assert.assertEquals("test", statusesMessage.query);

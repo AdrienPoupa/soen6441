@@ -1,6 +1,5 @@
 package actors;
 
-import models.SearchResult;
 import models.Status;
 
 import java.util.Set;
@@ -58,22 +57,6 @@ public final class Messages {
         @Override
         public String toString() {
             return "UnwatchSearchResults(" + query + ")";
-        }
-    }
-
-    /**
-     * SearchResults Message
-     */
-    public static final class SearchResults {
-        public final SearchResult searchResults;
-
-        public SearchResults(SearchResult searchResults) {
-            this.searchResults = requireNonNull(searchResults);
-        }
-
-        @Override
-        public String toString() {
-            return "SearchResults(" + searchResults.getQuery() + ")";
         }
     }
 
