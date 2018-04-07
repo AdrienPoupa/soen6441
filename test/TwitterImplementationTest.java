@@ -13,12 +13,21 @@ import java.util.concurrent.ExecutionException;
 
 import static play.inject.Bindings.bind;
 
+/**
+ * Twitter api test by bind TwitterApi to TwitterImplementation, and get the instance of TwitterApi
+ * @param twitterTestImplementation  instance of TwitterApi
+ * @author akapandaroad 
+ *                                   
+ *
+ */
+
 public class TwitterImplementationTest {
 
     private static TwitterApi twitterTestImplementation;
 
     private static Injector testApp;
 
+    
     @BeforeClass
     public static void initTestApp() {
         testApp = new GuiceInjectorBuilder()
@@ -27,6 +36,13 @@ public class TwitterImplementationTest {
         twitterTestImplementation = testApp.instanceOf(TwitterApi.class);
     }
 
+    /**
+     * 
+     * 
+     * @throws ExecutionException
+     * @throws InterruptedException
+     * @throws IOException
+     */
     @Test
     public void testSearch() throws ExecutionException, InterruptedException, IOException {
         WSResponse search = twitterTestImplementation.search("test").toCompletableFuture().get();
@@ -37,6 +53,13 @@ public class TwitterImplementationTest {
         Assert.assertEquals(searchJsonFile, body);
     }
 
+    /**
+     * 
+     * 
+     * @throws ExecutionException
+     * @throws InterruptedException
+     * @throws IOException
+     */
     @Test
     public void testProfile() throws ExecutionException, InterruptedException, IOException {
         WSResponse search = twitterTestImplementation.profile("test").toCompletableFuture().get();
@@ -47,6 +70,13 @@ public class TwitterImplementationTest {
         Assert.assertEquals(profileJsonFile, body);
     }
 
+    /**
+     * 
+     * 
+     * @param path
+     * @return
+     * @throws IOException
+     */
     private String getJsonFileAsString(String path) throws IOException {
         String filePath = new File("").getAbsolutePath();
         byte[] encoded = Files.readAllBytes(Paths.get(filePath.concat(path)));
