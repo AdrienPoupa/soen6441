@@ -15,8 +15,7 @@ import static play.inject.Bindings.bind;
 
 /**
  * Twitter api test by bind TwitterApi to TwitterImplementation, and get the instance of TwitterApi
- * @param twitterTestImplementation  instance of TwitterApi
- * @author akapandaroad 
+ * @param twitterTestImplementation  instance of TwitterApi 
  *                                   
  *
  */
