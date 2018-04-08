@@ -36,18 +36,26 @@ public class SearchResultsActorMessagesTest {
     static ActorSystem system;
 
     private static Injector testApp;
-
+    /**
+     * Setup the tests
+     */
     @BeforeClass
     public static void setup() {
         system = ActorSystem.create();
     }
-
+    
+    /**
+     * Shut down the system
+     */
     @AfterClass
     public static void teardown() {
         TestKit.shutdownActorSystem(system);
         system = null;
     }
-
+    
+    /**
+     * Initiate test app
+     */
     @BeforeClass
     public static void initTestApp() {
         testApp = new GuiceInjectorBuilder()
@@ -62,6 +70,9 @@ public class SearchResultsActorMessagesTest {
         searchResultsActorSync.setTwitterService(twitterService);
     }
 
+    	/**
+    	 * Test for the tick message
+    	 */
     @Test
     public void testTickMessage() {
         Set<Status> statusesSet = new HashSet<>();
@@ -87,6 +98,9 @@ public class SearchResultsActorMessagesTest {
         assertThat(user.getFriends(), is("819"));
     }
 
+    	/**
+    	 * Test for the WatchSearchResults message
+    	 */
     @Test
     public void testWatchSearchResults() {
         Set<Status> statusesSet = new HashSet<>();
@@ -111,45 +125,66 @@ public class SearchResultsActorMessagesTest {
         assertThat(user.getFollowers(), is("3256"));
         assertThat(user.getFriends(), is("819"));
     }
-
+    
+    /**
+     * Getter test for Keyword
+     */
     @Test
     public void testGetKeyword() {
         searchResultsActorSync.setQuery("test");
         Assert.assertEquals("test", searchResultsActorSync.getQuery());
     }
 
+    /**
+     * Setter test for keyword
+     */
     @Test
     public void testSetKeyword() {
         searchResultsActorSync.setQuery("test");
         Assert.assertEquals("test", searchResultsActorSync.getQuery());
     }
-
+    
+    /**
+     * Getter test for Statuses
+     */
     @Test
     public void testGetStatuses() {
         Set<Status> statusesSet = new HashSet<>();
         searchResultsActorSync.setStatuses(statusesSet);
         Assert.assertEquals(statusesSet, searchResultsActorSync.getStatuses());
     }
-
+    
+    /**
+     * Setter test for Statuses
+     */
     @Test
     public void testSetStatuses() {
         Set<Status> statusesSet = new HashSet<>();
         searchResultsActorSync.setStatuses(statusesSet);
         Assert.assertEquals(statusesSet, searchResultsActorSync.getStatuses());
     }
-
+    
+    /**
+     * Getter test for TwitterService
+     */
     @Test
     public void testGetTwitterService() {
         searchResultsActorSync.setTwitterService(twitterService);
         Assert.assertEquals(twitterService, searchResultsActorSync.getTwitterService());
     }
-
+    
+    /**
+     * Setter test for TwitterService
+     */
     @Test
     public void testSetTwitterService() {
         searchResultsActorSync.setTwitterService(twitterService);
         Assert.assertEquals(twitterService, searchResultsActorSync.getTwitterService());
     }
-
+    
+    /**
+     * Test for tick
+     */
     @Test
     public void testTickClass() {
         SearchResultsActor.Tick tick = new SearchResultsActor.Tick();
