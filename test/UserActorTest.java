@@ -48,7 +48,10 @@ public class UserActorTest {
         TestKit.shutdownActorSystem(system);
         system = null;
     }
-
+    
+    /**
+     * Test for the UserActor
+     */
     @Test
     public void testUserActor() {
         new TestKit(system) {{
@@ -84,25 +87,37 @@ public class UserActorTest {
             subject.tell(new Messages.UnwatchSearchResults("concordia"), getRef());
         }};
     }
-
+    
+    /**
+     * Setter test for SearchResultsActor
+     */
     @Test
     public void testSetSearchResultsActor() {
         userActor.setSearchResultsActors(null);
         Assert.assertNull(userActor.getSearchResultsActors());
     }
-
+    
+    /**
+     * Setter test for Materializer
+     */
     @Test
     public void testSetMaterializer() {
         userActor.setMat(null);
         Assert.assertNull(userActor.getMat());
     }
-
+    
+    /**
+     * Setter test for the SearchResultsMap
+     */
     @Test
     public void testSetSearchResultsMap() {
         userActor.setSearchResultsMap(null);
         Assert.assertNull(userActor.getSearchResultsMap());
     }
-
+    
+    /**
+     * Setter test for the JsonSink
+     */
     @Test
     public void testSetJsonSink() {
         userActor.setJsonSink(null);
