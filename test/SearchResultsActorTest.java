@@ -24,18 +24,27 @@ public class SearchResultsActorTest {
     static ActorSystem system;
 
     private static Injector testApp;
-
+    
+    /**
+     * Setup the tests
+     */
     @BeforeClass
     public static void setup() {
         system = ActorSystem.create();
     }
-
+    
+    /**
+     * Shut down system
+     */
     @AfterClass
     public static void teardown() {
         TestKit.shutdownActorSystem(system);
         system = null;
     }
-
+    
+    /**
+     * Test for the SearchResultsActor
+     */
     @Test
     public void testSearchResultsActor() {
         new TestKit(system) {{
