@@ -18,7 +18,9 @@ import static org.awaitility.Awaitility.*;
  * Credits: https://github.com/playframework/play-java-websocket-example/blob/2.6.x/test/controllers/FunctionalTest.java
  */
 public class WebSocketControllerTest {
-
+	/**
+	 * Test for the reject WebSocket
+	 */
     @Test
     public void testRejectWebSocket() {
         TestServer server = testServer(37117);
@@ -44,7 +46,10 @@ public class WebSocketControllerTest {
             }
         });
     }
-
+    
+    /**
+     * Test for the accept WebSocket
+     */
     @Test
     public void testAcceptWebSocket() {
         TestServer server = testServer(19001);
