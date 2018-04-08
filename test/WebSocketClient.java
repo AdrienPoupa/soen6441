@@ -24,7 +24,15 @@ public class WebSocketClient {
     public WebSocketClient(AsyncHttpClient c) {
         this.client = c;
     }
-
+    
+    /**
+     * 
+     * @param url
+     * @param listener
+     * @return CompletableFuture<WebSocket> future.toCompletableFuture
+     * @throws ExecutionException exception
+     * @throws InterruptedException exception
+     */
     public CompletableFuture<WebSocket> call(String url, WebSocketTextListener listener) throws ExecutionException, InterruptedException {
         final BoundRequestBuilder requestBuilder = client.prepareGet(url);
 
