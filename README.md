@@ -12,6 +12,18 @@ sbt run
 
 And then go to http://localhost:9000 to see the running web application.
 
+```
+sbt jacoco
+```
+
+Computes the coverage.
+
+```
+sbt doc
+```
+
+Generates the JavaDoc.
+
 ## Team Members
 
 
@@ -22,6 +34,10 @@ And then go to http://localhost:9000 to see the running web application.
 | Wei Li                    | 40027433      | Junit tests, JavaDoc, UI             |
 | Vamsikrishna Tamil Selvan | 40010750      | Test cases, JavaDoc, Documentation   |
 | Manoj Kumar Muppavarapu   | 40042560      | JavaDoc, Test cases, Documentation   |
+
+## Application flow
+
+![Application flow](flow.png)
 
 ## Controllers
 
@@ -50,99 +66,39 @@ And then go to http://localhost:9000 to see the running web application.
 - User.java:
 
   Handles the user included in both Search and Profile.
-  
 
-## Tests
+## Actors
 
-- testGetQuery: For search result 
+- GuiceInjectedActor.java:
 
-- testSetQuery: For search result
+  Used to create actors that use Guice's Inject annotation.
 
-- testSetStatuses:For search result 
+- Messages.java:
 
-- testSetFullText:For Statusch result
+  All the messages sent/received by the actors.
 
-- testGetStatuses:For search result
+- SearchResultsActor.java:
 
-- testUserParentActorCreate: For Messages
+  Search actor, calls the TwitterImplementation.
 
-- testWatchSearchResults: For Messages
+- UserActor.java:
 
-- testUnWatchSearchResults: For Messages
+  Handles and supervises the SearchResultsActors
 
-- testSearchResults: For Messages
+- UserParentActor.java:
 
-- testStatusesMessages: For Messages
+  Creates and supervises the UserActor.
 
-- testRegisterActor: For Messages
+## Services
 
-- testMessages: For Messages
+- TwitterAPI.java:
 
-- testTickMessage : For SearchResultsActorMessages 
+  Interface that defines the implementations.
 
+- TwitterImplementation.java:
 
-- testWatchSearchResults: For SearchResultsActorMessages
+  Uses the results provided by the TwitterService to parse the tweets.
 
-- testGetKeyword: For SearchResultsActorMessages
+- TwitterService.java:
 
-- testSetKeyword: For SearchResultsActorMessages
-
-- testGetStatuses:For SearchResultsActorMessages
-
-- testSetStatuses:For SearchResultsActorMessages
-
-- testGetTwitterService :For SearchResultsActorMessages
-
-- testSetTwitterService: For SearchResultsActorMessages
-
-- testTickClass: For SearchResultsActorMessages
-
-- testSearchResultsActor: For SearchResultActor
-
-- testGetUser: For Status
-
-- testSetUser: For Status
-
-- testGetFullText: For Status
-
-- testSetFullText: For Status
-
-- testGetType : For Status
-
-- testGetId : For Status
-
-- testSetId:For Status
-
-- equalsContract: For Status
-
-- testUserActor: For UserActor
-
-- testSetSearchResultsActor: For UserActor
-
-- testSetMaterializer: For UserActor
-
-- testSetSearchResultsMap: For UserActor
-
-- testGetLocation: For User
-
-- testSetLocation: For User
-
-- testGetDescription: For User
-
-- testSetDescription : For User
-
-- testGetFollowers :For User
-
-- testSetFollowers: For User
-
-- testGetFriends: For User
-
-- testSetFriends: For User
-
-- testGetId :For User
-
-- testSetName: For User
-
-- testGetScreenName : For User
-
-- testSetScreenName : For User
+  Calls the live TwitterAPI, implements the TwitterAPI interface.

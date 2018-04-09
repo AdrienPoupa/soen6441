@@ -60,7 +60,7 @@ public class WebSocketController extends Controller {
 
     /**
      * Create a UserParentActor with a given ID
-     * @param request
+     * @param request Request to handle
      * @return CompletionStage
      */
     @SuppressWarnings("unchecked")
@@ -91,6 +91,8 @@ public class WebSocketController extends Controller {
      * <p>
      * See https://tools.ietf.org/html/rfc6455#section-1.3 and
      * http://blog.dewhurstsecurity.com/2013/08/30/security-testing-html5-websockets.html
+     * @param rh Http Request header
+     * @return boolean
      */
     private boolean sameOriginCheck(Http.RequestHeader rh) {
         final Optional<String> origin = rh.header("Origin");
