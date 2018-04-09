@@ -15,6 +15,7 @@ import static akka.pattern.PatternsCS.pipe;
 /**
  * UserParentActor for UserActor
  * Inspired by https://github.com/playframework/play-java-websocket-example/blob/2.6.x/app/actors/UserParentActor.java
+ * @author Adrien Poupa
  */
 public class UserParentActor extends AbstractActor implements InjectedActorSupport {
 
@@ -23,12 +24,22 @@ public class UserParentActor extends AbstractActor implements InjectedActorSuppo
 
     private final UserActor.Factory childFactory;
 
+    /**
+     * Create the default UserParentActor
+     * Called by the WebSocketController
+     * Runs a default search on the keyword "test"
+     * @param childFactory factory to create a UserActor
+     */
     @Inject
     public UserParentActor(UserActor.Factory childFactory) {
         this.childFactory = childFactory;
         this.query = "test"; // default keyword
     }
 
+    /**
+     * Receive Akka messages
+     * @return Receive receive
+     */
     @Override
     public Receive createReceive() {
         return receiveBuilder()

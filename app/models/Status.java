@@ -62,7 +62,7 @@ public final class Status {
 
     /**
      * Get the tweet ID
-     * @return
+     * @return id ID
      */
     public String getId() {
         return id;

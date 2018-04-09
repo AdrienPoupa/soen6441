@@ -16,6 +16,7 @@ import static org.awaitility.Awaitility.*;
 
 /**
  * Credits: https://github.com/playframework/play-java-websocket-example/blob/2.6.x/test/controllers/FunctionalTest.java
+ * @author Adrien Poupa
  */
 public class WebSocketControllerTest {
 	/**

@@ -36,6 +36,7 @@ public class SearchResultsActorMessagesTest {
     static ActorSystem system;
 
     private static Injector testApp;
+
     /**
      * Setup the tests
      */
@@ -70,9 +71,9 @@ public class SearchResultsActorMessagesTest {
         searchResultsActorSync.setTwitterService(twitterService);
     }
 
-    	/**
-    	 * Test for the tick message
-    	 */
+    /**
+     * Test for the tick message
+     */
     @Test
     public void testTickMessage() {
         Set<Status> statusesSet = new HashSet<>();
@@ -98,9 +99,9 @@ public class SearchResultsActorMessagesTest {
         assertThat(user.getFriends(), is("819"));
     }
 
-    	/**
-    	 * Test for the WatchSearchResults message
-    	 */
+    /**
+     * Test for the WatchSearchResults message
+     */
     @Test
     public void testWatchSearchResults() {
         Set<Status> statusesSet = new HashSet<>();

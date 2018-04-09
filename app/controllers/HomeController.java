@@ -17,7 +17,7 @@ public class HomeController extends Controller {
 
     /**
      * Show the index
-     * @return CompletionStage<Result> page
+     * @return CompletionStage of Result page
      */
     public CompletionStage<Result> index() {
         return CompletableFuture.completedFuture(ok(index.render()));

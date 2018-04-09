@@ -31,6 +31,7 @@ import java.util.concurrent.CompletionStage;
  * The UserActor holds the connection and sends serialized
  * JSON data to the client.
  * Inspired from https://github.com/playframework/play-java-websocket-example/blob/2.6.x/app/actors/UserActor.java
+ * @author Adrien Poupa
  */
 public class UserActor extends AbstractActor {
 
@@ -50,6 +51,9 @@ public class UserActor extends AbstractActor {
 
     private Injector injector;
 
+    /**
+     * Default empty constructor for the tests
+     */
     public UserActor() {
         searchResultsActors = null;
         mat = null;
@@ -58,6 +62,11 @@ public class UserActor extends AbstractActor {
         injector = null;
     }
 
+    /**
+     * Regular constructor
+     * @param injector Guice Injector, used later to create the SearchResultsActor with GuiceInjectedActor
+     * @param mat Materializer for the Akka streams
+     */
     @Inject
     public UserActor(Injector injector, Materializer mat) {
         this.searchResultsActors = new HashMap<>();
@@ -66,6 +75,9 @@ public class UserActor extends AbstractActor {
         createSink();
     }
 
+    /**
+     * Create the Akka Sink
+     */
     public void createSink() {
         Pair<Sink<JsonNode, NotUsed>, Source<JsonNode, NotUsed>> sinkSourcePair =
                 MergeHub.of(JsonNode.class, 16)
@@ -147,6 +159,7 @@ public class UserActor extends AbstractActor {
 
     /**
      * Adds a statuses to the hub.
+     * @param message StatusesMessage message contaning the query and the statuses
      */
     public void addStatuses(Messages.StatusesMessage message) {
         Set<Status> statuses = message.statuses;
@@ -175,38 +188,73 @@ public class UserActor extends AbstractActor {
         searchResultsMap.put(query, killSwitch);
     }
 
+    /**
+     * Factory interface to create a UserActor from the UserParentActor
+     */
     public interface Factory {
         Actor create(String id);
     }
 
+    /**
+     * Setter for Materializer
+     * @param mat Materializer
+     */
     public void setMat(Materializer mat) {
         this.mat = mat;
     }
 
+    /**
+     * Getter for the SearchResultsMap
+     * @return a Map containing the kill switches for a query
+     */
     public Map<String, UniqueKillSwitch> getSearchResultsMap() {
         return searchResultsMap;
     }
 
+    /**
+     * Setter for the SearchResultsMap
+     * @param searchResultsMap SearchResultsMap
+     */
     public void setSearchResultsMap(Map<String, UniqueKillSwitch> searchResultsMap) {
         this.searchResultsMap = searchResultsMap;
     }
 
+    /**
+     * Getter for the Materializer
+     * @return Materializer
+     */
     public Materializer getMat() {
         return mat;
     }
 
+    /**
+     * Getter for the json sink
+     * @return jsonSink a Sink of JsonNodes and CompletionStage of Done
+     */
     public Sink<JsonNode, CompletionStage<Done>> getJsonSink() {
         return jsonSink;
     }
 
+    /**
+     * Setter for the json sink
+     * @param jsonSink Sink of JsonNode and CompletionStage of Done
+     */
     public void setJsonSink(Sink<JsonNode, CompletionStage<Done>> jsonSink) {
         this.jsonSink = jsonSink;
     }
 
+    /**
+     * Getter for the SearchResultsActor map
+     * @return searchResultsActors Map of String and ActorRef a map of actor references for a given query
+     */
     public Map<String, ActorRef> getSearchResultsActors() {
         return searchResultsActors;
     }
 
+    /**
+     * Setter for the SearchResultsActor map
+     * @param searchResultsActors Map of String and ActorRef a map of actor references for a given query
+     */
     public void setSearchResultsActors(Map<String, ActorRef> searchResultsActors) {
         this.searchResultsActors = searchResultsActors;
     }

@@ -21,6 +21,10 @@ public class WebSocketClient {
 
     private AsyncHttpClient client;
 
+    /**
+     * Constructor
+     * @param c AsyncHttpClient
+     */
     public WebSocketClient(AsyncHttpClient c) {
         this.client = c;
     }
@@ -41,9 +45,16 @@ public class WebSocketClient {
         return future.toCompletableFuture();
     }
 
+    /**
+     * LoggingListener
+     */
     static class LoggingListener implements WebSocketTextListener {
         private final Consumer<String> onMessageCallback;
 
+        /**
+         * Constructor
+         * @param onMessageCallback callback
+         */
         public LoggingListener(Consumer<String> onMessageCallback) {
             this.onMessageCallback = onMessageCallback;
         }
@@ -52,27 +63,42 @@ public class WebSocketClient {
 
         private Throwable throwableFound = null;
 
+        /**
+         * Get throwable
+         * @return throwable
+         */
         public Throwable getThrowable() {
             return throwableFound;
         }
 
+        /**
+         * Action performed on opening socket
+         * @param websocket
+         */
         public void onOpen(WebSocket websocket) {
-            //logger.info("onClose: ");
-            //websocket.sendMessage("hello");
         }
 
+        /**
+         * Action performed on closing socket
+         * @param websocket
+         */
         public void onClose(WebSocket websocket) {
-            //logger.info("onClose: ");
         }
 
+        /**
+         * Action performed when an error is thrown
+         * @param t throwable
+         */
         public void onError(Throwable t) {
-            //logger.error("onError: ", t);
             throwableFound = t;
         }
 
+        /**
+         * Action performed when there is a message
+         * @param s String
+         */
         @Override
         public void onMessage(String s) {
-            //logger.info("onMessage: s = " + s);
             onMessageCallback.accept(s);
         }
     }

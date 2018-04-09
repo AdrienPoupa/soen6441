@@ -15,9 +15,8 @@ import static play.inject.Bindings.bind;
 
 /**
  * Twitter api test by bind TwitterApi to TwitterImplementation, and get the instance of TwitterApi
- * @param twitterTestImplementation  instance of TwitterApi 
- *                                   
- *
+ * We use an instance of TwitterTestImplementation provided by Guice
+ * @author Adrien Poupa
  */
 
 public class TwitterImplementationTest {
@@ -26,7 +25,9 @@ public class TwitterImplementationTest {
 
     private static Injector testApp;
 
-    
+    /**
+     * Initialise the test application, bind the TwitterAPI interface to its mock implementation
+     */
     @BeforeClass
     public static void initTestApp() {
         testApp = new GuiceInjectorBuilder()
@@ -36,11 +37,11 @@ public class TwitterImplementationTest {
     }
 
     /**
-     * 
-     * 
-     * @throws ExecutionException
-     * @throws InterruptedException
-     * @throws IOException
+     * Test the search for a keyword comparing the static jsonfile we expect and what is returned
+     * by the mock implementation
+     * @throws ExecutionException if an error occurs during execution
+     * @throws InterruptedException if the request is interrupted
+     * @throws IOException if we have trouble reading the static file
      */
     @Test
     public void testSearch() throws ExecutionException, InterruptedException, IOException {
@@ -53,11 +54,11 @@ public class TwitterImplementationTest {
     }
 
     /**
-     * 
-     * 
-     * @throws ExecutionException
-     * @throws InterruptedException
-     * @throws IOException
+     * Test the search for a user comparing the static jsonfile we expect and what is returned
+     * by the mock implementation
+     * @throws ExecutionException if an error occurs during execution
+     * @throws InterruptedException if the request is interrupted
+     * @throws IOException if we have trouble reading the static file
      */
     @Test
     public void testProfile() throws ExecutionException, InterruptedException, IOException {
@@ -70,11 +71,10 @@ public class TwitterImplementationTest {
     }
 
     /**
-     * 
-     * 
-     * @param path
-     * @return
-     * @throws IOException
+     * Get the content of the mock files we store in the resources folder
+     * @param path String path of the files
+     * @return the String content of the file
+     * @throws IOException if we did not manage to read the file
      */
     private String getJsonFileAsString(String path) throws IOException {
         String filePath = new File("").getAbsolutePath();

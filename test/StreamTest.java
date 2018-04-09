@@ -40,11 +40,17 @@ public class StreamTest {
     private static UserActor userActor;
     private static Materializer mat;
 
+    /**
+     * Setup the actor system
+     */
     @BeforeClass
     public static void setup() {
         system = ActorSystem.create();
     }
 
+    /**
+     * Shutdown the actor system
+     */
     @AfterClass
     public static void teardown() {
         TestKit.shutdownActorSystem(system);

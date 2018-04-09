@@ -13,8 +13,16 @@ import static play.test.Helpers.*;
 
 import static org.mockito.Mockito.mock;
 
+/**
+ * Test the homepage
+ * @author Adrien Poupa
+ */
 public class HomeControllerTest {
 
+    /**
+     * Mock the Http Context before running the tests
+     * This is needed to render the template
+     */
     @Before
     public void setUp() {
         Http.Context context = mock(Http.Context.class);

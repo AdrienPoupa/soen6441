@@ -15,12 +15,15 @@ public class SearchResult {
 
     protected List<Status> statuses;
 
+    /**
+     * Default empty constructor for tests
+     */
     public SearchResult() {
     }
 
     /**
      * Get statuses
-     * @return List<Status> statuses
+     * @return List of Status statuses
      */
     public List<Status> getStatuses() {
         return statuses;
@@ -28,7 +31,7 @@ public class SearchResult {
 
     /**
      * Set the statuses
-     * @param statuses List<Status> statuses
+     * @param statuses List of Status  statuses
      */
     public void setStatuses(List<Status> statuses) {
         this.statuses = statuses;

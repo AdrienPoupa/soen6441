@@ -34,6 +34,10 @@ public class WebSocketController extends Controller {
     private final Logger logger = org.slf4j.LoggerFactory.getLogger("controllers.WebSocketController");
     private final ActorRef userParentActor;
 
+    /**
+     * Constructor
+     * @param userParentActor userParentActor provided by Guice
+     */
     @Inject
     public WebSocketController(@Named("userParentActor") ActorRef userParentActor) {
         this.userParentActor = userParentActor;
@@ -57,7 +61,7 @@ public class WebSocketController extends Controller {
     /**
      * Create a UserParentActor with a given ID
      * @param request
-     * @return
+     * @return CompletionStage
      */
     @SuppressWarnings("unchecked")
     private CompletionStage<Flow<JsonNode, JsonNode, NotUsed>> wsFutureFlow(Http.RequestHeader request) {

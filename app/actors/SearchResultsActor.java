@@ -87,6 +87,7 @@ public class SearchResultsActor extends AbstractActorWithTimers {
     /**
      * watchSearchResult message handling
      * @param message message to handle
+     * @return CompletionStage of Void
      */
     public CompletionStage<Void> watchSearchResult(Messages.WatchSearchResults message) {
         // Set the query
@@ -110,6 +111,7 @@ public class SearchResultsActor extends AbstractActorWithTimers {
 
     /**
      * watchSearchResult message handling
+     * @return CompletionStage of void
      */
     public CompletionStage<Void> tickMessage() {
         // Every 5 seconds, check for new tweets if we have a query
@@ -153,7 +155,7 @@ public class SearchResultsActor extends AbstractActorWithTimers {
 
     /**
      * Setter for the statuses
-     * @param statuses Set<Statuses> statuses
+     * @param statuses Set of Statuses statuses
      */
     public void setStatuses(Set<Status> statuses) {
         this.statuses = statuses;
@@ -161,7 +163,7 @@ public class SearchResultsActor extends AbstractActorWithTimers {
 
     /**
      * Statuses getter
-     * @return Set<Status> statuses
+     * @return Set of Status statuses
      */
     public Set<Status> getStatuses() {
         return statuses;

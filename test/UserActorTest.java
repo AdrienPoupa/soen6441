@@ -35,6 +35,9 @@ public class UserActorTest {
     private static Injector testApp;
     private static UserActor userActor;
 
+    /**
+     * Setup the actor system
+     */
     @BeforeClass
     public static void setup() {
         system = ActorSystem.create();
@@ -43,6 +46,9 @@ public class UserActorTest {
         userActor = subject.underlyingActor();
     }
 
+    /**
+     * Shutdown the actor system
+     */
     @AfterClass
     public static void teardown() {
         TestKit.shutdownActorSystem(system);

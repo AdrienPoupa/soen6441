@@ -23,6 +23,11 @@ public class TwitterController extends Controller {
 
     private HttpExecutionContext httpExecutionContext;
 
+    /**
+     * Constructor
+     * @param twitterService twitterService provided by Guice
+     * @param ec HttpExecutionContext used to return results for the profile page
+     */
     @Inject
     public TwitterController(TwitterService twitterService, HttpExecutionContext ec) {
         this.httpExecutionContext = ec;
@@ -32,7 +37,7 @@ public class TwitterController extends Controller {
     /**
      * Search form page (GET page)
      * Displays the form
-     * @return CompletionStage<SearchResult>
+     * @return CompletionStage of SearchResult
      */
     public CompletionStage<Result> search() {
         return CompletableFuture.completedFuture(ok(search.render()));
@@ -41,7 +46,7 @@ public class TwitterController extends Controller {
     /**
      * Display latest statuses of a profile
      * @param username String username of the Twitter user we want the latest statuses
-     * @return CompletionStage<SearchResult>
+     * @return CompletionStage of SearchResult
      */
     public CompletionStage<Result> profile(String username) {
         return twitterService.getProfile(username)

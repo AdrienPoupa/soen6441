@@ -29,6 +29,12 @@ public class TwitterControllerTest {
 
     private static Injector testApp;
 
+    /**
+     * Initialise the test application
+     * Set the current Http.Context
+     * Get the HttpExecutionContext
+     * Create a the twitterController for tests using the mock implementation of the TwitterAPI interface
+     */
     @BeforeClass
     public static void initTestApp() {
         Http.Context context = mock(Http.Context.class);
@@ -65,7 +71,7 @@ public class TwitterControllerTest {
     }
 
     /**
-     * Test the display of the search form
+     * Test the display of the profile
      */
     @Test
     public void testProfile() throws ExecutionException, InterruptedException {

@@ -23,10 +23,17 @@ import static org.mockito.Mockito.when;
 import static play.inject.Bindings.bind;
 import static org.hamcrest.core.Is.is;
 
+/**
+ * Test the TwitterService
+ * @author Adrien Poupa
+ */
 public class TwitterServiceTest {
 
     private static TwitterService twitterService;
 
+    /**
+     * Initialise the test application, bind the TwitterAPI interface to its mock implementation
+     */
     @BeforeClass
     public static void initTestApp() {
         Injector testApp = new GuiceInjectorBuilder()

@@ -88,6 +88,10 @@ public final class Messages {
         }
     }
 
+    /**
+     * Override toString for the Messages class
+     * @return string "Messages"
+     */
     @Override
     public String toString() {
         return "Messages";

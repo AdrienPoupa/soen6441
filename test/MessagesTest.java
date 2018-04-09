@@ -1,5 +1,4 @@
 import actors.Messages;
-import models.SearchResult;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,6 +10,9 @@ import java.util.HashSet;
  */
 public class MessagesTest {
 
+    /**
+     * Test the UserParentActor creation
+     */
     @Test
     public void testUserParentActorCreate() {
         Messages.UserParentActorCreate userParentActorCreate = new Messages.UserParentActorCreate("1");
@@ -18,6 +20,9 @@ public class MessagesTest {
         Assert.assertEquals("UserParentActorCreate(1)", userParentActorCreate.toString());
     }
 
+    /**
+     * Test WatchSearchResults class
+     */
     @Test
     public void testWatchSearchResults() {
         Messages.WatchSearchResults watchSearchResults = new Messages.WatchSearchResults("test");
@@ -25,13 +30,19 @@ public class MessagesTest {
         Assert.assertEquals("WatchSearchResults(test)", watchSearchResults.toString());
     }
 
+    /**
+     * Test UnwatchSearchResults class
+     */
     @Test
-    public void testUnWatchSearchResults() {
+    public void testUnwatchSearchResults() {
         Messages.UnwatchSearchResults unWatchSearchResults = new Messages.UnwatchSearchResults("test");
         Assert.assertEquals("test", unWatchSearchResults.query);
         Assert.assertEquals("UnwatchSearchResults(test)", unWatchSearchResults.toString());
     }
 
+    /**
+     * Test StatusesMessages class
+     */
     @Test
     public void testStatusesMessages() {
         Messages.StatusesMessage statusesMessage = new Messages.StatusesMessage(new HashSet<>(), "test");
@@ -39,12 +50,18 @@ public class MessagesTest {
         Assert.assertEquals("StatusesMessage(test)", statusesMessage.toString());
     }
 
+    /**
+     * Test RegisterActor class
+     */
     @Test
     public void testRegisterActor() {
         Messages.RegisterActor registerActor = new Messages.RegisterActor();
         Assert.assertEquals("RegisterActor", registerActor.toString());
     }
 
+    /**
+     * Test the Messages class itself
+     */
     @Test
     public void testMessages() {
         Messages messages = new Messages();

@@ -12,7 +12,7 @@ import java.util.concurrent.CompletionStage;
 import static play.mvc.Results.ok;
 
 /**
- * Mock implementation
+ * Mock implementation of the TwitterAPI interface
  */
 public class TwitterTestImplementation implements TwitterApi {
 
@@ -22,6 +22,15 @@ public class TwitterTestImplementation implements TwitterApi {
 
     private TwitterImplementation twitterImplementation;
 
+    /**
+     * Constructor
+     * First, we setup a server that will return our static files for a search or a profile
+     * Then, we get a test instance of the WSClient, existing in Play
+     * Then, we inject this instance in the real implementation: this way, the mock server
+     * will respond instead of Twitter, giving us the static files
+     * Finally, we override the base URL to query the local server which responds on /search and /statuses
+     * without any domain name in front of it
+     */
     public TwitterTestImplementation() {
         // Mock the Twitter's API response
         server = Server.forRouter((components) -> RoutingDsl.fromComponents(components)
@@ -43,11 +52,21 @@ public class TwitterTestImplementation implements TwitterApi {
         twitterImplementation.setBaseUrl("");
     }
 
+    /**
+     * Test the search implementation
+     * @param keyword keyword to search
+     * @return CompletionStage of a WSResponse
+     */
     @Override
     public CompletionStage<WSResponse> search(String keyword) {
         return twitterImplementation.search(keyword);
     }
 
+    /**
+     * Test the profile implementation
+     * @param username username to search
+     * @return CompletionStage of a WSResponse
+     */
     @Override
     public CompletionStage<WSResponse> profile(String username) {
         return twitterImplementation.profile(username);
