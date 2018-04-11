@@ -48,7 +48,8 @@ public class TwitterImplementationTest {
         WSResponse search = twitterTestImplementation.search("test").toCompletableFuture().get();
         String body = search.getBody();
 
-        String searchJsonFile = getJsonFileAsString("/test/resources/search.json");
+        String searchJsonFile = getJsonFileAsString(File.separator + "test" + File.separator + "resources" +
+                File.separator + "search.json");
 
         Assert.assertEquals(searchJsonFile, body);
     }
@@ -65,7 +66,8 @@ public class TwitterImplementationTest {
         WSResponse search = twitterTestImplementation.profile("test").toCompletableFuture().get();
         String body = search.getBody();
 
-        String profileJsonFile = getJsonFileAsString("/test/resources/profile.json");
+        String profileJsonFile = getJsonFileAsString(File.separator + "test" + File.separator + "resources" +
+                File.separator + "profile.json");
 
         Assert.assertEquals(profileJsonFile, body);
     }
@@ -80,6 +82,6 @@ public class TwitterImplementationTest {
         String filePath = new File("").getAbsolutePath();
         byte[] encoded = Files.readAllBytes(Paths.get(filePath.concat(path)));
 
-        return new String(encoded, Charset.defaultCharset());
+        return new String(encoded, "UTF-8");
     }
 }
